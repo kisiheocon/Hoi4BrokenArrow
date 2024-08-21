@@ -932,8 +932,141 @@ ideas = {
 				tag = UMB
 			attack_bonus_against = 0.05
 			}
-            
         }
+		eur_ncr_eco_low = {
+            picture = idea_EUR_NCR_eco_low
+            allowed = {
+            }
+            removal_cost = -1
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.05
+                mic_to_target_factor = 0.05
+                extra_trade_to_target_factor = 0.1
+                trade_cost_for_target_factor = -0.05
+            }
+			allowed_to_remove = {
+				OR = {
+					NCR = {
+						OR = {
+							exists = no
+							has_country_flag = ncr_crisis
+						}
+					}
+					has_war_with = NCR
+				}
+			}
+        }
+		eur_ncr_eco_mid_1 = {
+            picture = idea_EUR_NCR_eco_mid
+            allowed = {
+            }
+            removal_cost = -1
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.1
+                mic_to_target_factor = 0.1
+                extra_trade_to_target_factor = 0.2
+                trade_cost_for_target_factor = -0.1
+            }
+			allowed_to_remove = {
+				OR = {
+					NCR = {
+						OR = {
+							exists = no
+							has_country_flag = ncr_crisis
+						}
+					}
+					has_war_with = NCR
+				}
+			}
+        }
+		EUR_NCR_eco_mid_2 = {
+            picture = idea_EUR_NCR_eco_mid
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = 0.05
+            }
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.1
+                mic_to_target_factor = 0.1
+                extra_trade_to_target_factor = 0.2
+                trade_cost_for_target_factor = -0.1
+            }
+			allowed_to_remove = {
+				OR = {
+					NCR = {
+						OR = {
+							exists = no
+							has_country_flag = ncr_crisis
+						}
+					}
+					has_war_with = NCR
+				}
+			}
+        }
+		EUR_NCR_eco_high = {
+            picture = idea_EUR_NCR_eco_high
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = 0.15
+				stability_factor = 0.05
+				war_support_factor = -0.05
+            }
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.15
+                mic_to_target_factor = 0.15
+                extra_trade_to_target_factor = 0.3
+                trade_cost_for_target_factor = -0.2
+            }
+			allowed_to_remove = {
+				OR = {
+					NCR = {
+						OR = {
+							exists = no
+							has_country_flag = ncr_crisis
+						}
+					}
+					has_war_with = NCR
+				}
+			}
+        }
+		EUR_worthless_currencies_1 = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = -0.2
+				stability_factor = -0.1
+            }
+        }
+		EUR_worthless_currencies_2 = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = -0.15
+				stability_factor = -0.05
+            }
+        }
+		EUR_worthless_currencies_3 = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = -0.1
+            }
+        }	
+    }
 }
 
 

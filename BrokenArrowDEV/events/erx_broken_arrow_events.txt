@@ -152,6 +152,7 @@ country_event = {
 				enc_civilian_economy
 				concealed_econ
 				eur_enc_cons1
+				eur_ncr_eco_low
 			}
 		}
 		ERB = {
@@ -244,6 +245,7 @@ country_event = {
 				enc_civilian_economy
 				concealed_econ
 				eur_enc_cons1
+				eur_ncr_eco_low
 			}
 		}
 		ERB = {
