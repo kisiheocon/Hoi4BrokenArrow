@@ -9,7 +9,7 @@ tags={
 	"Events"
 	"Gameplay"
 }
-name="ERX Broken Arrow"
+name="ERX Broken Arrow DEV"
 picture="Thumbnail.png"
 supported_version="1.14.7"
 remote_file_id="3116919391"
