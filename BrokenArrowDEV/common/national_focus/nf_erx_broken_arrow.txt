@@ -2446,5 +2446,161 @@ focus_tree = {
 			custom_effect_tooltip = navarro_databases_unlocked
 		}
 	}
+
+	#######Local/Regional Economics
+	focus = {
+		id = erx_broken_arrow_eco_start
+		icon = x
+		cost = 30
+		x = 30
+		y = 20
+
+		prerequisite = {
+			focus = erx_broken_arrow_new_city
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_worthless_currencies_1
+				add_idea = eur_worthless_currencies_2
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_eco_currency
+		icon = x
+		cost = 20
+		x = 2
+		y = 1
+		relative_position_id = erx_broken_arrow_eco_start
+		prerequisite = {
+			focus = erx_broken_arrow_eco_start
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_worthless_currencies_2
+				add_idea = eur_worthless_currencies_3
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_eco_currency_caps
+		icon = x
+		cost = 20
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_eco_currency
+		prerequisite = {
+			focus = erx_broken_arrow_eco_currency
+		}
+		mutually_exclusive = {
+			focus = erx_broken_arrow_eco_currency_ncr
+		}
+		completion_reward = {
+			remove_ideas = eur_worthless_currencies_3
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_eco_currency_ncr
+		icon = x
+		cost = 20
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_eco_currency
+		prerequisite = {
+			focus = erx_broken_arrow_eco_currency
+		}
+		mutually_exclusive = {
+			focus = erx_broken_arrow_eco_currency_caps
+		}
+		completion_reward = {
+			remove_ideas = eur_worthless_currencies_3
+			set_temp_variable = { caps_to_add = 25 }
+			add_caps = yes
+			swap_ideas = {
+				remove_idea = currencygenericcap
+				add_idea = currencyncrdollar
+			}
+			add_opinion_modifier = {
+				target = NCR
+				modifier = ncr_bear_economy_sphere
+			}
+			reverse_add_opinion_modifier = {
+				target = NCR
+				modifier = ncr_bear_economy_sphere
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_eco_ncr_start
+		icon = x
+		cost = 20
+		x = -2
+		y = 1
+		relative_position_id = erx_broken_arrow_eco_start
+		prerequisite = {
+			focus = erx_broken_arrow_eco_start
+		}
+		
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_ncr_eco_mid_1
+				add_idea = eur_ncr_eco_mid_2
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_eco_ncr_high
+		icon = x
+		cost = 20
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_eco_ncr_start
+		prerequisite = {
+			focus = erx_broken_arrow_eco_ncr_start
+		}
+		available = {
+			has_completed_focus = erx_broken_arrow_eco_currency_ncr
+		}
+		mutually_exclusive = {
+			focus = erx_broken_arrow_eco_ncr_low
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_ncr_eco_mid_2
+				add_idea = eur_ncr_eco_high
+			}
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_eco_ncr_low
+		icon = x
+		cost = 20
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_eco_ncr_start
+		prerequisite = {
+			focus = erx_broken_arrow_eco_ncr_start
+		}
+		mutually_exclusive = {
+			focus = erx_broken_arrow_eco_ncr_high
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_ncr_eco_mid_2
+				add_idea = eur_ncr_eco_low
+			}
+			set_temp_variable = { caps_to_add = 25 }
+			add_caps = yes
+		}
+	}
 }
 	

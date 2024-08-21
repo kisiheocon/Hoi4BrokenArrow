@@ -933,8 +933,9 @@ ideas = {
 			attack_bonus_against = 0.05
 			}
         }
+        ######Local/Regional Economics
 		eur_ncr_eco_low = {
-            picture = idea_EUR_NCR_eco_low
+            picture = GFX_idea_eur_ncr_eco_low
             allowed = {
             }
             removal_cost = -1
@@ -958,7 +959,7 @@ ideas = {
 			}
         }
 		eur_ncr_eco_mid_1 = {
-            picture = idea_EUR_NCR_eco_mid
+            picture = GFX_idea_eur_ncr_eco_mid
             allowed = {
             }
             removal_cost = -1
@@ -981,8 +982,8 @@ ideas = {
 				}
 			}
         }
-		EUR_NCR_eco_mid_2 = {
-            picture = idea_EUR_NCR_eco_mid
+		eur_ncr_eco_mid_2 = {
+            picture = GFX_idea_eur_ncr_eco_mid
             allowed = {
             }
             removal_cost = -1
@@ -1008,8 +1009,8 @@ ideas = {
 				}
 			}
         }
-		EUR_NCR_eco_high = {
-            picture = idea_EUR_NCR_eco_high
+		eur_ncr_eco_high = {
+            picture = GFX_idea_eur_ncr_eco_high
             allowed = {
             }
             removal_cost = -1
@@ -1037,7 +1038,7 @@ ideas = {
 				}
 			}
         }
-		EUR_worthless_currencies_1 = {
+		eur_worthless_currencies_1 = {
             picture = x
             allowed = {
             }
@@ -1047,7 +1048,7 @@ ideas = {
 				stability_factor = -0.1
             }
         }
-		EUR_worthless_currencies_2 = {
+		eur_worthless_currencies_2 = {
             picture = x
             allowed = {
             }
@@ -1057,7 +1058,7 @@ ideas = {
 				stability_factor = -0.05
             }
         }
-		EUR_worthless_currencies_3 = {
+		eur_worthless_currencies_3 = {
             picture = x
             allowed = {
             }
