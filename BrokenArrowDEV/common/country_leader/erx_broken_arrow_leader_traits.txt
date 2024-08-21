@@ -1,0 +1,6 @@
+leader_traits = {
+    erx_ba_anti_communist = {
+        random = no
+        war_support_factor = 0.05
+    }
+}

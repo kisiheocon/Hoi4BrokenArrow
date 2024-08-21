@@ -1,0 +1,2450 @@
+
+focus_tree = {
+	id = nf_erx_broken_arrow
+	country = {
+		factor = 0
+		modifier = {
+			original_tag = EUR
+			add = 10
+		}
+	}
+	default = no
+	######Beginning
+	focus = {
+		id = erx_broken_arrow_operation_mayflower
+		icon = GFX_goal_enc_reform
+		cost = 7
+		x = 30
+		y = 0
+
+		completion_reward = {
+			add_ideas = eur_enc_complete_chaos
+			country_event = erx_broken_arrow.4
+			country_lock_all_division_template = yes
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_setting_up_shop
+		icon = GFX_goal_USA_modern_recon
+		cost = 7
+		x = 30
+		y = 1
+	
+
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_operation_mayflower
+		}
+
+		completion_reward = {
+			country_event = erx_broken_arrow.19
+			custom_effect_tooltip = setting_up_shop_tt
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_warm_welcome
+		icon = GFX_goal_enc_agreement
+		cost = 20
+		x = 32
+		y = 1
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_operation_mayflower
+		}
+
+		completion_reward = {
+			country_event = erx_broken_arrow.5
+			add_war_support = 0.05
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_arcata_company
+		icon = GFX_enc_goal_doctrine_attack
+		cost = 20
+		x = 28
+		y = 1
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_operation_mayflower
+		}
+
+		completion_reward = {
+			add_ideas = arcata_company
+			set_party_name = {
+				ideology = intellectuals
+				long_name = ERB_EUR1_intellectuals_party_long
+				name = ERB_EUR1_intellectuals_party
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_back_in_business
+		icon = GFX_goal_enc_pass_the_amunition
+		cost = 30
+		x = 30
+		y = 2
+
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_arcata_company
+		}
+				prerequisite = {
+			focus = erx_broken_arrow_setting_up_shop
+		}
+				prerequisite = {
+			focus = erx_broken_arrow_warm_welcome
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 30
+			remove_ideas = eur_enc_complete_chaos
+			country_event = erx_broken_arrow.6
+			country_lock_all_division_template = no
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_local_affairs
+		icon = GFX_goal_USA_democracy_savior
+		cost = 20
+		x = 30
+		y = 3
+
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_back_in_business
+		}
+
+		completion_reward = {
+			country_event = erx_broken_arrow.7
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_seize_state_apparatus
+		icon = GFX_goal_enc_integrate_politicians
+		cost = 30
+		x = 30
+		y = 4
+
+		available = {
+			intellectuals > 0.70
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_local_affairs
+		}
+
+		completion_reward = {
+			country_event = erx_broken_arrow.8
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_new_administration
+		icon = GFX_goal_enc_president_reform
+		cost = 25
+		x = 29
+		y = 5
+
+		available = {
+			has_country_flag = democratic_enc_takeover
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_seize_state_apparatus
+		}
+
+		mutually_exclusive = {
+			focus = erx_broken_arrow_cleaning_house
+		}
+
+		completion_reward = {
+			country_event = erx_broken_arrow.12
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_cleaning_house
+		icon = GFX_goal_enc_smash
+		cost = 25
+		x = 31
+		y = 5
+		available = {
+			has_country_flag = forceful_enc_takeover
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_seize_state_apparatus
+		}
+
+		mutually_exclusive = {
+			focus = erx_broken_arrow_new_administration
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = mop_up_portmasters_tt
+			country_event = erx_broken_arrow.12
+			add_stability = -0.05
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_important_meeting
+		icon = GFX_goal_enc_agreement
+		cost = 20
+		x = 30
+		y = 6
+
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_new_administration
+			focus = erx_broken_arrow_cleaning_house
+		}
+
+		completion_reward = {
+			country_event = erx_broken_arrow.15
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_american_exceptionalism
+		icon = GFX_goal_USA_call_of_race
+		cost = 30
+		x = 30
+		y = 7
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_important_meeting
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+			add_ideas = republic_dreams
+			#every_state = {
+			#	tooltip = EFFECT_EVERY_STATE_STARTS
+			#	limit = {
+			#		#Not Terra Incognita
+			#		check_variable = {
+			#			var = core_countries
+			#			value = 1
+			#			compare = greater_than_or_equals
+			#		}
+			#	}
+			#	add_claim_by = EUR
+			#}
+		}
+	}
+	###Repaying an ancient debt
+	focus = {
+		id = erx_broken_arrow_prep_expansion
+		icon = GFX_goal_enc_expansion_reform
+		cost = 20
+		x = 30
+		y = 8
+
+		prerequisite = {
+			focus = erx_broken_arrow_american_exceptionalism
+		}
+		
+		completion_reward = {
+			country_event = erx_broken_arrow.28
+			
+		}
+	}
+		focus = {
+		id = erx_broken_arrow_welcome_democracy
+		icon = GFX_goal_GFX_USA_hoovers_america-62869
+		cost = 30
+		x = 30
+		y = 9
+	
+		available = {
+		}
+				bypass = {
+			OR = {
+			182 = {
+				is_owned_and_controlled_by = ROOT
+			}
+				PAC = {
+			is_in_faction_with = EUR 
+			}
+			}
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_prep_expansion
+		}
+		
+		completion_reward = {
+			country_event = erx_broken_arrow.29
+		}
+	}
+		focus = {
+		id = erx_broken_arrow_calamity_days
+		icon = GFX_goal_GFX_USA_investigate_the_military-62362
+		cost = 30
+		x = 32
+		y = 9
+	
+		available = {
+		}
+				bypass = {
+			OR = {
+			467 = {
+				is_owned_and_controlled_by = ROOT
+			}
+				MXS = {
+			is_in_faction_with = EUR 
+			}
+			}
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_prep_expansion
+		}
+		
+		completion_reward = {
+			MXS = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+		}
+	}
+		focus = {
+		id = erx_broken_arrow_sever_economic
+		icon = GFX_goal_USA_sweep_farm_tariffs
+		cost = 30
+		x = 28
+		y = 9
+	
+		available = {
+		}
+				bypass = {
+			OR = {
+			369 = {
+				is_owned_and_controlled_by = ROOT
+			}
+				FOU = {
+			is_in_faction_with = EUR 
+			}
+			}
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_prep_expansion
+		}
+		
+		completion_reward = {
+				FOU = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_break_tribe
+		icon = GFX_goal_USA_congressional_authority
+		cost = 30
+		x = 30
+		y = 10
+	
+		available = {
+		}
+		bypass = {
+			OR = {
+			239 = {
+				is_owned_and_controlled_by = ROOT
+			}
+				UMB = {
+			is_in_faction_with = EUR 
+			}
+			}
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_sever_economic
+		}
+			prerequisite = {
+			focus = erx_broken_arrow_calamity_days
+		}
+			prerequisite = {
+			focus = erx_broken_arrow_welcome_democracy
+		}
+		
+		completion_reward = {
+			UMB = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+			add_timed_idea = { idea = EUR_fury_civilization  days = 30 }
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_non_negotiable_civilization
+		icon = GFX_goal_enc_ANT_establish_tributaries
+		cost = 20
+		x = 30
+		y = 11
+	
+		available = {
+			owns_state = 239
+			owns_state = 369
+			owns_state = 467
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_break_tribe
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = non_negotiable_civilization_tooltip
+			hidden_effect = {
+			239 = {
+				add_core_of = EUR
+			}
+			372 = {
+				add_core_of = EUR
+			}
+			239 = {
+				add_core_of = EUR
+			}
+			372 = {
+				add_core_of = EUR
+			}
+			239 = {
+				add_core_of = EUR
+			}
+			372 = {
+				add_core_of = EUR
+			}
+			239 = {
+				add_core_of = EUR
+			}
+			372 = {
+				add_core_of = EUR
+			}
+			}
+		}
+	}
+
+	focus = {
+		id = erx_broken_arrow_anguish_mourning
+		icon = GFX_goal_enc_remember_rig
+		cost = 20
+		x = 30
+		y = 12
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_non_negotiable_civilization
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = anguish_mourning_tt
+			country_event = erx_broken_arrow.18
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_war_plan_gold
+		icon = GFX_goal_enc_sabotage
+		cost = 30
+		x = 30
+		y = 13
+	
+		available = {
+			MXS = {
+				exists = no
+			}
+			UMB = {
+				exists = no
+			}
+			FOU = {
+				exists = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = arr_atk_prep_tt
+				check_variable = { arr_atk_prep =  3 }
+			}
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_anguish_mourning
+		}
+		
+		completion_reward = {
+			country_event = erx_broken_arrow.27
+			ARR = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_new_city
+		icon = GFX_goal_USA_payment_protection
+		cost = 20
+		x = 30
+		y = 14
+	
+		available = {
+			ARR = {
+				exists = no
+			}
+			owns_state = 337
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_war_plan_gold
+		}
+		
+		completion_reward = {
+			country_event = erx_broken_arrow.24
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_reverse_engineer
+		icon = GFX_goal_enc_industrial_research
+		cost = 20
+		x = 30
+		y = 15
+	
+		prerequisite = {
+			focus = erx_broken_arrow_new_city
+		}
+		
+		completion_reward = {
+			set_technology = {
+				enc_civilian_power_grid_tech = 1
+			}
+			custom_effect_tooltip = enc_rebuild_the_power_grid_tt
+			every_owned_state = {
+				set_state_flag = needs_civilian_power_grid
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = civilian_power_grid
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#####Radio Freedom
+	focus = {
+		id = erx_broken_arrow_airwaves
+		icon = GFX_enc_goal_usa_overhorizon
+		cost = 20
+		x = 35
+		y = 0
+	
+		available = {
+			has_completed_focus = erx_broken_arrow_operation_mayflower
+		}
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.5
+				category = communication_category
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.5
+				category = computing_tech
+			}
+			country_event = erx_broken_arrow.16
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_kpdj
+		icon = GFX_goal_enc_radio_civilian
+		cost = 20
+		x = 35
+		y = 1
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_airwaves
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = kpdj_tt
+		}
+	}
+	
+	focus = {
+		id = erx_broken_arrow_voice_of_nation
+		icon = GFX_goal_enc_reform_douglas
+		cost = 20
+		x = 35
+		y = 2
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_kpdj
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = fireside_chat_tt
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_call_favors
+		icon = GFX_goal_enc_NCR_seak_allies
+		cost = 20
+		x = 33
+		y = 3
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_voice_of_nation
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_extend_reach
+		icon = GFX_enc_goal_usa_earlywarningl
+		cost = 20
+		x = 35
+		y = 3
+		
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_voice_of_nation
+		}
+		
+		completion_reward = {
+			39 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = statewide_broadcasts
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_anti_communist
+		icon = GFX_goal_USA_antileftist_action
+		cost = 20
+		x = 37
+		y = 3
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_voice_of_nation
+		}
+		
+		completion_reward = {
+			add_country_leader_trait = erx_ba_anti_communist
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_final_preparations
+		icon = GFX_goal_enc_air_production
+		cost = 20
+		x = 35
+		y = 4
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_call_favors
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_extend_reach
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_anti_communist
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_broken_arrow
+		icon = GFX_goal_enc_ant
+		cost = 20
+		x = 35
+		y = 5
+		
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_final_preparations
+		}
+		
+		completion_reward = {
+			add_ideas = broken_arrow
+		}
+	}
+	#### Bond, James Bond
+	focus = {
+		id = erx_broken_arrow_intel_app
+		icon = GFX_enc_goal_usa_commandcontrol
+		cost = 20
+		x = 44
+		y = 0
+	
+		available = {
+			has_completed_focus = erx_broken_arrow_operation_mayflower
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = {
+					name = "Office of Strategic Services"
+					icon = GFX_intelligence_agency_logo_usa
+				}
+			}
+			add_timed_idea = { idea = building_intel_agency  days = 90 }
+		}
+	}
+	##Infiltrate Brotherhood
+	focus = {
+		id = erx_broken_arrow_domestic_sec
+		icon = GFX_goal_enc_america_open
+		cost = 20
+		x = 42
+		y = 1
+		
+		prerequisite = {
+			focus = erx_broken_arrow_intel_app
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				upgrade_intelligence_agency = upgrade_anti_partisan
+				upgrade_intelligence_agency = upgrade_passive_defense
+			}
+			add_ideas = domestic_sec
+		}
+	}
+	
+	focus = {
+		id = erx_broken_arrow_oss
+		icon = GFX_goal_oss_icon
+		cost = 20
+		x = 46
+		y = 2
+	
+		prerequisite = {
+			focus = erx_broken_arrow_nat_sec
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				upgrade_intelligence_agency = upgrade_commando_training
+				upgrade_intelligence_agency = upgrade_form_department
+			}
+			swap_ideas = {
+				remove_idea = national_sec
+				add_idea = national_sec_div
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_infil_bos
+		icon = GFX_goal_enc_war_with_bos_reform
+		cost = 20
+		x = 47
+		y = 3
+	
+		prerequisite = {
+			focus = erx_broken_arrow_domestic_sec_div
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_oss
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_infil_bos_scribe
+		icon = GFX_goal_enc_bos_leadership
+		cost = 20
+		x = 47
+		y = 4
+	
+		prerequisite = {
+			focus = erx_broken_arrow_infil_bos
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_infil_bos_chains
+		icon = GFX_goal_BOS_generic
+		cost = 20
+		x = 49
+		y = 4
+		
+		prerequisite = {
+			focus = erx_broken_arrow_infil_bos
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_infil_bos_council
+		icon = GFX_goal_flag_burn_BOS
+		cost = 20
+		x = 45
+		y = 4
+	
+		prerequisite = {
+			focus = erx_broken_arrow_infil_bos
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_brotherhood_propoganda
+		icon = GFX_goal_flag_burn_BOS
+		cost = 20
+		x = 47
+		y = 5
+	
+		prerequisite = {
+			focus = erx_broken_arrow_infil_bos_council
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_infil_bos_chains
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_infil_bos_scribe
+		}
+
+		completion_reward = {
+		}
+	}
+	##Infiltrate NCR
+	focus = {
+		id = erx_broken_arrow_nat_sec
+		icon = GFX_goal_enc_a_nation_reborn
+		cost = 20
+		x = 46
+		y = 1
+		
+		prerequisite = {
+			focus = erx_broken_arrow_intel_app
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				upgrade_intelligence_agency = upgrade_anti_partisan
+				upgrade_intelligence_agency = upgrade_passive_defense
+			}
+			add_ideas = national_sec
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_domestic_sec_div
+		icon = GFX_goal_enc_eyebot_reform
+		cost = 20
+		x = 42
+		y = 2
+	
+		prerequisite = {
+			focus = erx_broken_arrow_domestic_sec
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				upgrade_intelligence_agency = upgrade_interrogation_techniques
+				upgrade_intelligence_agency = upgrade_passive_defense
+			}
+			swap_ideas = {
+				remove_idea = domestic_sec
+				add_idea = domestic_sec_div
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_infil_ncr
+		icon = GFX_goal_enc_infiltrate_ncr
+		cost = 20
+		x = 41
+		y = 3
+	
+		prerequisite = {
+			focus = erx_broken_arrow_oss
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_domestic_sec_div
+		}
+
+		completion_reward = {
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_corpo_espion
+		icon = GFX_goal_enc_ncr_dollar
+		cost = 20
+		x = 41
+		y = 4
+	
+		prerequisite = {
+			focus = erx_broken_arrow_infil_ncr
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_ncr_high_comm
+		icon = GFX_goal_enc_rangers
+		cost = 20
+		x = 39
+		y = 4
+	
+		prerequisite = {
+			focus = erx_broken_arrow_infil_ncr
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_ncr_state
+		icon = GFX_goal_enc_suspend_elections
+		cost = 20
+		x = 43
+		y = 4
+	
+		prerequisite = {
+			focus = erx_broken_arrow_infil_ncr
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_ncr_prep
+		icon = GFX_goal_enc_the_common_man
+		cost = 20
+		x = 41
+		y = 5
+	
+		prerequisite = {
+			focus = erx_broken_arrow_corpo_espion
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_ncr_high_comm
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_ncr_state
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_ncr_resistance
+		icon = GFX_goal_enc_support_armed_coup
+		cost = 20
+		x = 41
+		y = 6
+	
+		prerequisite = {
+			focus = erx_broken_arrow_ncr_prep
+		}
+
+		available = {
+			has_completed_focus = erx_broken_arrow_extend_reach
+		}
+
+		completion_reward = {
+		}
+	}
+	########National Heritage
+	focus = {
+		id = erx_broken_arrow_national_heritage
+		icon = GFX_goal_enc_america_open
+		cost = 15
+		x = 14
+		y = 0
+		
+
+		available = {
+			has_completed_focus = erx_broken_arrow_operation_mayflower
+		}
+
+		completion_reward = {
+		}
+	}
+	##Revolution Hertiaage
+	focus = {
+		id = erx_broken_arrow_revolutionary_memories
+		icon = GFX_goal_enc_armed_militias
+		cost = 5
+		x = 10
+		y = 1
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_national_heritage
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = revolutionary_memories_tt
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_men_in_rags
+		icon = GFX_goal_enc_army_reserves
+		cost = 20
+		x = 10
+		y = 2
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_revolutionary_memories
+		}
+		
+		completion_reward = {
+			load_oob = EUR_federal_militia
+			add_ideas = the_continental_army
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_men_who_froze
+		icon = GFX_focus_enc_minutemen_patrols
+		cost = 20
+		x = 10
+		y = 3
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_men_in_rags
+		}
+		
+		completion_reward = {
+			add_ideas = valley_forge 
+			add_ideas = crossing_deleware
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_army_met_foes
+		icon = GFX_goal_enc_accept_wastelanders
+		cost = 20
+		x = 10
+		y = 4
+
+		available = {
+			has_country_flag = navarro_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_men_who_froze
+		}
+		
+		completion_reward = {
+			add_ideas = steadfast_army
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_prussian_ingenuity
+		icon = GFX_goal_GFX_USA_peace_through_trade-62866
+		cost = 20
+		x = 10
+		y = 5
+	
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = sad_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_army_met_foes
+		}
+		
+		completion_reward = {
+			add_ideas = prussian_idea
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_yorktown_legacy
+		icon = GFX_goal_USA_break_windsor
+		cost = 20
+		x = 10
+		y = 6
+	
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = sad_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_prussian_ingenuity
+		}
+		
+		completion_reward = {
+			add_ideas = yorktown_legacy_idea
+		}
+	}
+	###Texan Heritge
+		focus = {
+		id = erx_broken_arrow_mexico_way
+		icon = GFX_goal_USA_support_new_mexico
+		cost = 5
+		x = 12
+		y = 1
+	
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_national_heritage
+		}
+		
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = erx_broken_arrow_rio_grande
+		icon = GFX_goal_USA_beautiful_pacific
+		cost = 20
+		x = 12
+		y = 2
+	
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_mexico_way
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_remember_alamo
+		icon = GFX_goal_enc_military_sphere_reform
+		cost = 20
+		x = 12
+		y = 3
+	
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_rio_grande
+		}
+		
+		completion_reward = {
+		}
+	}
+	###Civil War Legacy
+	focus = {
+		id = erx_broken_arrow_nation_divided
+		icon = GFX_goal_goal_USA_No_Chauvinism
+		cost = 5
+		x = 14
+		y = 1
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_national_heritage
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_blockade
+		icon = GFX_goal_US_navy
+		cost = 20
+		x = 14
+		y = 2
+	
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = humboldt_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_nation_divided
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_gettysburg_legacy
+		icon = GFX_enc_goal_army_fort_sierra
+		cost = 20
+		x = 14
+		y = 3
+	
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = sad_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_blockade
+		}
+		
+		completion_reward = {
+			add_ideas = gettysburg_lessons
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_shermans_march
+		icon = GFX_enc_goal_doctrine_sherman
+		cost = 20
+		x = 14
+		y = 4
+	
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = sad_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_gettysburg_legacy
+		}
+		
+		completion_reward = {
+			add_ideas = shermans_lessons
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = -0.05
+			}
+			change_legitimacy = yes
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_custers_ranks
+		icon = GFX_goal_enc_ANT_establish_tributaries
+		cost = 20
+		x = 14
+		y = 5
+	
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = sad_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_shermans_march
+		}
+		
+		completion_reward = {
+			add_ideas = custers_ranks
+		}
+	}
+	###US-SPANISH War Legacy
+	focus = {
+		id = erx_broken_arrow_remember_maine
+		icon = GFX_enc_focus_navy_shipeagle
+		cost = 5
+		x = 16
+		y = 1
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_national_heritage
+		}
+		
+		completion_reward = {
+			add_ideas = maine_naval_idea
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_foray_phillipines
+		icon = GFX_goal_enc_reform_ant
+		cost = 20
+		x = 16
+		y = 2
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_remember_maine
+		}
+		
+		completion_reward = {
+			add_ideas = foray_naval_idea
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_santiago_shipwreck
+		icon = GFX_enc_goals_usn_dread_naught
+		cost = 20
+		x = 16
+		y = 3
+	
+		available = {
+			has_country_flag = san_diego_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_foray_phillipines
+		}
+		
+		completion_reward = {
+			add_ideas = shipwrecked_naval_idea
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_gulf_domination
+		icon = GFX_enc_goal_usa_mexicodoc
+		cost = 20
+		x = 16
+		y = 4
+		
+		available = {
+			has_country_flag = san_diego_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_santiago_shipwreck
+		}
+		
+		completion_reward = {
+			add_ideas = gulf_domination_idea
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_san_juan_hill
+		icon = GFX_goal_USA_avenge_mexican_crimes
+		cost = 20
+		x = 16
+		y = 5
+		
+		available = {
+			has_country_flag = navarro_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_gulf_domination
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_monroes_legacy
+		icon = GFX_goal_enc_a_nation_reborn
+		cost = 20
+		x = 16
+		y = 6
+	
+		available = {
+			has_country_flag = sad_databses
+			has_country_flag = navarro_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_san_juan_hill
+		}
+		
+		completion_reward = {
+		}
+	}
+	###Legacy of World War 2
+	focus = {
+		id = erx_broken_arrow_war_to_end_war
+		icon = GFX_enc_goal_usmc_reborn
+		cost = 5
+		x = 18
+		y = 1
+	
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_national_heritage
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_war_defense_depth
+		icon = GFX_goal_enc_fort_reformer
+		cost = 20
+		x = 18
+		y = 2
+		
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_war_to_end_war
+		}
+		
+		completion_reward = {
+			add_ideas = defense_in_depth
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_war_day_of_infamy
+		icon = GFX_goal_enc_annex_ykz
+		cost = 20
+		x = 18
+		y = 3
+	
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_war_defense_depth
+		}
+		
+		completion_reward = {
+			add_ideas = day_of_infamy
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.33
+				category = radar_tech
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.33
+				category = support_anti_air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_war_axis_of_evil
+		icon = GFX_goal_enc_slave_labour_collars
+		cost = 20
+		x = 18
+		y = 4
+		
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_war_day_of_infamy
+		}
+		
+		completion_reward = {
+			add_ideas = axis_of_evil
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_war_pattons_tanks
+		icon = GFX_enc_goal_doctrine_tank_attack
+		cost = 20
+		x = 18
+		y = 5
+		
+		available = {
+			has_country_flag = navarro_databases
+			has_country_flag = sad_databases
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_war_axis_of_evil
+		}
+		
+		completion_reward = {
+			add_ideas = pattons_tanks
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_war_atomic_age
+		icon = GFX_goal_enc_rocket_reform
+		cost = 20
+		x = 18
+		y = 6
+		
+		available = {
+			has_country_flag = wip_flag
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_war_pattons_tanks
+		}
+		
+		completion_reward = {
+		}
+	}
+	#######Industry/Rebuilding Eureka
+	focus = {
+		id = erx_broken_arrow_first_brick
+		icon = GFX_goal_enc_reform_industry_1
+		cost = 25
+		x = 20
+		y = 7
+	
+		available = {
+			has_completed_focus = erx_broken_arrow_operation_mayflower
+		}
+
+		prerequisite = {
+		}
+		
+		completion_reward = {
+			39 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_broken_glass
+		icon = GFX_goal_enc_construction_usa
+		cost = 25
+		x = 20
+		y = 8
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_first_brick
+		}
+		
+		completion_reward = {
+			39 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = logistics_cons_bonus
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_mic
+		icon = GFX_goal_enc_reform_industry_2
+		cost = 25
+		x = 22
+		y = 9
+		
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_broken_glass
+		}
+		
+		completion_reward = {
+			39 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_civ_inf
+		icon = GFX_goal_enc_reform_industry_3
+		cost = 25
+		x = 18
+		y = 9
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_broken_glass
+		}
+		
+		completion_reward = {
+			39 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_dockyards
+		icon = GFX_goal_enc_goal_enc_navy_dockyards
+		cost = 25
+		x = 20
+		y = 9
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_broken_glass
+		}
+		
+		completion_reward = {
+			39 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_internal_security
+		icon = GFX_goal_USA_sphere_of_influence
+		cost = 25
+		x = 20
+		y = 10
+	
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_mic
+			focus = erx_broken_arrow_civ_inf
+		}
+		
+		completion_reward = {
+			add_ideas = bunker_building
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_rebuild_humboldt
+		icon = GFX_goal_goal_USA_By_the_People_For_the_People
+		cost = 25
+		x = 20
+		y = 11
+
+		available = {
+		}
+
+		prerequisite = {
+			focus = erx_broken_arrow_internal_security
+		}
+		
+		completion_reward = {
+			39 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = eureka_fisheries
+			39 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					add_to_temp_array = { new_node_trade_array = 211 }
+					add_to_temp_array = { new_node_trade_array = 525 }
+					add_to_temp_array = { new_node_trade_array = 554 }
+					add_to_temp_array = { new_node_trade_array = 210 }
+					add_to_temp_array = { new_node_trade_array = 551 }
+					add_to_temp_array = { new_node_trade_array = 478 }
+					set_temp_variable = { new_node_map_x = 2165 }
+					set_temp_variable = { new_node_map_y = 960 }
+				}
+				create_map_node = yes
+			}
+		}
+	}
+	
+	
+	#######Ensuring GOD GIVEN RIGHTS
+	focus = {
+		id = erx_broken_arrow_ensuring_liberty
+		icon = GFX_goal_america_goal_eagle_deal
+		cost = 15
+		x = 11
+		y = 9
+		
+		available = {
+			has_completed_focus = erx_broken_arrow_operation_mayflower
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_freedom_religion
+		icon = GFX_goal_enc_america_open
+		cost = 15
+		x = 11
+		y = 10
+		
+		prerequisite = {
+			focus = erx_broken_arrow_ensuring_liberty
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+			set_temp_variable = { elites_pop = party_popularity@elites }
+			divide_temp_variable = { elites_pop = -2 }
+			add_stability = elites_pop
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+			add_ideas = freedom_of_religion
+		}
+	}
+
+	#=============
+	
+	focus = {
+		id = erx_broken_arrow_freedom_speech
+		icon = GFX_goal_enc_law
+		cost = 15
+		x = 9
+		y = 10
+		
+		prerequisite = {
+			focus = erx_broken_arrow_ensuring_liberty
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+			set_temp_variable = { elites_pop = party_popularity@elites }
+			divide_temp_variable = { elites_pop = -2 }
+			add_stability = elites_pop
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+			add_ideas = freedom_of_speech
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_freedom_press
+		icon = GFX_goal_enc_free_press
+		cost = 15
+		x = 7
+		y = 10
+	
+		prerequisite = {
+			focus = erx_broken_arrow_ensuring_liberty
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+			set_temp_variable = { elites_pop = party_popularity@elites }
+			divide_temp_variable = { elites_pop = -2 }
+			add_stability = elites_pop
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+			add_ideas = freedom_of_press
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_freedom_want
+		icon = GFX_goal_enc_radio_civilian
+		cost = 15
+		x = 13
+		y = 10
+	
+		prerequisite = {
+			focus = erx_broken_arrow_ensuring_liberty
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+			set_temp_variable = { elites_pop = party_popularity@elites }
+			divide_temp_variable = { elites_pop = -2 }
+			add_stability = elites_pop
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+			add_ideas = freedom_of_want
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_freedom_fear
+		icon = GFX_goal_enc_slave_labour_collars
+		cost = 15
+		x = 15
+		y = 10
+	
+		prerequisite = {
+			focus = erx_broken_arrow_ensuring_liberty
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				var = legitimacy_change_var
+				value = 0.05
+			}
+			change_legitimacy = yes
+			set_temp_variable = { elites_pop = party_popularity@elites }
+			divide_temp_variable = { elites_pop = -2 }
+			add_stability = elites_pop
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+			add_ideas = freedom_of_fear
+		}
+	}
+	
+	#######Navarro Crisis
+	focus = {
+		id = erx_broken_arrow_navarro_crisis
+		icon = GFX_goal_enc_super_soldier
+		cost = 20
+		x = 24
+		y = 0
+
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = "Enables intervention decisions."
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_development
+		icon = GFX_goal_enc_citizenship_for_service
+		cost = 25
+		x = 24
+		y = 1
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_crisis
+		}
+		available = {
+			has_country_flag = victory_in_navarro
+		}
+
+		completion_reward = {
+			340 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
+			353 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
+			56 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
+			548 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
+			441 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
+			216 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_philanthropy
+		icon = GFX_goal_america_goal_eagle_deal
+		cost = 25
+		x = 23
+		y = 2
+		
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_development
+		}
+
+		completion_reward = {
+			340 = {
+				add_resistance = -5
+				add_compliance = 2.5
+			}
+			353 = {
+				add_resistance = -5
+				add_compliance = 2.5
+			}
+			56 = {
+				add_resistance = -5
+				add_compliance = 2.5
+			}
+			548 = {
+				add_resistance = -5
+				add_compliance = 2.5
+			}
+			441 = {
+				add_resistance = -5
+				add_compliance = 2.5
+			}
+			216 = {
+				add_resistance = -5
+				add_compliance = 2.5
+			}
+			add_timed_idea = { idea = navarro_aid days = 60 }
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_roadways
+		icon = GFX_goal_generic_usa_building
+		cost = 25
+		x = 25
+		y = 2
+
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_development
+		}
+
+		completion_reward = {
+			340 = {
+				add_resistance = -5
+				add_compliance = 2.5
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			353 = {
+				add_resistance = -5
+				add_compliance = 2.5
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			56 = {
+				add_resistance = -5
+				add_compliance = 2.5
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			548 = {
+				add_resistance = -5
+				add_compliance = 2.5
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			441 = {
+				add_resistance = -5
+				add_compliance = 2.5
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			216 = {
+				add_resistance = -5
+				add_compliance = 2.5
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_timed_idea = { idea = navarro_roads days = 60 }
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_accomplished
+		icon = GFX_goal_enc_reform_douglas
+		cost = 25
+		x = 24
+		y = 3
+
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_philanthropy
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_roadways
+		}
+
+		available = {
+			340 = {
+				compliance > 90
+			}
+			353 = {
+				compliance > 90
+			}
+			56 = {
+				compliance > 90
+			}
+			548 = {
+				compliance > 90
+			}
+			441 = {
+				compliance > 90
+			}
+			216 = {
+				compliance > 90
+			}
+		}
+
+		completion_reward = {
+			add_state_core = 340
+			add_state_core = 353
+			add_state_core = 56
+			add_state_core = 548
+			add_state_core = 441
+			add_state_core = 216
+			set_province_name = {
+				id = 3434
+				name = "Camp Navarro"
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_infrastructure
+		icon = GFX_goal_USA_city_on_a_hill
+		cost = 25
+		x = 23
+		y = 4
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_accomplished
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_infrastructure_2
+		icon = GFX_goal_enc_reform_industry_2
+		cost = 25
+		x = 22
+		y = 5
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_infrastructure
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			340 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			353 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			56 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			441 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			216 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_infrastructure_3
+		icon = GFX_goal_enc_reform_industry_1
+		cost = 25
+		x = 22
+		y = 6
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_infrastructure_2
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_military
+		icon = GFX_goal_enc_military_sphere_reform
+		cost = 25
+		x = 25
+		y = 4
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_accomplished
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_military_2
+		icon = GFX_goal_enc_power_armor_integration
+		cost = 25
+		x = 26
+		y = 5
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_military
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_military_3
+		icon = GFX_goal_enc_industrial_vehicles
+		cost = 25
+		x = 26
+		y = 6
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_military_2
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_timed_idea = { idea = navarro_military days = 30 }
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_naval
+		icon = GFX_goal_USA_ports_atlantic
+		cost = 25
+		x = 24 
+		y = 5
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_infrastructure
+			focus = erx_broken_arrow_navarro_military
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			340 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			353 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			56 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			441 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			216 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_naval_2
+		icon = GFX_goal_enc_goal_enc_navy_dockyards
+		cost = 25
+		x = 24
+		y = 6
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_naval
+		}
+
+		completion_reward = {
+			548 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_labs
+		icon = GFX_goal_enc_science_reform
+		cost = 25
+		x = 23
+		y = 7
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_infrastructure_3
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_naval_2
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_military_3
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_products
+		icon = GFX_goal_USA_arsenal_of_democracy
+		cost = 25
+		x = 25
+		y = 7
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_infrastructure_3
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_military_3
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_naval_2
+		}
+
+		completion_reward = {
+			add_ideas = navarro_products
+		}
+	}
+	focus = {
+		id = erx_broken_arrow_navarro_databases
+		icon = GFX_goal_enc_restore_the_base
+		cost = 30
+		x = 24
+		y = 8
+
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_labs
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_navarro_products
+		}
+
+		completion_reward = {
+			set_province_name = {
+				id = 3434
+				name = "U.S Army Base Navarro"
+			}
+			set_country_flag = navarro_databases
+			custom_effect_tooltip = navarro_databases_unlocked
+		}
+	}
+}
+	

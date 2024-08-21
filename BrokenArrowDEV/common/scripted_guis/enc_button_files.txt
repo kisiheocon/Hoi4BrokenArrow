@@ -1,0 +1,859 @@
+scripted_gui = {
+	############################
+	# Reformer GUI
+	############################
+	connect_to_power = {
+		context_type = selected_state_context
+		window_name = "connect_to_power_container"
+		parent_window_token = selected_state_view
+		visible = {
+			is_owned_and_controlled_by = ROOT
+			NOT = {
+				is_core_of = ROOT
+			}
+			OR = {
+				free_building_slots = {
+					building = civilian_power_grid
+					size > 0
+					include_locked  = no
+				}
+				civilian_power_grid > 0
+			}
+		}
+		effects = {
+			connect_to_power_click = {
+				hidden_effect = { ROOT = { sound_effect = ERB_electric } }
+				set_state_flag = needs_civilian_power_grid
+				add_core_of = root
+			}
+		}
+		triggers = {
+			connect_to_power_click_enabled = {
+				civilian_power_grid > 0
+				OR = {
+					compliance > 0.90
+					has_resistance = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_than_2_electricity
+					ROOT = {
+						check_variable = {
+							var = resource@energy
+							value = 2
+							compare = greater_than_or_equals
+						}
+					}
+				}
+				OR = {
+					# any neighbour is cored
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+					# or its an island
+					is_island_state = yes
+				}
+			}
+		}
+
+		ai_check = {
+			# check_variable = { ROOT.political_power > 99.99 }
+			check_variable = { ai_random > 0.55 }
+		}
+
+		ai_weights = {
+			connect_to_power_click = {
+				ai_will_do = {
+					factor = 40
+				}
+			}
+		}
+	}
+	connected_to_power = {
+		context_type = selected_state_context
+		window_name = "connected_to_power_container"
+		parent_window_token = selected_state_view
+		visible = {
+			is_core_of = ROOT
+			civilian_power_grid > 0
+		}
+	}
+	install_police_force = {
+		context_type = selected_state_context
+		window_name = "install_police_force_container"
+		parent_window_token = selected_state_view
+		visible = {
+			is_owned_and_controlled_by = ROOT
+			is_fully_controlled_by = ROOT
+			ROOT =  {
+				has_completed_focus = enc_reno_police
+				has_completed_focus = enc_rebuild_the_power_grid
+			}
+			NOT = {
+				is_core_of = FROM
+				civilian_power_grid > 0
+			}
+			free_building_slots = {
+				building = civilian_power_grid
+				size < 1
+				include_locked  = no
+			}
+			# Nothing to delete
+			# industrial_complex < 1
+			# arms_factory < 1
+			# water_generator < 1
+			# electricity_generator < 1
+			# metal_generator < 1
+		}
+
+		effects = {
+			install_police_force_click = {
+				hidden_effect = {
+					sound_effect = ERB_police
+					ROOT = {
+						add_manpower = -100
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				set_state_flag = enc_police_force_installed
+			}
+		}
+		triggers = {
+			install_police_force_click_enabled = {
+				ROOT = {
+					has_manpower > 100
+				}
+				NOT = { has_state_flag = enc_police_force_installed }
+				free_building_slots = {
+					building = civilian_power_grid
+					size < 1
+					include_locked  = no
+				}
+			}
+		}
+
+		ai_check = {
+			check_variable = { ROOT.political_power > 49.99 }
+			check_variable = { ai_random > 0.55 }
+		}
+
+		ai_weights = {
+			install_police_force_click = {
+				ai_will_do = {
+					factor = 40
+				}
+			}
+		}
+	}
+	enc_legitimacy = {
+		context_type = player_context
+		window_name = "legitimacy_container"
+		visible = {
+			OR = {
+				AND = {
+					original_tag = ERB
+					has_completed_focus = enc_reform
+					has_idea = slavery_outlawed
+				}
+				AND = {
+					original_tag = EUR
+					has_completed_focus = erx_broken_arrow_seize_state_apparatus
+				}
+		}
+
+		effects = {
+			legitimacy_bg_click = {
+				# nothing
+			}
+		}
+	}
+	enc_legitimacy_2 = { # for when there is slavery
+		context_type = player_context
+		window_name = "legitimacy_2_container"
+		visible = {
+			original_tag = ERB
+			has_completed_focus = enc_reform			
+            NOT = {
+				has_idea = slavery_outlawed
+			}
+		}
+
+		effects = {
+			legitimacy_bg_click = {
+				# nothing
+			}
+		}
+	}
+	arm_rebels = {
+		context_type = selected_state_context
+
+		window_name = arm_rebels_container
+		parent_window_token = selected_state_view
+
+		visible = {
+			is_core_of = BAR
+			ROOT =  {
+				has_completed_focus = enc_operation_carnaval
+				NOT = {
+					has_country_flag = enc_petition_delivered
+				}
+			}
+		}
+		effects = {
+			arm_rebels_click = {
+				ROOT = {
+					hidden_effect = {
+						set_temp_variable = { click_cost = 0 }
+						subtract_from_temp_variable = { click_cost = enc_rebels_we_have_armed}
+
+						add_political_power = click_cost?-25
+					}
+				}
+				set_state_flag = enc_rebels_armed
+				if = {
+					limit = {
+						has_state_flag = enc_rebels_armed
+					}
+					custom_effect_tooltip = enc_rebels_armed
+				}
+				else = {
+					custom_effect_tooltip = arm_rebels_click
+				}
+				 ROOT = {
+					add_to_variable  = { enc_rebels_we_have_armed = 25}
+				}
+			}
+		}
+		triggers = {
+			arm_rebels_click_enabled = {
+				ROOT = {
+					custom_trigger_tooltip = {
+						tooltip = arm_rebels_tt_cost
+						check_variable = {
+							var = political_power
+							value = enc_rebels_we_have_armed
+							compare = greater_than_or_equals
+						}
+					}
+				}
+				NOT = {
+					has_state_flag = enc_rebels_armed
+				}
+			}
+		}
+
+		ai_check = {
+			check_variable = { ai_random > 0.55 }
+		}
+		ai_weights = {
+			arm_rebels_click = {
+				ai_will_do = {
+					factor = 40
+				}
+			}
+		}
+	}
+	arm_slaves_ready = {
+		context_type = selected_state_context
+		window_name = arm_slaves_ready_container
+		parent_window_token = selected_state_view
+		visible = {			
+			has_state_flag = enc_slaves_armed
+		}
+	}
+	arm_slaves = {
+		context_type = selected_state_context
+		window_name = arm_slaves_container
+		parent_window_token = selected_state_view
+
+		visible = {
+			is_owned_and_controlled_by = CES
+			NOT = {
+				has_state_flag = no_rebels_you_fucks
+				has_state_flag = enc_slaves_armed
+			}
+			ROOT =  {
+				has_completed_focus = enc_ss_ceasar_bottom_weapons
+				NOT = {
+					has_country_flag = enc_ss_ceasar_top_raiding
+				}
+			}
+		}
+		effects = {
+			arm_slaves_click = {
+				ROOT = {
+					hidden_effect = {
+						set_temp_variable = { click_cost = 0 }
+						subtract_from_temp_variable = { click_cost = enc_slaves_we_have_armed}
+
+						add_political_power = click_cost?-25
+					}
+				}
+				set_state_flag = enc_slaves_armed
+				if = {
+					limit = {
+						has_state_flag = enc_slaves_armed
+					}
+					custom_effect_tooltip = enc_slaves_armed
+				}
+				else = {
+					custom_effect_tooltip = arm_slaves_click
+				}
+				ROOT = {
+					add_to_variable  = { enc_slaves_we_have_armed = 25}
+				}
+			}
+		}
+		triggers = {
+			arm_slaves_click_enabled = {
+				ROOT = {
+					custom_trigger_tooltip = {
+						tooltip = arm_slaves_tt_cost
+						check_variable = {
+							var = political_power
+							value = enc_slaves_we_have_armed
+							compare = greater_than_or_equals
+						}
+					}
+				}
+				NOT = {
+					has_state_flag = enc_slaves_armed
+				}
+			}
+		}
+
+		ai_check = {
+			check_variable = { ai_random > 0.55 }
+		}
+
+		ai_weights = {
+			arm_slaves_click = {
+				ai_will_do = {
+					factor = 40
+				}
+			}
+		}
+	}
+	arm_patriots = {
+		context_type = selected_state_context
+		window_name = arm_patriots_container
+		parent_window_token = selected_state_view
+		visible = {
+			is_owned_and_controlled_by = NCR
+			ROOT =  {
+				has_country_flag = ncr_suspicious
+				has_completed_focus = enc_organise_the_sympathizers
+			}
+			NOT = {
+				has_state_flag = enc_patriots_armed
+				has_state_flag = no_rebels_you_fucks
+			}
+		}
+		effects = {
+			arm_patriots_click = {
+				ROOT = {
+					hidden_effect = {
+						set_temp_variable = { click_cost = 0 }
+						# click cost becomes negative value of enc_p_w_h_a
+						subtract_from_temp_variable = { click_cost = enc_patriots_we_have_armed}
+						add_political_power = click_cost?-25
+					}
+				}
+				set_state_flag = enc_patriots_armed
+				if = {
+					limit = {
+						has_state_flag = enc_patriots_armed
+					}
+					custom_effect_tooltip = enc_patriots_armed
+				}
+				else = {
+					custom_effect_tooltip = arm_patriots_click
+				}
+				ROOT = {
+					add_to_variable  = { enc_patriots_we_have_armed = 25}
+				}
+			}
+		}
+		triggers = {
+			arm_patriots_click_enabled = {
+				ROOT = {
+					custom_trigger_tooltip = {
+						tooltip = arm_patriots_tt_cost
+						check_variable = {
+							var = political_power
+							value = enc_patriots_we_have_armed
+							compare = greater_than_or_equals
+						}
+					}
+				}
+				NOT = {
+					has_state_flag = enc_patriots_armed
+				}
+			}
+		}
+
+		ai_check = {
+			check_variable = { ai_random > 0.55 }
+		}
+
+		ai_weights = {
+			arm_patriots_click = {
+				ai_will_do = {
+					factor = 40
+				}
+			}
+		}
+	}
+	arm_patriots_ready = {
+		context_type = selected_state_context
+		window_name = arm_patriots_ready_container
+		parent_window_token = selected_state_view
+		visible = {
+			has_state_flag = enc_patriots_armed
+		}
+	}
+
+	erb_light_up_america = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			tag = ERB
+			has_completed_focus = enc_rebuild_the_power_grid
+		}
+		window_name = "erb_screen_power_grid_scripted_gui"
+
+		effects = {
+			erb_power_grid_window_click = {
+				if = {
+					limit = {
+						has_variable = power_grid_screen
+					}
+
+					if = {
+						limit = { has_global_flag = debug_logs }
+						log = "[GetDateText]: closing power grid screen"
+					}
+
+					clear_variable = power_grid_screen
+				}
+				else = {
+
+					if = {
+						limit = { has_global_flag = debug_logs }
+						log = "[GetDateText]: opening power grid screen"
+					}
+
+					set_variable = { power_grid_screen = 1 }
+					hidden_effect = { ERB = { sound_effect = ERB_electric } }
+				}
+				if = {
+					limit = {
+						check_variable = { power_grid_screen = 1}
+					}
+
+					if = {
+						limit = { has_global_flag = debug_logs }
+						log = "[GetDateText]: clearing power grid array"
+					}
+
+					clear_array = ERB.power_grid_array
+				}
+				if = {
+					limit = {
+						any_owned_state = {
+							NOT = { is_core_of = ERB }
+							NOT = { is_in_array = { ERB.power_grid_array = THIS } }
+						}
+					}
+
+					if = {
+						limit = { has_global_flag = debug_logs }
+						log = "[GetDateText]: checking every state"
+					}
+
+					every_owned_state = {
+						limit = {
+							NOT = {
+								is_core_of = ERB
+							}
+							civilian_power_grid > 0
+							any_neighbor_state = {
+								is_core_of = ERB
+							}
+							NOT = { is_in_array = { ERB.power_grid_array = THIS } }
+						}
+
+						if = {
+							limit = { has_global_flag = debug_logs }
+							log = "[GetDateText]: [THIS.GetName] added to power grid array"
+						}
+
+						add_to_array = { ERB.power_grid_array = THIS }
+					}
+				}
+			}
+		}
+	}
+	power_grid_screen_container = {
+		context_type = player_context
+
+		window_name = "power_grid_screen_container"
+
+		visible = {
+			has_variable = power_grid_screen
+		}
+
+		effects = {
+			close_button_click = {
+				clear_variable = power_grid_screen
+			}
+			connect_to_power_grid1_click = {
+				hidden_effect = { root = { sound_effect = ERB_electric } }
+				set_state_flag = needs_civilian_power_grid
+				add_core_of = root
+			}
+
+			entry_bg_button1_click = {
+				ROOT = {
+					goto_state = PREV
+				}
+			}
+		}
+
+		triggers = {
+			connect_to_power_grid1_visible = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				OR = {
+					free_building_slots = {
+						building = civilian_power_grid
+						size > 0
+						include_locked  = no
+					}
+					civilian_power_grid > 0
+					# something to delete
+					# industrial_complex > 0
+					# arms_factory > 0
+					# water_generator > 0
+					# electricity_generator > 0
+					# metal_generator > 0
+				}
+			}
+			connect_to_power_grid1_enabled = {
+				civilian_power_grid > 0
+					custom_trigger_tooltip = {
+						tooltip = more_than_2_electricity
+						ROOT = {
+							check_variable = {
+								var = resource@energy
+								value = 5
+								compare = greater_than_or_equals
+							}
+						}
+					}
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+			}
+		}
+		dynamic_lists = {
+			erb_screen_power_grid_scripted_gui_gridbox = {
+				array = ERB.power_grid_array
+				entry_container = erb_power_grid_screen_scripted_gui_entry
+				change_scope = yes
+			}
+		}
+	}
+
+	############################
+	# Exploiting Wasteland
+	############################
+
+	establish_outpost = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		window_name = establish_outpost_container
+		visible = {
+			is_controlled_by = LLW
+			NOT = { has_state_flag = LLW_outpost_active }
+		}
+		effects = {
+			establish_outpost_click = {
+				set_state_flag = LLW_outpost_active
+				set_resistance = 20
+				ROOT = {
+					transfer_state = PREV
+					add_command_power = -10
+				}
+			}
+		}
+		triggers = {
+			establish_outpost_click_enabled = {
+				is_controlled_by = LLW
+				NOT = { has_state_flag = LLW_outpost_active }
+				ROOT = { command_power > 10 }
+			}
+		}
+	}
+	abandon_outpost = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		window_name = abandon_outpost_container
+		visible = {
+			has_state_flag = LLW_outpost_active
+		}
+		effects = {
+			abandon_outpost_click = {
+				clr_state_flag = LLW_outpost_active
+				ROOT = {
+					add_manpower = harvest_resources_manpower_used_temp?25
+				}
+				LLW = {
+					transfer_state = PREV
+				}
+			}
+		}
+		triggers = {
+			abandon_outpost_click_enabled = {
+
+			}
+		}
+	}
+
+	# unused
+	add_slaves = {
+		context_type = selected_state_context
+		window_name = add_slaves_container
+		parent_window_token = selected_state_view
+		visible = {
+			always = no # shelved for now
+		}
+		effects = {
+			add_slaves_click = {
+				set_temp_variable = { slavery_change = 0.10 }
+				add_to_variable = { slaves_in_state = 1 }
+			}
+			add_slaves_shift_click = {
+				set_temp_variable = { slavery_change = 1 }
+				add_to_variable = { slaves_in_state = 10 }
+			}
+			add_slaves_right_click = {
+				set_temp_variable = { slavery_change = 1 }
+				add_to_variable = { slaves_in_state = -1 }
+			}
+			add_slaves_shift_right_click = {
+				set_temp_variable = { slavery_change = 1 }
+				add_to_variable = { slaves_in_state = -10 }
+			}
+
+		}
+		triggers = {
+			add_slaves_click_enabled = {
+				# check_variable = { slave_number_display > 0 }
+			}
+			add_slaves_shift_click_enabled = {
+				# check_variable = { slave_number_display > 0 }
+			}
+		}
+	}
+	LLW_state = {
+		context_type = selected_state_context
+		window_name = LLW_state_container
+		parent_window_token = selected_state_view
+		visible = {
+			always = no # shelved for now
+			has_state_flag = LLW_harvest_resources_active
+		}
+	}
+
+	harvest_resources = {
+        context_type = selected_state_context
+        window_name = harvest_resources_container
+        parent_window_token = selected_state_view
+        visible = {
+			always = no
+			is_owned_and_controlled_by = LLW
+			ERB = { has_completed_focus = enc_robot_engineering }
+			NOT = {
+				has_state_flag = LLW_harvest_resources_active
+			}
+			OR = {
+				has_resources_amount = { resource = water			amount > 0 }
+				has_resources_amount = { resource = energy			amount > 0 }
+				has_resources_amount = { resource = metal			amount > 0 }
+				has_resources_amount = { resource = composites		amount > 0 }
+				has_resources_amount = { resource = circuitry		amount > 0 }
+				has_resources_amount = { resource = advanced		amount > 0 }
+			}
+		}
+		effects = {
+			harvest_resources_click = {
+				set_variable = { harvest_resources_manpower_used = state_population_k }
+				multiply_variable = { harvest_resources_manpower_used = 10 }
+				set_temp_variable = { harvest_resources_cost = harvest_resources_manpower_used }
+				multiply_temp_variable = { harvest_resources_cost = -1 }
+				set_temp_variable = {automation_temp = automation }
+				multiply_temp_variable = { harvest_resources_cost = automation_temp }
+				ROOT = {
+					add_manpower = harvest_resources_cost?25
+				}
+				set_state_flag = LLW_harvest_resources_active
+				LLW = { give_resource_rights = { receiver = ERB state = PREV } }
+			}
+		}
+		triggers = {
+			harvest_resources_click_enabled = {
+				set_temp_variable = { harvest_resources_manpower_used_temp = state_population_k }
+				multiply_temp_variable = { harvest_resources_manpower_used_temp = 10 }
+				ROOT = {
+					has_manpower > harvest_resources_manpower_used_temp?25
+				}
+			}
+		}
+	}
+	robotic_garrison = {
+		context_type = selected_state_context
+		window_name = robotic_garrison_container
+		parent_window_token = selected_state_view
+		visible = {
+			is_owned_and_controlled_by = ERB
+			ROOT = {
+				original_tag = ERB
+			}
+			ERB = { has_completed_focus = enc_robot_engineering }
+		}
+		effects = {
+			robotic_garrison_click = {
+				add_state_modifier = {
+					modifier = {
+						required_garrison_factor = -0.25
+					}
+				}
+				ERB = {
+					add_equipment_to_stockpile = {
+						type = cnc_robot
+						amount = -25
+					}
+				}
+			}
+		}
+		triggers = {
+			robotic_garrison_click_enabled = {
+				ERB = {
+					has_equipment  = {
+						cnc_robot > 24
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_than_24_robots
+					ROOT = {
+						has_equipment  = {
+							cnc_robot > 24
+						}
+					}
+				}
+			}
+		}
+	}
+	harvest_resources_recall = {
+		context_type = selected_state_context
+		window_name = harvest_resources_recall_container
+		parent_window_token = selected_state_view
+		visible = {
+			always = no # shelved
+			is_owned_and_controlled_by = LLW
+			has_state_flag = LLW_harvest_resources_active
+		}
+		effects = {
+			harvest_resources_recall_click = {
+				clr_state_flag = LLW_harvest_resources_active
+				ERB = {
+					remove_resource_rights = PREV
+					add_manpower = PREV.harvest_resources_manpower_used?75
+				}
+			}
+		}
+		triggers = {
+			harvest_resources_recall_click_enabled = {
+
+			}
+		}
+	}
+	robotic_garrison_master = { 
+        context_type = selected_state_context
+        window_name = robotic_garrison_master_container
+        parent_window_token = selected_state_view
+        visible = {
+			is_owned_and_controlled_by = ERB
+			ROOT = { has_completed_focus = enc_robot_engineering }
+        }
+        effects = {
+            robotic_garrison_click = {
+				add_state_modifier = {
+					modifier = {
+						required_garrison_factor = -0.25
+					}
+				}
+				ERB = {
+					add_equipment_to_stockpile = { 
+						type = cnc_robot
+						amount = -25
+					} 
+				}
+				add_to_variable = { state_robots = 1 }
+				set_variable = { state_robots_amount = state_robots }
+				multiply_variable = { state_robots_amount =  0.25 }
+			}
+            robotic_garrison_decrease_click = {
+				add_state_modifier = {
+					modifier = {
+						required_garrison_factor = 0.25
+					}
+				}
+				ERB = {
+					add_equipment_to_stockpile = {
+						type = cnc_robot
+						amount = 25
+						producer = ERB
+					}
+				}
+				subtract_from_variable = { state_robots = 1 }
+				set_variable = { state_robots_amount = state_robots }
+				multiply_variable = { state_robots_amount =  0.25 }
+			}
+        }
+        triggers = {
+            robotic_garrison_click_enabled = {
+				ERB = {
+					has_equipment  = {   
+						cnc_robot > 24
+					}
+				}
+				check_variable = { state_robots < 2 }
+			}
+            robotic_garrison_decrease_click_enabled = {
+				check_variable = { state_robots > 0 }
+			}
+		}
+	}
+} 
+
+
+#	new_button = {
+#		context_type = selected_state_context
+#        window_name = new_button_container
+#        parent_window_token = selected_state_view
+#        visible = {
+#
+#        }
+#        effects = {
+#            new_button_click = {
+#
+#            }
+#        }
+#        triggers = {
+#            new_button_click_enabled = {
+#
+#            }
+#        }
+#	}

@@ -1,0 +1,12 @@
+opinion_modifiers = {
+	eureka_side_opinion_modifier = {value = 50}
+	free_folk_side_opinion_modifier = {value = 50}
+	eureka_side_trade_modifier = {
+        trade = yes
+        value = 75    # Provides -100 trade opinion for 2 months
+    }
+	free_folk_side_trade_modifier = {
+        trade = yes
+        value = 75    # Provides -100 trade opinion for 2 months
+    }
+}
