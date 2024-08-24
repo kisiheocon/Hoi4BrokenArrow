@@ -1,0 +1,38 @@
+defined_text = {
+    name = eureka_spies_status_bos
+    text = {
+        trigger = {
+            EUR = {
+                has_country_flag = eureka_spies_in_bos 
+            }
+        }
+        localization_key = spies_yes
+    }
+    text = {
+        trigger = { 
+            NOT = {
+                EUR = {
+                    has_country_flag = eureka_spies_in_bos 
+                }
+            }
+        }
+        localization_key = spies_no
+    }
+}
+defined_text = {
+    name = eureka_spies_status_ncr
+    text = {
+        trigger =  {
+            has_country_flag = eureka_spies_in_ncr 
+        }
+         localization_key = spies_yes
+    }
+    text = {
+        trigger = { 
+            NOT = {
+                has_country_flag = eureka_spies_in_ncr
+            }
+        }
+        localization_key = spies_no
+    }
+}

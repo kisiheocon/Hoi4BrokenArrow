@@ -1,0 +1,21 @@
+
+ERB_EUR_FEG = {
+	color = rgb { 57 79 59 }
+	color_ui = rgb { 57 79 59 }
+}
+ERB_EUR_ANS = {
+	color = rgb { 20 28 107 }
+	color_ui = rgb { 20 28 107 }
+}
+ERB_EUR_FRA = {
+	color = rgb { 57 79 59 }
+	color_ui = rgb { 57 79 59 }
+}
+ERB_EUR_APG = {
+	color = rgb { 20 28 107 }
+	color_ui = rgb { 20 28 107 }
+}
+ERB_EUR_PAC = {
+	color = rgb { 20 28 107 }
+	color_ui = rgb { 20 28 107 }
+}

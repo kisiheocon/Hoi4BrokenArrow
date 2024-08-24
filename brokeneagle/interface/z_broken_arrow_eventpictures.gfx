@@ -1,0 +1,14 @@
+spriteTypes = {
+	##############################################################################
+	####  COUNTRY EVENTS need to be event_[name].dds        ######################
+	##############################################################################
+
+	################
+	# Broken Arrow
+	################
+	spriteType = {
+		name = "GFX_event_broken_arrow_eagle"
+		texturefile = "gfx/event_pictures/broken_arrow_eagle.dds"
+	}
+	
+}
