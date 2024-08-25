@@ -9,7 +9,9 @@ focus_tree = {
 		}
 	}
 	default = no
-	######Beginning
+#############
+##Beginning##
+#############
 	focus = {
 		id = erx_broken_arrow_operation_mayflower
 		icon = GFX_goal_enc_reform
@@ -25,9 +27,9 @@ focus_tree = {
 		id = erx_broken_arrow_setting_up_shop
 		icon = GFX_goal_USA_modern_recon
 		cost = 7
-		x = 30
+		x = 0
 		y = 1
-	
+		relative_position_id = erx_broken_arrow_operation_mayflower
 
 		available = {
 		}
@@ -45,8 +47,9 @@ focus_tree = {
 		id = erx_broken_arrow_warm_welcome
 		icon = GFX_goal_enc_agreement
 		cost = 20
-		x = 32
+		x = 2
 		y = 1
+		relative_position_id = erx_broken_arrow_operation_mayflower
 	
 		available = {
 		}
@@ -65,8 +68,9 @@ focus_tree = {
 		id = erx_broken_arrow_arcata_company
 		icon = GFX_enc_goal_doctrine_attack
 		cost = 20
-		x = 28
+		x = -2
 		y = 1
+		relative_position_id = erx_broken_arrow_operation_mayflower
 	
 		available = {
 		}
@@ -88,8 +92,9 @@ focus_tree = {
 		id = erx_broken_arrow_back_in_business
 		icon = GFX_goal_enc_pass_the_amunition
 		cost = 30
-		x = 30
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_setting_up_shop
 
 		available = {
 		}
@@ -116,8 +121,9 @@ focus_tree = {
 		id = erx_broken_arrow_local_affairs
 		icon = GFX_goal_USA_democracy_savior
 		cost = 20
-		x = 30
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_back_in_business
 
 		available = {
 		}
@@ -134,8 +140,9 @@ focus_tree = {
 		id = erx_broken_arrow_seize_state_apparatus
 		icon = GFX_goal_enc_integrate_politicians
 		cost = 30
-		x = 30
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_local_affairs
 
 		available = {
 			intellectuals > 0.70
@@ -153,8 +160,9 @@ focus_tree = {
 		id = erx_broken_arrow_new_administration
 		icon = GFX_goal_enc_president_reform
 		cost = 25
-		x = 29
-		y = 5
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_seize_state_apparatus
 
 		available = {
 			has_country_flag = democratic_enc_takeover
@@ -176,8 +184,10 @@ focus_tree = {
 		id = erx_broken_arrow_cleaning_house
 		icon = GFX_goal_enc_smash
 		cost = 25
-		x = 31
-		y = 5
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_seize_state_apparatus
+
 		available = {
 			has_country_flag = forceful_enc_takeover
 		}
@@ -201,8 +211,9 @@ focus_tree = {
 		id = erx_broken_arrow_important_meeting
 		icon = GFX_goal_enc_agreement
 		cost = 20
-		x = 30
-		y = 6
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_new_administration
 
 		available = {
 		}
@@ -220,8 +231,9 @@ focus_tree = {
 		id = erx_broken_arrow_american_exceptionalism
 		icon = GFX_goal_USA_call_of_race
 		cost = 30
-		x = 30
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_important_meeting
 	
 		available = {
 		}
@@ -251,13 +263,16 @@ focus_tree = {
 			#}
 		}
 	}
-	###Repaying an ancient debt
+####################
+##Arroyo Expansion##
+####################
 	focus = {
 		id = erx_broken_arrow_prep_expansion
 		icon = GFX_goal_enc_expansion_reform
 		cost = 20
-		x = 30
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_american_exceptionalism
 
 		prerequisite = {
 			focus = erx_broken_arrow_american_exceptionalism
@@ -265,26 +280,26 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = erx_broken_arrow.28
-			
 		}
 	}
-		focus = {
+	focus = {
 		id = erx_broken_arrow_welcome_democracy
 		icon = GFX_goal_GFX_USA_hoovers_america-62869
 		cost = 30
-		x = 30
-		y = 9
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_prep_expansion
 	
 		available = {
 		}
-				bypass = {
+		bypass = {
 			OR = {
-			182 = {
-				is_owned_and_controlled_by = ROOT
-			}
+				182 = {
+					is_owned_and_controlled_by = ROOT
+				}
 				PAC = {
-			is_in_faction_with = EUR 
-			}
+					is_in_faction_with = EUR 
+				}
 			}
 		}
 		prerequisite = {
@@ -295,23 +310,24 @@ focus_tree = {
 			country_event = erx_broken_arrow.29
 		}
 	}
-		focus = {
+	focus = {
 		id = erx_broken_arrow_calamity_days
 		icon = GFX_goal_GFX_USA_investigate_the_military-62362
 		cost = 30
-		x = 32
-		y = 9
+		x = 2
+		y = 1
+		relative_position_id = erx_broken_arrow_prep_expansion
 	
 		available = {
 		}
-				bypass = {
+		bypass = {
 			OR = {
-			467 = {
-				is_owned_and_controlled_by = ROOT
-			}
+				467 = {
+					is_owned_and_controlled_by = ROOT
+				}
 				MXS = {
-			is_in_faction_with = EUR 
-			}
+					is_in_faction_with = EUR 
+				}
 			}
 		}
 		prerequisite = {
@@ -322,23 +338,24 @@ focus_tree = {
 			MXS = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
 		}
 	}
-		focus = {
+	focus = {
 		id = erx_broken_arrow_sever_economic
 		icon = GFX_goal_USA_sweep_farm_tariffs
 		cost = 30
-		x = 28
-		y = 9
+		x = -2
+		y = 1
+		relative_position_id = erx_broken_arrow_prep_expansion
 	
 		available = {
 		}
-				bypass = {
+		bypass = {
 			OR = {
-			369 = {
-				is_owned_and_controlled_by = ROOT
-			}
+				369 = {
+					is_owned_and_controlled_by = ROOT
+				}
 				FOU = {
-			is_in_faction_with = EUR 
-			}
+					is_in_faction_with = EUR 
+				}
 			}
 		}
 		prerequisite = {
@@ -353,29 +370,30 @@ focus_tree = {
 		id = erx_broken_arrow_break_tribe
 		icon = GFX_goal_USA_congressional_authority
 		cost = 30
-		x = 30
-		y = 10
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_welcome_democracy
 	
 		available = {
 		}
 		bypass = {
 			OR = {
-			239 = {
-				is_owned_and_controlled_by = ROOT
-			}
+				239 = {
+					is_owned_and_controlled_by = ROOT
+				}
 				UMB = {
-			is_in_faction_with = EUR 
-			}
+					is_in_faction_with = EUR 
+				}
 			}
 		}
 
 		prerequisite = {
 			focus = erx_broken_arrow_sever_economic
 		}
-			prerequisite = {
+		prerequisite = {
 			focus = erx_broken_arrow_calamity_days
 		}
-			prerequisite = {
+		prerequisite = {
 			focus = erx_broken_arrow_welcome_democracy
 		}
 		
@@ -388,8 +406,9 @@ focus_tree = {
 		id = erx_broken_arrow_non_negotiable_civilization
 		icon = GFX_goal_enc_ANT_establish_tributaries
 		cost = 20
-		x = 30
-		y = 11
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_break_tribe
 	
 		available = {
 			owns_state = 239
@@ -404,30 +423,30 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = non_negotiable_civilization_tooltip
 			hidden_effect = {
-			239 = {
-				add_core_of = EUR
-			}
-			372 = {
-				add_core_of = EUR
-			}
-			239 = {
-				add_core_of = EUR
-			}
-			372 = {
-				add_core_of = EUR
-			}
-			239 = {
-				add_core_of = EUR
-			}
-			372 = {
-				add_core_of = EUR
-			}
-			239 = {
-				add_core_of = EUR
-			}
-			372 = {
-				add_core_of = EUR
-			}
+				239 = {
+					add_core_of = EUR
+				}
+				372 = {
+					add_core_of = EUR
+				}
+				239 = {
+					add_core_of = EUR
+				}
+				372 = {
+					add_core_of = EUR
+				}
+				239 = {
+					add_core_of = EUR
+				}
+				372 = {
+					add_core_of = EUR
+				}
+				239 = {
+					add_core_of = EUR
+				}
+				372 = {
+					add_core_of = EUR
+				}
 			}
 		}
 	}
@@ -436,8 +455,9 @@ focus_tree = {
 		id = erx_broken_arrow_anguish_mourning
 		icon = GFX_goal_enc_remember_rig
 		cost = 20
-		x = 30
-		y = 12
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_non_negotiable_civilization
 	
 		available = {
 		}
@@ -455,8 +475,9 @@ focus_tree = {
 		id = erx_broken_arrow_war_plan_gold
 		icon = GFX_goal_enc_sabotage
 		cost = 30
-		x = 30
-		y = 13
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_anguish_mourning
 	
 		available = {
 			MXS = {
@@ -487,8 +508,9 @@ focus_tree = {
 		id = erx_broken_arrow_new_city
 		icon = GFX_goal_USA_payment_protection
 		cost = 20
-		x = 30
-		y = 14
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_war_plan_gold
 	
 		available = {
 			ARR = {
@@ -509,8 +531,9 @@ focus_tree = {
 		id = erx_broken_arrow_reverse_engineer
 		icon = GFX_goal_enc_industrial_research
 		cost = 20
-		x = 30
-		y = 15
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_new_city
 	
 		prerequisite = {
 			focus = erx_broken_arrow_new_city
@@ -539,8 +562,13 @@ focus_tree = {
 		id = erx_beaver_state
 		icon = GFX_enc_goal_usa_overhorizon
 		cost = 30
-		x = 36
-		y = 12
+		x = 6
+		y = 1
+		relative_position_id = erx_broken_arrow_new_city
+
+		prerequisite = {
+			focus = erx_broken_arrow_new_city
+		}
 
 		completion_reward = {
 			country_event = erx_broken_arrow.31
@@ -827,18 +855,22 @@ focus_tree = {
 		completion_reward = {
 		}
 	}
-	#####Radio Freedom
+#################
+##Radio Freedom##
+#################
 	focus = {
 		id = erx_broken_arrow_airwaves
 		icon = GFX_enc_goal_usa_overhorizon
 		cost = 20
-		x = 35
-		y = 0
+		x = 6
+		y = 1
+		relative_position_id = erx_broken_arrow_back_in_business
 	
-		available = {
-			has_completed_focus = erx_broken_arrow_operation_mayflower
+		prerequisite = {
+			focus = erx_broken_arrow_back_in_business
 		}
-
+		available = {
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -858,8 +890,9 @@ focus_tree = {
 		id = erx_broken_arrow_kpdj
 		icon = GFX_goal_enc_radio_civilian
 		cost = 20
-		x = 35
+		x = 0
 		y = 1
+		relative_position_id = erx_broken_arrow_airwaves
 	
 		available = {
 		}
@@ -877,8 +910,9 @@ focus_tree = {
 		id = erx_broken_arrow_voice_of_nation
 		icon = GFX_goal_enc_reform_douglas
 		cost = 20
-		x = 35
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_kpdj
 	
 		available = {
 		}
@@ -895,8 +929,9 @@ focus_tree = {
 		id = erx_broken_arrow_call_favors
 		icon = GFX_goal_enc_NCR_seak_allies
 		cost = 20
-		x = 33
-		y = 3
+		x = -2
+		y = 1
+		relative_position_id = erx_broken_arrow_voice_of_nation
 	
 		available = {
 		}
@@ -912,8 +947,9 @@ focus_tree = {
 		id = erx_broken_arrow_extend_reach
 		icon = GFX_enc_goal_usa_earlywarningl
 		cost = 20
-		x = 35
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_voice_of_nation
 		
 		available = {
 		}
@@ -937,8 +973,9 @@ focus_tree = {
 		id = erx_broken_arrow_anti_communist
 		icon = GFX_goal_USA_antileftist_action
 		cost = 20
-		x = 37
-		y = 3
+		x = 2
+		y = 1
+		relative_position_id = erx_broken_arrow_voice_of_nation
 	
 		available = {
 		}
@@ -955,8 +992,9 @@ focus_tree = {
 		id = erx_broken_arrow_final_preparations
 		icon = GFX_goal_enc_air_production
 		cost = 20
-		x = 35
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_extend_reach
 	
 		available = {
 		}
@@ -978,9 +1016,10 @@ focus_tree = {
 		id = erx_broken_arrow_broken_arrow
 		icon = GFX_goal_enc_ant
 		cost = 20
-		x = 35
-		y = 5
-		
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_final_preparations
+
 		available = {
 		}
 
@@ -992,16 +1031,21 @@ focus_tree = {
 			add_ideas = broken_arrow
 		}
 	}
-	#### Bond, James Bond
+####################
+##Bond, James Bond##
+####################
 	focus = {
 		id = erx_broken_arrow_intel_app
 		icon = GFX_enc_goal_usa_commandcontrol
 		cost = 20
-		x = 44
-		y = 0
+		x = 14
+		y = 1
+		relative_position_id = erx_broken_arrow_back_in_business
 	
+		prerequisite = {
+			focus = erx_broken_arrow_back_in_business
+		}
 		available = {
-			has_completed_focus = erx_broken_arrow_operation_mayflower
 		}
 
 		completion_reward = {
@@ -1022,8 +1066,9 @@ focus_tree = {
 		id = erx_broken_arrow_domestic_sec
 		icon = GFX_goal_enc_america_open
 		cost = 20
-		x = 42
+		x = -2
 		y = 1
+		relative_position_id = erx_broken_arrow_intel_app
 		
 		prerequisite = {
 			focus = erx_broken_arrow_intel_app
@@ -1045,8 +1090,9 @@ focus_tree = {
 		id = erx_broken_arrow_oss
 		icon = GFX_goal_oss_icon
 		cost = 20
-		x = 46
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_nat_sec
 	
 		prerequisite = {
 			focus = erx_broken_arrow_nat_sec
@@ -1070,8 +1116,9 @@ focus_tree = {
 		id = erx_broken_arrow_infil_bos
 		icon = GFX_goal_enc_war_with_bos_reform
 		cost = 20
-		x = 47
-		y = 3
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_oss
 	
 		prerequisite = {
 			focus = erx_broken_arrow_domestic_sec_div
@@ -1087,8 +1134,9 @@ focus_tree = {
 		id = erx_broken_arrow_infil_bos_scribe
 		icon = GFX_goal_enc_bos_leadership
 		cost = 20
-		x = 47
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_bos
 	
 		prerequisite = {
 			focus = erx_broken_arrow_infil_bos
@@ -1101,8 +1149,9 @@ focus_tree = {
 		id = erx_broken_arrow_infil_bos_chains
 		icon = GFX_goal_BOS_generic
 		cost = 20
-		x = 49
-		y = 4
+		x = 2
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_bos
 		
 		prerequisite = {
 			focus = erx_broken_arrow_infil_bos
@@ -1115,8 +1164,9 @@ focus_tree = {
 		id = erx_broken_arrow_infil_bos_council
 		icon = GFX_goal_flag_burn_BOS
 		cost = 20
-		x = 45
-		y = 4
+		x = -2
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_bos
 	
 		prerequisite = {
 			focus = erx_broken_arrow_infil_bos
@@ -1129,8 +1179,9 @@ focus_tree = {
 		id = erx_broken_arrow_brotherhood_propoganda
 		icon = GFX_goal_flag_burn_BOS
 		cost = 20
-		x = 47
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_bos_scribe
 	
 		prerequisite = {
 			focus = erx_broken_arrow_infil_bos_council
@@ -1150,8 +1201,9 @@ focus_tree = {
 		id = erx_broken_arrow_nat_sec
 		icon = GFX_goal_enc_a_nation_reborn
 		cost = 20
-		x = 46
+		x = 2
 		y = 1
+		relative_position_id = erx_broken_arrow_intel_app
 		
 		prerequisite = {
 			focus = erx_broken_arrow_intel_app
@@ -1172,8 +1224,9 @@ focus_tree = {
 		id = erx_broken_arrow_domestic_sec_div
 		icon = GFX_goal_enc_eyebot_reform
 		cost = 20
-		x = 42
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_domestic_sec
 	
 		prerequisite = {
 			focus = erx_broken_arrow_domestic_sec
@@ -1197,8 +1250,9 @@ focus_tree = {
 		id = erx_broken_arrow_infil_ncr
 		icon = GFX_goal_enc_infiltrate_ncr
 		cost = 20
-		x = 41
-		y = 3
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_domestic_sec_div
 	
 		prerequisite = {
 			focus = erx_broken_arrow_oss
@@ -1216,8 +1270,9 @@ focus_tree = {
 		id = erx_broken_arrow_corpo_espion
 		icon = GFX_goal_enc_ncr_dollar
 		cost = 20
-		x = 41
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_ncr
 	
 		prerequisite = {
 			focus = erx_broken_arrow_infil_ncr
@@ -1230,8 +1285,9 @@ focus_tree = {
 		id = erx_broken_arrow_ncr_high_comm
 		icon = GFX_goal_enc_rangers
 		cost = 20
-		x = 39
-		y = 4
+		x = -2
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_ncr
 	
 		prerequisite = {
 			focus = erx_broken_arrow_infil_ncr
@@ -1244,8 +1300,9 @@ focus_tree = {
 		id = erx_broken_arrow_ncr_state
 		icon = GFX_goal_enc_suspend_elections
 		cost = 20
-		x = 43
-		y = 4
+		x = 2
+		y = 1
+		relative_position_id = erx_broken_arrow_infil_ncr
 	
 		prerequisite = {
 			focus = erx_broken_arrow_infil_ncr
@@ -1258,8 +1315,9 @@ focus_tree = {
 		id = erx_broken_arrow_ncr_prep
 		icon = GFX_goal_enc_the_common_man
 		cost = 20
-		x = 41
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_corpo_espion
 	
 		prerequisite = {
 			focus = erx_broken_arrow_corpo_espion
@@ -1278,8 +1336,9 @@ focus_tree = {
 		id = erx_broken_arrow_ncr_resistance
 		icon = GFX_goal_enc_support_armed_coup
 		cost = 20
-		x = 41
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_ncr_prep
 	
 		prerequisite = {
 			focus = erx_broken_arrow_ncr_prep
@@ -1292,29 +1351,32 @@ focus_tree = {
 		completion_reward = {
 		}
 	}
-	########National Heritage
+#####################
+##National Heritage##
+#####################
 	focus = {
 		id = erx_broken_arrow_national_heritage
 		icon = GFX_goal_enc_america_open
 		cost = 15
-		x = 14
-		y = 0
+		x = 6
+		y = 4
 		
 
 		available = {
-			has_completed_focus = erx_broken_arrow_operation_mayflower
+			has_completed_focus = erx_broken_arrow_back_in_business
 		}
 
 		completion_reward = {
 		}
 	}
-	##Revolution Hertiaage
+	##Revolution Hertiage
 	focus = {
 		id = erx_broken_arrow_revolutionary_memories
 		icon = GFX_goal_enc_armed_militias
 		cost = 5
-		x = 10
+		x = -4
 		y = 1
+		relative_position_id = erx_broken_arrow_national_heritage
 	
 		available = {
 		}
@@ -1331,8 +1393,9 @@ focus_tree = {
 		id = erx_broken_arrow_men_in_rags
 		icon = GFX_goal_enc_army_reserves
 		cost = 20
-		x = 10
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_revolutionary_memories
 	
 		available = {
 		}
@@ -1350,8 +1413,9 @@ focus_tree = {
 		id = erx_broken_arrow_men_who_froze
 		icon = GFX_focus_enc_minutemen_patrols
 		cost = 20
-		x = 10
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_men_in_rags
 	
 		available = {
 		}
@@ -1369,8 +1433,9 @@ focus_tree = {
 		id = erx_broken_arrow_army_met_foes
 		icon = GFX_goal_enc_accept_wastelanders
 		cost = 20
-		x = 10
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_men_who_froze
 
 		available = {
 			has_country_flag = navarro_databases
@@ -1388,8 +1453,9 @@ focus_tree = {
 		id = erx_broken_arrow_prussian_ingenuity
 		icon = GFX_goal_GFX_USA_peace_through_trade-62866
 		cost = 20
-		x = 10
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_army_met_foes
 	
 		available = {
 			has_country_flag = navarro_databases
@@ -1408,8 +1474,9 @@ focus_tree = {
 		id = erx_broken_arrow_yorktown_legacy
 		icon = GFX_goal_USA_break_windsor
 		cost = 20
-		x = 10
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_prussian_ingenuity
 	
 		available = {
 			has_country_flag = navarro_databases
@@ -1429,8 +1496,9 @@ focus_tree = {
 		id = erx_broken_arrow_mexico_way
 		icon = GFX_goal_USA_support_new_mexico
 		cost = 5
-		x = 12
+		x = -2
 		y = 1
+		relative_position_id = erx_broken_arrow_national_heritage
 	
 		available = {
 			has_country_flag = wip_flag
@@ -1447,8 +1515,9 @@ focus_tree = {
 		id = erx_broken_arrow_rio_grande
 		icon = GFX_goal_USA_beautiful_pacific
 		cost = 20
-		x = 12
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_mexico_way
 	
 		available = {
 			has_country_flag = wip_flag
@@ -1465,8 +1534,9 @@ focus_tree = {
 		id = erx_broken_arrow_remember_alamo
 		icon = GFX_goal_enc_military_sphere_reform
 		cost = 20
-		x = 12
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_rio_grande
 	
 		available = {
 			has_country_flag = wip_flag
@@ -1484,8 +1554,9 @@ focus_tree = {
 		id = erx_broken_arrow_nation_divided
 		icon = GFX_goal_goal_USA_No_Chauvinism
 		cost = 5
-		x = 14
+		x = 0
 		y = 1
+		relative_position_id = erx_broken_arrow_national_heritage
 	
 		available = {
 		}
@@ -1501,8 +1572,9 @@ focus_tree = {
 		id = erx_broken_arrow_blockade
 		icon = GFX_goal_US_navy
 		cost = 20
-		x = 14
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_nation_divided
 	
 		available = {
 			has_country_flag = navarro_databases
@@ -1520,8 +1592,9 @@ focus_tree = {
 		id = erx_broken_arrow_gettysburg_legacy
 		icon = GFX_enc_goal_army_fort_sierra
 		cost = 20
-		x = 14
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_blockade
 	
 		available = {
 			has_country_flag = navarro_databases
@@ -1540,8 +1613,9 @@ focus_tree = {
 		id = erx_broken_arrow_shermans_march
 		icon = GFX_enc_goal_doctrine_sherman
 		cost = 20
-		x = 14
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_gettysburg_legacy
 	
 		available = {
 			has_country_flag = navarro_databases
@@ -1565,8 +1639,9 @@ focus_tree = {
 		id = erx_broken_arrow_custers_ranks
 		icon = GFX_goal_enc_ANT_establish_tributaries
 		cost = 20
-		x = 14
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_shermans_march
 	
 		available = {
 			has_country_flag = navarro_databases
@@ -1586,8 +1661,9 @@ focus_tree = {
 		id = erx_broken_arrow_remember_maine
 		icon = GFX_enc_focus_navy_shipeagle
 		cost = 5
-		x = 16
+		x = 2
 		y = 1
+		relative_position_id = erx_broken_arrow_national_heritage
 	
 		available = {
 		}
@@ -1604,8 +1680,9 @@ focus_tree = {
 		id = erx_broken_arrow_foray_phillipines
 		icon = GFX_goal_enc_reform_ant
 		cost = 20
-		x = 16
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_remember_maine
 	
 		available = {
 		}
@@ -1622,8 +1699,9 @@ focus_tree = {
 		id = erx_broken_arrow_santiago_shipwreck
 		icon = GFX_enc_goals_usn_dread_naught
 		cost = 20
-		x = 16
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_foray_phillipines
 	
 		available = {
 			has_country_flag = san_diego_databases
@@ -1641,8 +1719,9 @@ focus_tree = {
 		id = erx_broken_arrow_gulf_domination
 		icon = GFX_enc_goal_usa_mexicodoc
 		cost = 20
-		x = 16
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_santiago_shipwreck
 		
 		available = {
 			has_country_flag = san_diego_databases
@@ -1660,8 +1739,9 @@ focus_tree = {
 		id = erx_broken_arrow_san_juan_hill
 		icon = GFX_goal_USA_avenge_mexican_crimes
 		cost = 20
-		x = 16
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_gulf_domination
 		
 		available = {
 			has_country_flag = navarro_databases
@@ -1678,8 +1758,9 @@ focus_tree = {
 		id = erx_broken_arrow_monroes_legacy
 		icon = GFX_goal_enc_a_nation_reborn
 		cost = 20
-		x = 16
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_san_juan_hill
 	
 		available = {
 			has_country_flag = sad_databses
@@ -1698,8 +1779,9 @@ focus_tree = {
 		id = erx_broken_arrow_war_to_end_war
 		icon = GFX_enc_goal_usmc_reborn
 		cost = 5
-		x = 18
+		x = 4
 		y = 1
+		relative_position_id = erx_broken_arrow_national_heritage
 	
 		available = {
 			has_country_flag = wip_flag
@@ -1716,11 +1798,11 @@ focus_tree = {
 		id = erx_broken_arrow_war_defense_depth
 		icon = GFX_goal_enc_fort_reformer
 		cost = 20
-		x = 18
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_war_to_end_war
 		
 		available = {
-			has_country_flag = wip_flag
 		}
 
 		prerequisite = {
@@ -1735,11 +1817,12 @@ focus_tree = {
 		id = erx_broken_arrow_war_day_of_infamy
 		icon = GFX_goal_enc_annex_ykz
 		cost = 20
-		x = 18
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_war_defense_depth
 	
 		available = {
-			has_country_flag = wip_flag
+			has_country_flag = navarro_databases
 		}
 
 		prerequisite = {
@@ -1764,11 +1847,12 @@ focus_tree = {
 		id = erx_broken_arrow_war_axis_of_evil
 		icon = GFX_goal_enc_slave_labour_collars
 		cost = 20
-		x = 18
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_war_day_of_infamy
 		
 		available = {
-			has_country_flag = wip_flag
+			has_country_flag = navarro_databases
 		}
 
 		prerequisite = {
@@ -1783,8 +1867,9 @@ focus_tree = {
 		id = erx_broken_arrow_war_pattons_tanks
 		icon = GFX_enc_goal_doctrine_tank_attack
 		cost = 20
-		x = 18
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_war_axis_of_evil
 		
 		available = {
 			has_country_flag = navarro_databases
@@ -1803,8 +1888,9 @@ focus_tree = {
 		id = erx_broken_arrow_war_atomic_age
 		icon = GFX_goal_enc_rocket_reform
 		cost = 20
-		x = 18
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_war_pattons_tanks
 		
 		available = {
 			has_country_flag = wip_flag
@@ -1822,14 +1908,15 @@ focus_tree = {
 		id = erx_broken_arrow_first_brick
 		icon = GFX_goal_enc_reform_industry_1
 		cost = 25
-		x = 20
-		y = 7
+		x = -6
+		y = 1
+		relative_position_id = erx_broken_arrow_back_in_business
 	
 		available = {
-			has_completed_focus = erx_broken_arrow_operation_mayflower
 		}
 
 		prerequisite = {
+			focus = erx_broken_arrow_back_in_business
 		}
 		
 		completion_reward = {
@@ -1857,8 +1944,9 @@ focus_tree = {
 		id = erx_broken_arrow_broken_glass
 		icon = GFX_goal_enc_construction_usa
 		cost = 25
-		x = 20
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_first_brick
 	
 		available = {
 		}
@@ -1883,8 +1971,9 @@ focus_tree = {
 		id = erx_broken_arrow_mic
 		icon = GFX_goal_enc_reform_industry_2
 		cost = 25
-		x = 22
-		y = 9
+		x = 2
+		y = 1
+		relative_position_id = erx_broken_arrow_broken_glass
 		
 		available = {
 		}
@@ -1908,8 +1997,9 @@ focus_tree = {
 		id = erx_broken_arrow_civ_inf
 		icon = GFX_goal_enc_reform_industry_3
 		cost = 25
-		x = 18
-		y = 9
+		x = -2
+		y = 1
+		relative_position_id = erx_broken_arrow_broken_glass
 	
 		available = {
 		}
@@ -1933,8 +2023,9 @@ focus_tree = {
 		id = erx_broken_arrow_dockyards
 		icon = GFX_goal_enc_goal_enc_navy_dockyards
 		cost = 25
-		x = 20
-		y = 9
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_broken_glass
 	
 		available = {
 		}
@@ -1958,8 +2049,9 @@ focus_tree = {
 		id = erx_broken_arrow_internal_security
 		icon = GFX_goal_USA_sphere_of_influence
 		cost = 25
-		x = 20
-		y = 10
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_dockyards
 	
 		available = {
 		}
@@ -1977,8 +2069,9 @@ focus_tree = {
 		id = erx_broken_arrow_rebuild_humboldt
 		icon = GFX_goal_goal_USA_By_the_People_For_the_People
 		cost = 25
-		x = 20
-		y = 11
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_internal_security
 
 		available = {
 		}
@@ -2024,18 +2117,18 @@ focus_tree = {
 		}
 	}
 	
-	
-	#######Ensuring GOD GIVEN RIGHTS
-	
+#############################
+##Ensuring GOD GIVEN RIGHTS##
+#############################
 	focus = {
 		id = erx_broken_arrow_ensuring_liberty
 		icon = GFX_goal_america_goal_eagle_deal
 		cost = 15
-		x = 7
-		y = 9
+		x = 61
+		y = 4
 		
 		available = {
-			has_completed_focus = erx_broken_arrow_operation_mayflower
+			has_completed_focus = erx_broken_arrow_back_in_business
 		}
 
 		completion_reward = {
@@ -2047,7 +2140,7 @@ focus_tree = {
 		}
 	}
 
-	#=============
+	#=============Freedom Of Religion
 
 	focus = {
 		id = erx_broken_arrow_freedom_religion
@@ -2378,15 +2471,16 @@ focus_tree = {
 			add_ideas = freedom_of_fear
 		}
 	}
-	
-	#######Navarro Crisis
+##################
+##Navarro Crisis##
+##################
 	focus = {
 		id = erx_broken_arrow_navarro_crisis
 		icon = GFX_goal_enc_super_soldier
 		cost = 20
-		x = 24
+		x = -14
 		y = 0
-
+		relative_position_id = erx_broken_arrow_back_in_business
 
 		available = {
 			always = no
@@ -2400,11 +2494,15 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_development
 		icon = GFX_goal_enc_citizenship_for_service
 		cost = 25
-		x = 24
+		x = -14
 		y = 1
+		relative_position_id = erx_broken_arrow_back_in_business
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_crisis
+		}
+		prerequisite = {
+			focus = erx_broken_arrow_back_in_business
 		}
 		available = {
 			has_country_flag = victory_in_navarro
@@ -2441,9 +2539,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_philanthropy
 		icon = GFX_goal_america_goal_eagle_deal
 		cost = 25
-		x = 23
-		y = 2
-		
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_development
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_development
@@ -2481,9 +2579,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_roadways
 		icon = GFX_goal_generic_usa_building
 		cost = 25
-		x = 25
-		y = 2
-
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_development
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_development
@@ -2551,9 +2649,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_accomplished
 		icon = GFX_goal_enc_reform_douglas
 		cost = 25
-		x = 24
-		y = 3
-
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_philanthropy
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_philanthropy
@@ -2564,22 +2662,22 @@ focus_tree = {
 
 		available = {
 			340 = {
-				compliance > 90
+				compliance > 89
 			}
 			353 = {
-				compliance > 90
+				compliance > 89
 			}
 			56 = {
-				compliance > 90
+				compliance > 89
 			}
 			548 = {
-				compliance > 90
+				compliance > 89
 			}
 			441 = {
-				compliance > 90
+				compliance > 89
 			}
 			216 = {
-				compliance > 90
+				compliance > 89
 			}
 		}
 
@@ -2600,8 +2698,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_infrastructure
 		icon = GFX_goal_USA_city_on_a_hill
 		cost = 25
-		x = 23
-		y = 4
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_accomplished
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_accomplished
@@ -2622,8 +2721,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_infrastructure_2
 		icon = GFX_goal_enc_reform_industry_2
 		cost = 25
-		x = 22
-		y = 5
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_infrastructure
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure
@@ -2679,8 +2779,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_infrastructure_3
 		icon = GFX_goal_enc_reform_industry_1
 		cost = 25
-		x = 22
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_infrastructure_2
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure_2
@@ -2701,8 +2802,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_military
 		icon = GFX_goal_enc_military_sphere_reform
 		cost = 25
-		x = 25
-		y = 4
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_accomplished
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_accomplished
@@ -2723,8 +2825,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_military_2
 		icon = GFX_goal_enc_power_armor_integration
 		cost = 25
-		x = 26
-		y = 5
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_military
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_military
@@ -2745,8 +2848,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_military_3
 		icon = GFX_goal_enc_industrial_vehicles
 		cost = 25
-		x = 26
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_military_2
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_military_2
@@ -2768,8 +2872,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_naval
 		icon = GFX_goal_USA_ports_atlantic
 		cost = 25
-		x = 24 
-		y = 5
+		x = 1 
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_infrastructure
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure
@@ -2831,8 +2936,9 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_naval_2
 		icon = GFX_goal_enc_goal_enc_navy_dockyards
 		cost = 25
-		x = 24
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_naval
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_naval
@@ -2853,17 +2959,15 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_labs
 		icon = GFX_goal_enc_science_reform
 		cost = 25
-		x = 23
-		y = 7
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_infrastructure_3
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure_3
 		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_naval_2
-		}
-		prerequisite = {
-			focus = erx_broken_arrow_navarro_military_3
 		}
 
 		completion_reward = {
@@ -2874,12 +2978,10 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_products
 		icon = GFX_goal_USA_arsenal_of_democracy
 		cost = 25
-		x = 25
-		y = 7
+		x = -1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_military_3
 
-		prerequisite = {
-			focus = erx_broken_arrow_navarro_infrastructure_3
-		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_military_3
 		}
@@ -2895,13 +2997,12 @@ focus_tree = {
 		id = erx_broken_arrow_navarro_databases
 		icon = GFX_goal_enc_restore_the_base
 		cost = 30
-		x = 24
-		y = 8
+		x = 1
+		y = 1
+		relative_position_id = erx_broken_arrow_navarro_labs
 
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_labs
-		}
-		prerequisite = {
 			focus = erx_broken_arrow_navarro_products
 		}
 
@@ -2919,8 +3020,9 @@ focus_tree = {
 		id = erx_broken_arrow_eco_start
 		icon = x
 		cost = 30
-		x = 30
-		y = 20
+		x = -6
+		y = 1
+		relative_position_id = erx_broken_arrow_new_city
 
 		prerequisite = {
 			focus = erx_broken_arrow_new_city
