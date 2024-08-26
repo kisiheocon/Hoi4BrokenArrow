@@ -238,7 +238,7 @@ erx_broken_arrow_oregon_affairs_cat = {
 		remove_effect = {
 			add_equipment_to_stockpile = { type = energy_equipment_2 producer = USA amount = 400}
 			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 producer = ERB amount = 150}
-			add_equipment_to_stockpile = { type = support_equipment_1 = producer = USA amount = 100}
+			add_equipment_to_stockpile = { type = support_equipment_1 producer = USA amount = 100}
 			add_equipment_to_stockpile = { type = anti_tank_equipment_2  producer = USA amount = 75}
 			add_equipment_to_stockpile = { type = explosive_demolitions_equipment_2  producer = USA amount = 75}
 			add_equipment_to_stockpile = { type = energy_fireteam_equipment_2  producer = USA amount = 75}
@@ -345,6 +345,9 @@ erx_broken_arrow_navarro_cat = {
 		fire_only_once = yes
 		visible = {
 			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
 		}
 		complete_effect = {
 			set_country_flag = eur_navarro_intervention
@@ -376,6 +379,9 @@ erx_broken_arrow_navarro_cat = {
 		fire_only_once = yes
 		visible = {
 			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
 		}
 		days_remove = 70
 		modifier = {
@@ -386,12 +392,18 @@ erx_broken_arrow_navarro_cat = {
 		icon = x
 		available = {
 			has_country_flag = eur_navarro_intervention
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
 		}
 		cost = 50
 		days_re_enable = 30
 		fire_only_once = no
 		visible = {
 			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
 		}
 		complete_effect = {
 			NVT = {
@@ -412,20 +424,16 @@ erx_broken_arrow_navarro_cat = {
 		fire_only_once = no
 		visible = {
 			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
 		}
 		complete_effect = {
 			NVT = {
 				add_timed_idea = { idea = shi_atk_bonus days = 20 }
 			}
-			#SHI = {
-			#	add_timed_idea = { idea = shi_atk_nerf days = 20 } 
-			#}
-			random_other_country = {
-				limit = {
-					original_tag = NVT
-					has_government = intellectuals
-				}
-				add_timed_idea = { idea = shi_atk_nerf days = 20 }
+			NVS = {
+				add_timed_idea = { idea = shi_atk_nerf days = 20 } 
 			}
 		}
 	}
@@ -439,6 +447,9 @@ erx_broken_arrow_navarro_cat = {
 		fire_only_once = no
 		visible = {
 			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
 		}
 		days_remove = 25
 		modifier = {

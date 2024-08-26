@@ -3,10 +3,6 @@ focus_tree = {
 	id = nf_erx_broken_arrow
 	country = {
 		factor = 0
-		modifier = {
-			original_tag = EUR
-			add = 100
-		}
 	}
 	default = no
 #############
@@ -2498,6 +2494,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_back_in_business
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_crisis
 		}
@@ -2543,6 +2542,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_development
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_development
 		}
@@ -2583,6 +2585,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_development
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_development
 		}
@@ -2653,6 +2658,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_philanthropy
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_philanthropy
 		}
@@ -2702,6 +2710,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_accomplished
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_accomplished
 		}
@@ -2725,6 +2736,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_infrastructure
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure
 		}
@@ -2783,6 +2797,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_infrastructure_2
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure_2
 		}
@@ -2806,6 +2823,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_accomplished
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_accomplished
 		}
@@ -2829,6 +2849,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_military
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_military
 		}
@@ -2852,6 +2875,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_military_2
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_military_2
 		}
@@ -2876,6 +2902,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_infrastructure
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure
 			focus = erx_broken_arrow_navarro_military
@@ -2940,6 +2969,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_naval
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_naval
 		}
@@ -2963,6 +2995,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_infrastructure_3
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_infrastructure_3
 		}
@@ -2982,6 +3017,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_military_3
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_military_3
 		}
@@ -3001,6 +3039,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = erx_broken_arrow_navarro_labs
 
+		allow_branch = {
+			has_country_flag = eur_navarro_time
+		}
 		prerequisite = {
 			focus = erx_broken_arrow_navarro_labs
 			focus = erx_broken_arrow_navarro_products

@@ -962,17 +962,6 @@ ideas = {
                 extra_trade_to_target_factor = 0.1
                 trade_cost_for_target_factor = -0.05
             }
-			allowed_to_remove = {
-				OR = {
-					NCR = {
-						OR = {
-							exists = no
-							has_country_flag = ncr_crisis
-						}
-					}
-					has_war_with = NCR
-				}
-			}
         }
 		eur_ncr_eco_mid_1 = {
             picture = GFX_idea_eur_ncr_eco_mid
@@ -986,17 +975,6 @@ ideas = {
                 extra_trade_to_target_factor = 0.2
                 trade_cost_for_target_factor = -0.1
             }
-			allowed_to_remove = {
-				OR = {
-					NCR = {
-						OR = {
-							exists = no
-							has_country_flag = ncr_crisis
-						}
-					}
-					has_war_with = NCR
-				}
-			}
         }
 		eur_ncr_eco_mid_2 = {
             picture = GFX_idea_eur_ncr_eco_mid
@@ -1013,17 +991,6 @@ ideas = {
                 extra_trade_to_target_factor = 0.2
                 trade_cost_for_target_factor = -0.1
             }
-			allowed_to_remove = {
-				OR = {
-					NCR = {
-						OR = {
-							exists = no
-							has_country_flag = ncr_crisis
-						}
-					}
-					has_war_with = NCR
-				}
-			}
         }
 		eur_ncr_eco_high = {
             picture = GFX_idea_eur_ncr_eco_high
@@ -1042,17 +1009,6 @@ ideas = {
                 extra_trade_to_target_factor = 0.3
                 trade_cost_for_target_factor = -0.2
             }
-			allowed_to_remove = {
-				OR = {
-					NCR = {
-						OR = {
-							exists = no
-							has_country_flag = ncr_crisis
-						}
-					}
-					has_war_with = NCR
-				}
-			}
         }
 		eur_worthless_currencies_1 = {
             picture = x
@@ -1083,7 +1039,29 @@ ideas = {
                 production_speed_buildings_factor = -0.1
             }
         }
-}
+    
+##Transitional Government##
+        eur_tran_gov_demo = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+				stability_factor = 0.1
+                political_power_factor = -0.15
+            }
+        }
+        eur_tran_gov_auth = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+                stability_factor = -0.25
+                political_power_gain = 0.5
+            }
+        }
+    }
 }
 
 

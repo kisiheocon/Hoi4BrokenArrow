@@ -1,6 +1,6 @@
 erx_broken_arrow_radiowaves_cat = {
 	allowed = {
-		tag = EUR
+		original_tag = EUR
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_airwaves
@@ -9,7 +9,7 @@ erx_broken_arrow_radiowaves_cat = {
 }
 erx_broken_arrow_oregon_affairs_cat = {
 	allowed = {
-		tag = EUR
+		original_tag = EUR
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_airwaves
@@ -18,7 +18,7 @@ erx_broken_arrow_oregon_affairs_cat = {
 }
 erx_broken_arrow_stashes_cat = {
 	allowed = {
-		tag = EUR
+		original_tag = EUR
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_airwaves
@@ -27,7 +27,7 @@ erx_broken_arrow_stashes_cat = {
 }
 erx_broken_arrow_enclave_cat = {
 	allowed = {
-		tag = ERB
+		original_tag = ERB
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_airwaves
@@ -36,7 +36,7 @@ erx_broken_arrow_enclave_cat = {
 }
 erx_broken_arrow_armory_gfx_cat = {
 	allowed = {
-		tag = EUR
+		original_tag = EUR
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_airwaves
@@ -45,7 +45,7 @@ erx_broken_arrow_armory_gfx_cat = {
 }
 erx_broken_arrow_navarro_cat = {
 	allowed = {
-		tag = EUR
+		original_tag = EUR
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_airwaves
@@ -54,7 +54,7 @@ erx_broken_arrow_navarro_cat = {
 }
 erx_broken_arrow_espionage_cat = {
 	allowed = {
-		tag = EUR
+		original_tag = EUR
 	}
 	visible = {
 		#has_completed_focus = erx_broken_arrow_intel_app

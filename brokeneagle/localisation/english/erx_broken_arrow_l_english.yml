@@ -201,7 +201,13 @@ erx_broken_arrow_navarro.2.t: "Victory in Navarro"
 erx_broken_arrow_navarro.2.d: "Through advisors, lend leases and “Hired Mercenaries” we have won the day in Navarro, routing both the Colonial Government with their baron masters and the Chinese Interlopers from San Francisco.\n\nHowever, the region is still in chaos, with militants from all sides still engaged in limited guerilla warfare across the Navarro Territories.\n\nDespite this, we have reclaimed our old home. And we have dealt both our southern neighbors a defining blow.\n\nOur position is secure, and spirits are elated. "
 erx_broken_arrow_navarro.2.a: "'But there is much work to be done'"
 
+erx_broken_arrow_navarro.3.t: "Ad Declarationem Saeculi"
+erx_broken_arrow_navarro.3.d: "A Vision Reclaimed, A Nation Reborn?\n\nOur unprecedented Victory in the Navarro war has not only shaken the region, but the entire west coast. We have fought and reclaimed our homeland back from these interlopers. And in so doing cemented our stature and strength in this ever changing world. For months we have campaigned and fought with the promise of a better future for Eureka. And despite his good spirits. Granite himself had resigned the Union to the pages of History. But our triumph here? Our Valor and unity? It has re-awoken something in each and every one of us. For the first time in decades, we have fought as one people, with one goal and have not only beaten back our foes. But have sent them reeling back to their masters like cowards. We have retaken Navarro, but why stop there? The whole of America lays at our fingertips. The liberation of the American People lay at our fingertips. Indeed The very future of this entire continent lays at our fingertips. Anderson may linger in his bunkers, The N.C.R may babble in their congress. And the Brotherhood may shiver in their Power Armour like cowards. But us? No. Our horizons do not end in some squalid wasteland. They are just beginning."
+erx_broken_arrow_navarro.3.a: "'Our Liberation is at Hand'"
 
+erx_broken_arrow_navarro.4.t: "The Republic Strikes Back"
+erx_broken_arrow_navarro.4.d: "We have sent the Republic and their baron cronies reeling across the border. Our Victory has been damning both for the Republics reputation and the Barons profit margins. Both have created enough backlash and public outcry that the Republic has been forced to send their army to retake their lands and extinguish the “Eurekan Troublemakers” as the President puts it. However it doesn’t take much observation to see that the NCR isn't looking for War, they are already stretched thin with other matters and due to mismanagement cannot afford one either. They seem to be intent on trying to overwhelm us into surrender with overwhelming numbers.\n\nWhich means if we can hold out long enough, they'll have to bite the bullet and back off."
+erx_broken_arrow_navarro.4.a: "'They send Mountains to topple a Mound?'"
 ########## MAYFLOWER - AMERICAN EXCEPTIONALISM ##############
 erx_broken_arrow_operation_mayflower:0 "Operation Mayflower"
 erx_broken_arrow_operation_mayflower_desc:0 "We are betrayed! Anderson's tyranny leaves us no options, with President Granite rescued we must like our forefathers evacuate to our old stomping grounds... "Eureka""
@@ -805,3 +811,15 @@ eureka_vp_fob:0 "F.O.B Liberty"
 
 ######Anderson No Declare War if AI
 ERX_anderson_chains:0 "Suffer not the Abominable Intelligence"
+##Transitional Government##
+eur_tran_gov_demo:0 "Promised Liberties"
+eur_tran_gov_auth:0 "Suspended Liberties"
+##Worthless Currencies##
+eur_worthless_currencies_1:0 "Worthless Currencies"
+eur_worthless_currencies_2:0 "Worthless Currencies"
+eur_worthless_currencies_3:0 "Worthless Currencies"
+##EUR-NCR Trade Relations##
+eur_ncr_eco_low:0 "Alternative Trade Routes"
+eur_ncr_eco_mid_1:0 "NCR Trade Dependent"
+eur_ncr_eco_mid_2:0 "NCR Trade Dependent"
+eur_ncr_eco_high:0 "NCR Trade Agreement"
