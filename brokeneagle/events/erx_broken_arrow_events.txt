@@ -472,6 +472,7 @@ country_event = {
 	option = {
 		name = erx_broken_arrow.15.a 
 		country_event = { id = erx_broken_arrow.155 }
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 }
 country_event = {
@@ -483,7 +484,7 @@ country_event = {
 
 	option = {
 		name = erx_broken_arrow.155.a 
-		
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 }
 #THE YANKEE DOODLE BOY
@@ -495,13 +496,16 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = erx_broken_arrow.16.a 
+		name = erx_broken_arrow.16.a
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 	option = {
 		name = erx_broken_arrow.16.b
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 	option = {
 		name = erx_broken_arrow.16.c
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 }
 #I VOW THEE TO MY COUNTRY
@@ -748,15 +752,16 @@ country_event = {
 
 	option = {
 		name = erx_broken_arrow.29.a 
-	puppet = PAC
-	PAC = {
-	set_cosmetic_tag = ERB_EUR_PAC
-	}
-	PAC = {
-		hidden_effect = {
-	country_event = { id = erx_broken_arrow.30 days = 1 }
-	}
-	}
+		puppet = PAC
+		PAC = {
+			set_cosmetic_tag = ERB_EUR_PAC
+		}
+		PAC = {
+			hidden_effect = {
+				country_event = { id = erx_broken_arrow.30 days = 1 }
+			}
+		}
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 }
 country_event = {
@@ -792,7 +797,6 @@ country_event = {
 	desc = erx_broken_arrow.31.d
 
 	is_triggered_only = yes
-	hidden = yes
 	option = {
 		name = erx_broken_arrow.31.a 
 		hidden_effect = {
@@ -807,7 +811,6 @@ country_event = {
 	desc = erx_broken_arrow.32.d
 
 	is_triggered_only = yes
-	hidden = yes
 	option = {
 		name = erx_broken_arrow.32.a 
 		declare_war_on = {

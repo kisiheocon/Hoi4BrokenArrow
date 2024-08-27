@@ -1,3 +1,12 @@
+erx_broken_arrow_navarro_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = GFX_decision_satellite
+}
 erx_broken_arrow_radiowaves_cat = {
 	allowed = {
 		original_tag = EUR
@@ -43,15 +52,6 @@ erx_broken_arrow_armory_gfx_cat = {
 	}
 	icon = x
 }
-erx_broken_arrow_navarro_cat = {
-	allowed = {
-		original_tag = EUR
-	}
-	visible = {
-		#has_completed_focus = erx_broken_arrow_airwaves
-	}
-	icon = GFX_decision_satellite
-}
 erx_broken_arrow_espionage_cat = {
 	allowed = {
 		original_tag = EUR
@@ -81,4 +81,13 @@ EUR_political_infighting = {
 			}
 		}
 	}
+}
+erx_broken_arrow_development_oregon_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = x
 }

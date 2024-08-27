@@ -558,8 +558,8 @@ focus_tree = {
 		id = erx_beaver_state
 		icon = GFX_enc_goal_usa_overhorizon
 		cost = 30
-		x = 6
-		y = 1
+		x = 0
+		y = 4
 		relative_position_id = erx_broken_arrow_new_city
 
 		prerequisite = {

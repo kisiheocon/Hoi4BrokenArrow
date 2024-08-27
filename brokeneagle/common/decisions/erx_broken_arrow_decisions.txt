@@ -476,6 +476,142 @@ erx_broken_arrow_navarro_cat = {
 		}
 	}
 }
+erx_broken_arrow_development_oregon_cat = {
+	erx_broken_arrow_development_oregon_salem = {
+		icon = x
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			has_full_control_of_state = 493
+			num_of_available_civilian_factories > 3
+			has_equipment = {
+				infantry_equipment > 799
+			}
+			has_equipment = {
+				support_equipment_1 >99
+			}
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -800
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -100
+			}
+		}
+		days_remove = 120
+		remove_effect = {
+			493 = {
+				set_temp_variable = { pop_add = 2500 }
+                add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = large_city
+				add_victory_points = {
+					province = 4101
+					value = 10
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 493
+			}
+		}
+	}
+	erx_broken_arrow_development_oregon_eugene = {
+		icon = x
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			has_full_control_of_state = 358
+			num_of_available_civilian_factories > 3
+			has_equipment = {
+				support_equipment_1 >299
+			}
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -300
+			}
+		}
+		days_remove = 120
+		remove_effect = {
+			358 = {
+				set_temp_variable = { pop_add = 2000 }
+                add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_province_name = { 
+					id = 4200 name = "Eugene"
+				}
+				set_state_category = large_city
+				add_victory_points = {
+					province = 4200
+					value = 12
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 358
+			}
+		}
+	}
+}
 erx_broken_arrow_espionage_cat = {
 	eureka_espionage_bos_0 = {
 		icon = x
