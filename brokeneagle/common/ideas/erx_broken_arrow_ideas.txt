@@ -723,6 +723,9 @@ ideas = {
             }
             removal_cost = -1
 
+            cancel = {
+                has_country_flag = conquered_navarro
+            }
             modifier = {
                 send_volunteer_size = 3
             }

@@ -456,6 +456,25 @@ erx_broken_arrow_navarro_cat = {
 			send_volunteer_size = 1
 		}
 	}
+	navarro_survive_ncr = {
+		icon = x
+		days_mission_timeout = 60
+		is_good = yes
+
+		activation = {
+			has_country_flag = navarro_ncr_revenge
+		}
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			always = no
+		}
+		timeout_effect = {
+			clr_country_flag = navarro_ncr_revenge
+			white_peace = NCR
+		}
+	}
 }
 erx_broken_arrow_espionage_cat = {
 	eureka_espionage_bos_0 = {

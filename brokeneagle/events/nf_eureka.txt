@@ -1,0 +1,2174 @@
+﻿add_namespace = nf_eureka
+country_event = { #Things get bad
+	id = nf_eureka.0
+	title = nf_eureka.0.t
+	desc = nf_eureka.0.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.0.a
+		add_stability = 0.1
+	}
+	option = {
+		name = nf_eureka.0.b
+		add_war_support = 0.08
+	}
+	option = {
+		name = nf_eureka.0.c
+		add_political_power = 50
+	}
+}
+
+country_event = { #Portmasters start hunting sea life
+	id = nf_eureka.1
+	title = nf_eureka.1.t
+	desc = nf_eureka.1.d
+	picture = GFX_event_nature_nice
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.1.a
+		add_ideas = eur_spec_attack
+		hidden_effect = {
+			news_event = { id = nf_eureka.2 days = 4 }
+		}
+	}
+	option = {
+		name = nf_eureka.1.b
+		add_ideas = eur_spec_defence
+		hidden_effect = {
+			news_event = { id = nf_eureka.2 days = 4 }
+		}
+	}
+	option = {
+		name = nf_eureka.1.c
+		add_ideas = eur_spec_supply
+		hidden_effect = {
+			news_event = { id = nf_eureka.2 days = 4 }
+		}
+	}
+}
+
+news_event = { ### Hubologists
+	id = nf_eureka.2
+	title = nf_eureka.2.t
+	desc = nf_eureka.2.d
+	picture = GFX_event_UFO_invasion
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.2.a
+		set_temp_variable = {
+			caps_to_add = 20
+		}
+		add_caps = yes
+	}
+}
+
+country_event = { #Scavenge support equipment
+	id = nf_eureka.5
+	title = nf_eureka.5.t
+	desc = nf_eureka.5.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.5.a
+		add_equipment_to_stockpile = {
+			type = dogs_equipment
+			amount = 20
+		}
+		add_equipment_to_stockpile = {
+			type = fireteam_equipment
+			amount = 20
+		}
+	}
+	option = {
+		name = nf_eureka.5.b
+		add_equipment_to_stockpile = {
+			type = demolitions_equipment
+			amount = 20
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 20
+		}
+	}
+	option = {
+		name = nf_eureka.5.c
+		trigger = {
+			has_completed_focus = eur_take_it_all
+		}
+		add_equipment_to_stockpile = {
+			type = dogs_equipment
+			amount = 20
+		}
+		add_equipment_to_stockpile = {
+			type = fireteam_equipment
+			amount = 20
+		}
+		add_equipment_to_stockpile = {
+			type = demolitions_equipment
+			amount = 20
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 20
+		}
+	}
+}
+
+country_event = { #Hunt twins choice
+	id = nf_eureka.6
+	title = nf_eureka.6.t
+	desc = nf_eureka.6.d
+	picture = GFX_event_NCR_money_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.6.a
+		set_country_flag = eur_olivia_chosen
+		custom_effect_tooltip = eureka_olivia_tt
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				EUR_has_ai_behavior_eurekaclave = yes
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.6.b
+		set_country_flag = eur_cordell_chosen
+		custom_effect_tooltip = eureka_cordell_tt
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.6.c
+		set_country_flag = accept_mutants
+		custom_effect_tooltip = eureka_mutant_tt
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = -0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				EUR_has_ai_behavior_eurekaclave = yes
+			}
+		}
+	}
+}
+
+country_event = { #Approach NCR or Arroyo for caps
+	id = nf_eureka.7
+	title = nf_eureka.7.t
+	desc = nf_eureka.7.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.7.a
+		ARR = {
+			country_event = {
+				id = nf_eureka.8
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_war_with = ARR
+				factor = -1
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.7.b
+		if = {
+			limit = {
+				country_exists = RDS
+			}
+			RDS = {
+				country_event = {
+					id = nf_eureka.8
+				}
+			}
+		}
+		else = {
+			NCR = {
+				country_event = {
+					id = nf_eureka.8
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_war_with = NCR
+				factor = -1
+			}
+		}
+	}
+}
+
+country_event = { #Message from Eureka
+	id = nf_eureka.8
+	title = nf_eureka.8.t
+	desc = nf_eureka.8.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.8.a
+		EUR = {
+			country_event = {
+				id = nf_eureka.9
+			}
+		}
+		set_temp_variable = {
+			caps_to_add = -30
+		}
+		add_caps = yes
+		add_to_variable = { arr_fou_influence = 0.08 }
+		custom_effect_tooltip = fou_influence_bigup_tt
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_eureka.8.b
+		EUR = {
+			country_event = {
+				id = nf_eureka.10
+			}
+		}
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = { #They accept
+	id = nf_eureka.9
+	title = nf_eureka.9.t
+	desc = nf_eureka.9.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.9.a
+		set_temp_variable = {
+			caps_to_add = 30
+		}
+		add_caps = yes
+		add_political_power = 100
+	}
+}
+
+country_event = { #They decline
+	id = nf_eureka.10
+	title = nf_eureka.10.t
+	desc = nf_eureka.10.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.10.a
+		add_war_support = 0.15
+	}
+}
+
+country_event = { #Eureka offers non-aggression
+	id = nf_eureka.11
+	title = nf_eureka.11.t
+	desc = nf_eureka.11.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.11.a
+		diplomatic_relation = {
+			country = EUR
+			relation = non_aggression_pact
+			active = yes
+		}
+		EUR = {
+			diplomatic_relation = {
+				country = FROM
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_eureka.11.b
+		EUR = {
+			country_event = {
+				id = nf_eureka.12
+			}
+		}
+	}
+}
+
+country_event = { #Arroyo says no
+	id = nf_eureka.12
+	title = nf_eureka.12.t
+	desc = nf_eureka.12.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.12.a
+		set_country_flag = eur_arroyo_declined
+	}
+}
+
+country_event = { #Mercenary Explanation
+	id = nf_eureka.13
+	title = nf_eureka.13.t
+	desc = nf_eureka.13.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.13.a
+	}
+}
+
+country_event = {
+	id = nf_eureka.14
+	title = nf_eureka.14.t
+	desc = nf_eureka.14.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.14.a
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = ARR
+					}
+				}
+				country_event = {
+					id = nf_eureka.15
+					days = 1
+				}
+			}
+		}
+		39 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			add_manpower = -125
+		}
+	}
+}
+
+country_event = {
+	id = nf_eureka.15
+	title = nf_eureka.15.t
+	desc = nf_eureka.15.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.15.a
+		set_country_flag = eur_arroyo_war
+	}
+}
+
+country_event = {
+	id = nf_eureka.16
+	title = nf_eureka.16.t
+	desc = nf_eureka.16.d
+	#picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.16.a
+		ARR = {
+			puppet = EUR
+			hidden_effect = {
+				ARR = {
+					country_event = {
+						id = nf_arroyo.84
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 1
+			factor = -1
+			modifier = {
+				OR = {
+					ARR = { check_variable = { arr_eur_coercion > 39 } }
+					ARR = { check_variable = { arr_eur_influence > 39 } }
+				}
+				factor = 10
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.16.b
+		declare_war_on = {
+			target = ARR
+			type = annex_everything
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				OR = {
+					ARR = { check_variable = { arr_eur_coercion > 39 } }
+					ARR = { check_variable = { arr_eur_influence > 39 } }
+				}
+				factor = -1
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.16.c
+		trigger = {
+			is_new_california_member = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+country_event = { #Easter egg
+	id = nf_eureka.18
+	title = nf_eureka.18.t
+	desc = nf_eureka.18.d
+	#picture = GFX_event_arr_enclave_oil
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		original_tag = EUR
+		is_ai = no
+		date > 2275.2.1
+		date < 2275.3.1
+		has_global_flag = OWB_wild_wasteland_enabled_global_flag
+	}
+	option = {
+		name = nf_eureka.18.a
+		hidden_effect = {
+			country_event = { id = nf_eureka.19 days = 1 }
+		}
+	}
+	option = {
+		name = nf_eureka.18.b
+		hidden_effect = {
+			country_event = { id = nf_eureka.19 days = 1 }
+		}
+	}
+}
+
+country_event = { #Easter egg continuation
+	id = nf_eureka.19
+	title = nf_eureka.19.t
+	desc = nf_eureka.19.d
+	#picture = GFX_event_arr_enclave_oil
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.19.a
+		if = {
+			limit = {
+				has_global_flag = caps_enabled_global_flag
+			}
+			set_temp_variable = {
+				caps_to_add = 10
+			}
+			add_caps = yes
+		}
+	}
+}
+
+country_event = { #Granite Company
+	id = nf_eureka.20
+	title = nf_eureka.20.t
+	desc = nf_eureka.20.d
+	picture = GFX_event_ENC_camp_navarro
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.20.a
+		hidden_effect = {
+			set_technology = {
+				power_armour_tech_level_settler = 1
+				power_armour_tech_level_scientific = 1
+			}
+		}
+		country_event = nf_eureka.21
+		trigger = {
+			has_country_flag = NCR_indifferent
+		}
+	}
+	option = {
+		name = nf_eureka.20.b
+		hidden_effect = {
+			set_technology = {
+				power_armour_tech_level_settler = 1
+				power_armour_tech_level_scientific = 1
+			}
+		}
+		add_to_variable = { EUR_suspicion = 2 }
+		army_experience = 25
+		set_temp_variable = {
+			caps_to_add = 25
+		}
+		add_caps = yes
+		country_event = nf_eureka.21
+	}
+}
+
+country_event = { #Arrival in Eureka
+	id = nf_eureka.21
+	title = nf_eureka.21.t
+	desc = nf_eureka.21.d
+	picture = GFX_event__enc_1_soldier
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.21.a
+		add_ideas = granite_company_heroism
+		news_event = nf_eureka.22
+	}
+	option = {
+		name = nf_eureka.21.b
+		add_ideas = eur_next_generation
+		news_event = nf_eureka.22
+	}
+}
+news_event = { #Arrival in Eureka
+	id = nf_eureka.22
+	title = nf_eureka.22.t
+	desc = nf_eureka.22.d
+	picture = GFX_event_erb_vertibird_crash_snow
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.22.a
+		add_war_support = 0.05
+		news_event = nf_eureka.23
+	}
+}
+news_event = {#Hahahahr
+	id = nf_eureka.23
+	title = nf_eureka.23.t
+	desc = nf_eureka.23.d
+	picture = GFX_event_ENC_dark
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {#Better be careful
+		name = nf_eureka.23.a
+		custom_effect_tooltip = nf_eureka.23.a_tt
+		set_country_flag = ncr_suspicious
+		add_to_variable = { EUR_suspicion = 1 }
+		#set_country_flag = can_NCR_crisis_laylow
+		#set_country_flag = can_NCR_crisis_construction
+		set_country_flag = can_NCR_crisis_resources
+
+		hidden_effect = {
+			news_event = { id = nf_eureka.27 days = 10 }
+		}
+	}
+}
+
+country_event = {#24 NCR Rumors
+	id = nf_eureka.25
+	title = nf_eureka.25.t
+	desc = nf_eureka.25.d
+	picture = GFX_event_nice_town
+
+	is_triggered_only = yes
+
+	option = { # Everyone
+		name = nf_eureka.25.a
+		add_ideas = all_are_welcome #This idea does not exist - Alduin
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				EUR_has_ai_behavior_eurekaclave = yes
+			}
+		}
+	}
+	option = { #Only the Pure
+
+		name = nf_eureka.25.b
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		add_ideas = the_genetic_elite
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = { #Put out Signals to Old Enclavemembers
+		name = nf_eureka.25.c
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.10
+		}
+		add_ideas = the_genetic_elite2
+		add_to_variable = { EUR_suspicion = 1 }
+		custom_effect_tooltip = nf_eureka_suspicious
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = { EUR_has_ai_behavior_eurekaclave = yes }
+			}
+		}
+	}
+}
+
+
+country_event = {# Shi
+	id = nf_eureka.26
+	title = nf_eureka.26.t
+	desc = nf_eureka.26.d
+	picture = GFX_event_SHI_good
+
+	is_triggered_only = yes
+
+	option = { # Shi
+		name = nf_eureka.26.a
+		add_ideas = eur_shi_contacts
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				SHI_has_ai_behavior_bos = yes
+				factor = 0
+			}
+		}
+	}
+	option = { #Hubologists
+		name = nf_eureka.26.b
+		add_popularity = {
+			ideology = people
+			popularity = 0.05
+		}
+		add_ideas = eur_hubologist_contacts
+		ai_chance = {
+			base = 1
+			modifier = {
+				SHI_has_ai_behavior_independent = yes
+				factor = 0
+			}
+		}
+	}
+
+}
+
+news_event = { #Friends
+	id = nf_eureka.27
+	title = nf_eureka.27.t
+	desc = nf_eureka.27.d
+	picture = GFX_event_enc_ghoul_fraternity
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.27.a
+	}
+}
+
+country_event = { #28 - Oh No!
+	id = nf_eureka.28
+	title = nf_eureka.28.t
+	desc = nf_eureka.28.d
+	picture = GFX_event_sub_generic_ghouls
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = assassination_attempt_flag
+	}
+	option = { # time for patience is over
+		name = nf_eureka.28.a
+
+		add_stability = -0.1
+		MCA_Douglas_Granite = { add_country_leader_trait = EUR_wounded_trait }
+		custom_effect_tooltip = eur_crackdown_justified_tt
+		set_country_flag = eur_crackdown_justified
+	}
+	option = { # keep this quiet
+		name = nf_eureka.28.b
+		MCA_Douglas_Granite = { add_country_leader_trait = EUR_wounded_trait }
+		add_political_power = -50
+		set_country_flag = eur_crackdown_justified
+	}
+}
+
+news_event = { #Friends
+	id = nf_eureka.29
+	title = nf_eureka.29.t
+	desc = nf_eureka.29.d
+	picture = GFX_event_ENC_soldiers
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			NOT = {
+				has_country_flag = EUR_wounded
+			}
+		}
+		name = nf_eureka.29.a
+		set_politics = { ruling_party = intellectuals elections_allowed = no }
+		mark_focus_tree_layout_dirty = yes
+		set_cosmetic_tag = EUR_granite
+		if = {
+			limit = {
+				has_country_flag = EUR_wounded
+			}
+			add_country_leader_trait = EUR_wounded_trait
+		}
+		retire_character = EUR_portmaster
+		retire_character = EUR_portmaster_bander
+		hidden_effect = {
+			scoped_sound_effect = use_plasma_gun_sound
+		}
+		add_tech_bonus = {
+			bonus = 0.75
+			ahead_reduction = 3
+			uses = 1
+			category = plasma_weaponry_tech_category
+		}
+	}
+	option = {
+		name = nf_eureka.29.b
+		trigger = {
+			has_country_flag = EUR_wounded
+		}
+		set_politics = { ruling_party = intellectuals elections_allowed = no }
+		set_cosmetic_tag = EUR_granite
+		if = {
+			limit = {
+				has_country_flag = EUR_wounded
+			}
+			add_country_leader_trait = EUR_wounded_trait
+		}
+		add_tech_bonus = {
+			bonus = 0.75
+			ahead_reduction = 3
+			uses = 1
+			category = plasma_weaponry_tech_category
+		}
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			scoped_sound_effect = use_plasma_gun_sound
+		}
+		retire_character = EUR_portmaster
+		retire_character = EUR_portmaster_bander
+	}
+}
+
+country_event = {# 30 - Inspections
+	id = nf_eureka.30
+	title = nf_eureka.30.t
+	desc = nf_eureka.30.d
+	picture = GFX_event_enclave_coffee
+
+	is_triggered_only = yes
+
+	option = { # the time has come
+		name = nf_eureka.30.a
+		NCR = {
+			news_event = nf_eureka.31
+		}
+		clr_country_flag = ncr_suspicious
+	}
+	option = { # Customs Union
+		trigger = {
+			NOT = {
+				has_idea = ncr_sphere2
+			}
+		}
+		swap_ideas = {
+			remove_idea = ncr_sphere
+			add_idea = ncr_sphere2
+		}
+		name = nf_eureka.30.b
+		subtract_from_variable = { EUR_suspicion = 3 }
+		custom_effect_tooltip = EUR_less_suspicion_tt
+	}
+	option = { # Give Guns
+		trigger = {
+			has_equipment = {
+				infantry_equipment > 99
+			}
+			NOT = {
+				has_country_flag = eur_gave_guns
+			}
+		}
+		name = nf_eureka.30.c
+		subtract_from_variable = { EUR_suspicion = 2 }
+		set_country_flag = eur_gave_guns
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -100
+		}
+	}
+	# option = { # No attack
+	# 	trigger = {
+	# 		has_country_flag = can_NCR_crisis_laylow
+	# 	}
+	# 	name = nf_eureka.30.e
+	# 	activate_decision = NCR_crisis_laylow
+	# 	clr_country_flag = can_NCR_crisis_laylow
+	# 	subtract_from_variable = { EUR_suspicion = 2 }
+	# }
+	# option = { # No construction
+	# 	trigger = {
+	# 		has_country_flag = can_NCR_crisis_construction
+	# 	}
+	# 	name = nf_eureka.30.f
+	# 	activate_decision = NCR_crisis_construction
+	# 	clr_country_flag = can_NCR_crisis_construction
+	# 	subtract_from_variable = { EUR_suspicion = 2 }
+	# }
+}
+
+
+news_event = { #NCR WAr
+	id = nf_eureka.31
+	title = nf_eureka.31.t
+	desc = nf_eureka.31.d
+	picture = GFX_event_ENC_soldiers
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.31.a
+		declare_war_on = {
+			target = EUR
+			type = annex_everything
+		}
+	}
+}
+country_event = { #neavada
+	id = nf_eureka.32
+	title = nf_eureka.32.t
+	desc = nf_eureka.32.d
+	picture = GFX_event_new_reno_sign
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_eureka.32.a
+		add_tech_bonus = {
+			uses = 1
+			bonus = 0.5
+			category = agriculture_tech
+		}
+		add_popularity = {
+			ideology = people
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_eurekaclave = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.32.b
+		39 = {
+			add_resource = {
+				type = circuitry
+				amount = 3
+			}
+			add_resource = {
+				type = advanced
+				amount = 2
+			}
+			add_resource = {
+				type = composites
+				amount = 2
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_hubologists = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.32.c
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_hubologists = yes
+					EUR_has_ai_behavior_eurekaclave = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { #neavada
+	id = nf_eureka.33
+	title = nf_eureka.33.t
+	desc = nf_eureka.33.d
+	picture = GFX_event_enclave_settlement
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_eureka.33.a
+		39 = {
+			add_resource = {
+				type = energy
+				amount = 15
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_regulators = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.33.b
+		39 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_eurekaclave = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.33.c
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		39 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_eurekaclave = yes
+					EUR_has_ai_behavior_regulators = yes
+				}
+			}
+		}
+	}
+}
+news_event = { #Captured the Doctor
+	id = nf_eureka.34
+	title = nf_eureka.34.t
+	desc = nf_eureka.34.d
+	picture = GFX_event_enc_henry_returns
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.34.a
+		set_country_flag = dr_henry_returns
+		custom_effect_tooltip = nf_eureka.34.a_tt
+	}
+}
+
+news_event = { #Eureka side
+	id = nf_eureka.35
+	title = nf_eureka.35.t
+	desc = nf_eureka.35.d
+	picture = GFX_event_ARR_arroyo
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.35.a
+		declare_war_on = {
+			target = ARR
+			type = annex_everything
+		}
+	}
+}
+
+news_event = { #Eureka side
+	id = nf_eureka.36
+	title = nf_eureka.36.t
+	desc = nf_eureka.36.d
+	picture = GFX_event_arr_enclave_oil
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.35.a
+		declare_war_on = {
+			target = EUR
+			type = annex_everything
+		}
+	}
+}
+country_event = { #Eureka Won
+	id = nf_eureka.37
+	title = nf_eureka.37.t
+	desc = nf_eureka.37.d
+	picture = GFX_event_event_ice_cream
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.37.a
+		337 = {
+			set_temp_variable = {
+				pop_add = -200
+			}
+			add_state_population = yes
+		}
+		set_temp_variable = {
+			caps_to_add = 120
+		}
+		add_caps = yes
+	}
+	option = {
+		name = nf_eureka.37.b
+		every_owned_state = {
+			limit = {
+				is_core_of = ARR
+			}
+			add_compliance = 50
+		}
+	}
+	option = {
+		name = nf_eureka.37.c
+		337 = {
+			set_temp_variable = {
+				pop_add = -5000
+			}
+			add_state_population = yes
+
+		}
+		337 = {
+			damage_building = {
+				type = infrastructure
+				damage = 3
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 3
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = ARR
+			}
+			add_core_of = EUR
+		}
+	}
+}
+
+
+country_event = { #Miners approach us
+	id = nf_eureka.38
+	title = nf_eureka.38.t
+	desc = nf_eureka.38.d
+	picture = GFX_event_generic_caravan
+
+	is_triggered_only = yes
+	option = {
+		name = nf_eureka.38.a
+		ai_chance = {
+			base = 50
+		}
+		add_resource = {
+			type = metal
+			amount = 5
+			state = 141
+		}
+		EUR = {
+			news_event = nf_eureka.39
+		}
+	}
+	option = {
+		name = nf_eureka.38.b
+		add_stability = -0.05
+		ai_chance = {
+			base = 0
+		}
+		EUR = {
+			news_event = nf_eureka.40
+		}
+	}
+}
+news_event = { #Eureka side
+	id = nf_eureka.39
+	title = nf_eureka.39.t
+	desc = nf_eureka.39.d
+	picture = GFX_event_ncr_ranger_cards
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.39.a
+		random_owned_state = {
+			add_resource = {
+				type = metal
+				amount = 8
+			}
+		}
+		random_owned_state = {
+			add_resource = {
+				type = metal
+				amount = 8
+			}
+		}
+		random_owned_state = {
+			add_resource = {
+				type = metal
+				amount = 8
+			}
+		}
+	}
+}
+news_event = { #Eureka side
+	id = nf_eureka.40
+	title = nf_eureka.40.t
+	desc = nf_eureka.40.d
+	picture = GFX_event_ncr_ranger_cards
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.40.a
+		subtract_from_variable = {
+			EUR_suspicion = 2
+		}
+		custom_effect_tooltip = EUR_less_suspicion_tt
+	}
+}
+
+news_event = { #Portmasters start hunting sea life
+	id = nf_eureka.41
+	title = nf_eureka.41.t
+	desc = nf_eureka.41.d
+	picture = GFX_event_ENC_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.41.a
+		548 = {
+			add_core_of = EUR
+			add_resource = {
+				type = composites
+				amount = 8
+			}
+			add_resource = {
+				type = circuitry
+				amount = 3
+			}
+			add_resource = {
+				type = advanced
+				amount = 3
+			}
+		}
+		set_capital = {
+			state = 548
+		}
+	}
+}
+country_event = { #Scientists
+	id = nf_eureka.42
+	title = nf_eureka.42.t
+	desc = nf_eureka.42.d
+	picture = GFX_event_followers_medicine
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.42.a
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = cat_land_doctrine
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		subtract_from_variable = {
+			EUR_suspicion = 2
+		}
+		custom_effect_tooltip = EUR_less_suspicion_tt
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_eurekaclave = yes
+					EUR_has_ai_behavior_regulators = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.42.b
+		add_research_slot = 1
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_regulators = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.42.c
+		add_research_slot = 1
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_eurekaclave = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+}
+
+
+
+country_event = { ### Fall of San Francisco
+	id = nf_eureka.43
+	title = nf_eureka.43.t
+	desc = nf_eureka.43.d
+	picture = GFX_event_new_san_fran
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.43.a
+		add_ideas = eur_hubologist_stuff
+		add_popularity = {
+			ideology = people
+			popularity = 0.15
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.43.b
+		add_ideas = eur_ncr_bribes
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_eurekaclave = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.43.c
+		add_ideas = eur_poseidonet
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EUR_has_ai_behavior_regulators = yes
+					EUR_has_ai_behavior_portmasters_ncr = yes
+					EUR_has_ai_behavior_portmasters_arroyo = yes
+				}
+			}
+		}
+	}
+}
+news_event = { #POrtmasters
+	id = nf_eureka.44
+	title = nf_eureka.44.t
+	desc = nf_eureka.44.d
+	picture = GFX_event_tanker
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.44.a
+		set_politics = { ruling_party = elites elections_allowed = no }
+		set_technology = {
+			naval_tech_level_scientific = 1
+		}
+		set_cosmetic_tag = EUR_portmasters
+	}
+}
+news_event = { #The Regulators
+	id = nf_eureka.45
+	title = nf_eureka.45.t
+	desc = nf_eureka.45.d
+	picture = GFX_event_ncr_bos_relations
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.45.a
+		set_politics = { ruling_party = ruler elections_allowed = no }
+		if = {
+			limit = {
+				NCR = {exists = yes }
+			}
+			clr_country_flag = ncr_suspicious
+			#clr_country_flag = can_NCR_crisis_laylow
+			#clr_country_flag = can_NCR_crisis_construction
+			clr_country_flag = can_NCR_crisis_resources
+			set_cosmetic_tag = EUR_NCR
+			create_or_join_new_california = yes
+		}
+		else = {
+			NCR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+}
+
+news_event = { #The Hubologists
+	id = nf_eureka.46
+	title = nf_eureka.46.t
+	desc = nf_eureka.46.d
+	picture = GFX_event_generic_ufo_crash
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.46.a
+		set_politics = { ruling_party = people elections_allowed = no }
+		set_cosmetic_tag = EUR_hubologists
+		set_technology = {
+			tools_tech_level_scientific = 1
+			habitation_tech_level_scientific = 1
+			exploitation_tech_level_scientific = 1
+		}
+		set_capital = {state = 163 }
+	}
+}
+
+
+news_event = { #The Enclave
+	id = nf_eureka.47
+	title = nf_eureka.47.t
+	desc = nf_eureka.47.d
+	picture = GFX_event_enc_urban_patrol
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.47.a
+		clr_country_flag = ncr_suspicious
+		set_cosmetic_tag = EUR_enclave
+		set_country_flag = enclave_nation
+		load_focus_tree = navarro_enclave_focus
+	}
+}
+country_event = { #Portmasters start hunting sea life
+	id = nf_eureka.48
+	title = nf_eureka.48.t
+	desc = nf_eureka.48.d
+	picture = GFX_event_MOJ_message_ncr
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.48.a
+		set_autonomy = {
+			target = EUR
+			autonomy_state = autonomy_free_state
+		}
+		EUR = {
+			news_event = nf_eureka.49
+		}
+	}
+	option = {
+		name = nf_eureka.48.b
+		add_ideas = eur_spec_defence
+		ai_chance = {
+			base = 0
+		}
+
+	}
+}
+
+news_event = { #Portmasters start hunting sea life
+	id = nf_eureka.49
+	title = nf_eureka.49.t
+	desc = nf_eureka.49.d
+	picture = GFX_event_NCR_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_eureka.49.a
+	}
+}
+
+
+country_event = { #The Enclave
+	id = nf_eureka.50
+	title = nf_eureka.50.t
+	desc = nf_eureka.50.d
+	picture = GFX_event_enc_ncr
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.50.a
+		350 = {
+			add_core_of = EUR
+			damage_building = {
+				type = arms_factory
+				damage = 0.6
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.6
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 0.6
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.50.b
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_exodus
+			}
+		}
+		NCR = {
+			set_cosmetic_tag = BAR_ENC
+			load_focus_tree = enclave_puppet_tree
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 135
+					state = 136
+					state = 141
+					state = 162
+					state = 168
+					state = 421
+					state = 543
+					state = 584
+					is_core_of = BJS
+					is_core_of = BVC
+					is_core_of = BLP
+				}
+			}
+			set_state_flag = do_not_exodus
+			NCR = {
+				transfer_state = PREV
+			}
+			clr_state_flag = do_not_exodus
+		}
+		set_autonomy = {
+			target = NCR
+			autonomy_state = autonomy_enclave_state
+		}
+		NCR = {
+			add_country_leader_role = {
+				character = NCR_anton_flynn
+				promote_leader = yes
+				country_leader = {
+					ideology = technocracy
+					traits = {
+						po_loyal_puppet
+						baron_connections
+					}
+					expire = "3000.01.01.01"
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_state = {
+				clr_state_flag = do_not_exodus
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.50.c
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_exodus
+			}
+		}
+		NCR = {
+			set_cosmetic_tag = DAY_ENC
+			load_focus_tree = enclave_puppet_tree
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 4
+					state = 24
+					state = 63
+					state = 80
+					state = 205
+					state = 292
+					state = 583
+					state = 866
+					is_core_of = BJS
+					is_core_of = BVC
+					is_core_of = BLP
+				}
+			}
+			NCR = {
+				transfer_state = PREV
+			}
+			clr_state_flag = do_not_exodus
+		}
+		set_autonomy = {
+			target = NCR
+			autonomy_state = autonomy_enclave_state
+		}
+		NCR = {
+			add_country_leader_role = {
+				character = NCR_grant_c_hayes
+				promote_leader = yes
+				country_leader = {
+					ideology = technocracy
+					traits = {
+						po_loyal_puppet
+						old_world_blues
+					}
+					expire = "3000.01.01.01"
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_state = {
+				clr_state_flag = do_not_exodus
+			}
+		}
+	}
+}
+
+news_event = { #The Enclave
+	id = nf_eureka.51
+	title = nf_eureka.51.t
+	desc = nf_eureka.51.d
+	picture = GFX_event_enc_reform_propaganda
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.51.a
+		NCR = {
+			NCR_anton_flynn = {
+				set_nationality = EUR
+			}
+		}
+		NCR_anton_flynn = {
+			add_advisor_role = {
+				activate = yes
+				advisor = {
+					slot = cultural_advisor
+					cost = 50
+					idea_token = NCR_anton_flynn_cultural_advisor
+					traits = {
+						power_broker
+						baron_connections
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The Enclave
+	id = nf_eureka.52
+	title = nf_eureka.52.t
+	desc = nf_eureka.52.d
+	picture = GFX_event_enclave_ominous_red
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.52.a
+		add_resource = {
+			type = circuitry
+			amount = 4
+			state = 350
+		}
+		add_resource = {
+			type = advanced
+			amount = 3
+			state = 350
+		}
+		add_resource = {
+			type = composites
+			amount = 4
+			state = 350
+		}
+		if = {
+			limit = {
+				has_idea = followers_spreading_idea
+			}
+			remove_ideas = followers_spreading_idea
+		}
+		set_country_flag = followers_expelled
+	}
+	option = {
+		name = nf_eureka.52.b
+		70 = {
+			add_manpower = -5000
+			add_resource = {
+				type = metal
+				amount = 10
+			}
+			add_resource = {
+				type = circuitry
+				amount = 10
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.52.c
+		add_war_support = 0.10
+		add_manpower = -5
+		set_temp_variable = {
+			caps_to_add = 200
+		}
+		add_caps = yes
+	}
+}
+
+
+country_event = { #The Enclave
+	id = nf_eureka.53
+	title = nf_eureka.53.t
+	desc = nf_eureka.53.d
+	picture = GFX_event_new_reno_sign
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.53.a
+		285 = {
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+		}
+		if = {
+			limit = {
+				285 = {
+					is_core_of = DES
+				}
+			}
+			add_political_power = 150
+		}
+		else = {
+			285 = {
+				add_compliance = 25
+			}
+		}
+		set_temp_variable = {
+			caps_to_add = 300
+		}
+	}
+	option = {
+		name = nf_eureka.53.b
+		release_autonomy = {
+			target = NEW
+			autonomy_state = autonomy_enclave_state
+		}
+		NEW = {
+			set_politics = {
+				ruling_party = ruler
+				elections_allowed = no
+			}
+			set_cosmetic_tag = NEW_ENC
+		}
+		transfer_state = 159
+		transfer_state = 57
+		transfer_state = 59
+		add_equipment_to_stockpile = {
+			type = plasma_equipment_1
+			amount = 300
+			producer = USA
+		}
+
+	}
+	option = {
+		name = nf_eureka.53.c
+		VLT = {
+			transfer_state = 184
+			transfer_state = 614
+			transfer_state = 285
+			184 = {
+				add_core_of = VLT
+			}
+			614 = {
+				add_core_of = VLT
+			}
+			285 = {
+				add_core_of = VLT
+			}
+		}
+	}
+}
+
+
+country_event = { ### Hubologists
+	id = nf_eureka.54
+	title = nf_eureka.54.t
+	desc = nf_eureka.54.d
+	picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.54.a
+		every_owned_state = {
+			limit = {
+				is_core_of = NCR
+			}
+			add_compliance = 20
+		}
+		custom_effect_tooltip = nf_eureka.54.a_tt
+	}
+	option = {
+		name = nf_eureka.54.b
+			add_tech_bonus = {
+				bonus = 0.75
+				ahead_reduction = 3
+				uses = 1
+				category = support_medical_tech_category
+			}
+	}
+	option = {
+		name = nf_eureka.54.c
+		set_technology = {
+			naval_tech_level_scientific = 1
+		}
+	}
+}
+
+
+news_event = { ### Good Macarthur tells you to fuck off
+	id = nf_eureka.55
+	title = nf_eureka.55.t
+	desc = nf_eureka.55.d
+	picture = GFX_fall_shady_sands
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.55.a
+		add_war_support = 0.10
+		EUR = {
+			news_event = nf_eureka.56
+		}
+	}
+}
+
+
+news_event = { ### Good Macarthur tells you to fuck off
+	id = nf_eureka.56
+	title = nf_eureka.56.t
+	desc = nf_eureka.56.d
+	picture = GFX_event_macarthur_helipad
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.56.a
+		add_manpower = -5
+	}
+}
+
+
+news_event = { ### Maqcarthur says thanks, i guess
+	id = nf_eureka.57
+	title = nf_eureka.57.t
+	desc = nf_eureka.57.d
+	picture = GFX_fall_shady_sands
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.57.a
+		add_political_power = 10
+		EUR = {
+			news_event = nf_eureka.58
+		}
+	}
+}
+
+news_event = { ### Have a reward
+	id = nf_eureka.58
+	title = nf_eureka.58.t
+	desc = nf_eureka.58.d
+	picture = GFX_event_fruit_bowl
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.58.a
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			ahead_reduction = 4
+			category = power_armor_tech_category
+		}
+	}
+}
+
+news_event = { ### Have a reward
+	id = nf_eureka.59
+	title = nf_eureka.59.t
+	desc = nf_eureka.59.d
+	picture = GFX_event_psi_chicago_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = nf_eureka.59.a
+		add_tech_bonus = {
+			bonus = 0.75
+			ahead_reduction = 3
+			uses = 1
+			category = plasma_weaponry_tech_category
+		}
+	}
+}
+
+
+country_event = { ### Voting
+	id = nf_eureka.60
+	title = nf_eureka.60.t
+	desc = nf_eureka.60.d
+	picture = GFX_event_enc_single_soldier
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.60.a
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+				is_core_of = EUR
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.60.b
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+				is_core_of = EUR
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.60.c
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+				is_core_of = EUR
+			}
+			add_extra_state_shared_building_slots = 3
+			add_resource = {
+				type = water
+				amount = 12
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.60.e
+		add_stability = 0.10
+	}
+}
+
+country_event = { ### Rig
+	id = nf_eureka.61
+	title = nf_eureka.61.t
+	desc = nf_eureka.61.d
+	picture = GFX_event_arr_enclave_oil
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.61.a
+		MCA_Douglas_Granite = { add_country_leader_trait = EUR_remember_where_you_came_from }
+
+	}
+}
+
+news_event = { ### Closingin
+	id = nf_eureka.62
+	title = nf_eureka.62.t
+	desc = nf_eureka.62.d
+	picture = GFX_event_ENC_cloning_success
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.62.a
+		set_technology = {
+			electronics_tech_level_scientific = 1
+		}
+		add_manpower = -15
+	}
+}
+
+
+country_event = { #Easter egg continuation
+	id = nf_eureka.63
+	title = nf_eureka.63.t
+	desc = nf_eureka.63.d
+	picture = GFX_event_ncr_jail
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_eureka.63.a
+		if = {
+			limit = {
+				has_global_flag = caps_enabled_global_flag
+			}
+			set_temp_variable = { caps_to_add = 225 }
+			add_caps = yes
+		}
+		467 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+	option = {
+		name = nf_eureka.63.b
+		add_resource = {
+			type = circuitry
+			amount = 4
+			state = 467
+		}
+		hidden_effect = {
+			news_event = {
+				id = nf_eureka.64
+				days = 100
+			}
+		}
+	}
+	option = {
+		name = nf_eureka.63.c
+		467 = {
+			add_state_modifier = {
+				modifier = {
+					local_manpower = 0.3
+				}
+			}
+			add_compliance = 30
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+		set_province_name = {
+			id = 4365
+			name = VICTORY_POINTS_4365_EUR
+		}
+
+	}
+}
+
+news_event = { ### Hubologists
+	id = nf_eureka.64
+	title = nf_eureka.64.t
+	desc = nf_eureka.64.d
+	picture = GFX_event_UFO_invasion
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.64.a
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 1
+			ahead_reduction = 3
+			category = air_tech_category
+		}
+		set_temp_variable = {
+			caps_to_add = -5
+		}
+		add_caps = yes
+	}
+}
+
+news_event = { ### Hubologists
+	id = nf_eureka.65
+	title = nf_eureka.65.t
+	desc = nf_eureka.65.d
+	picture = GFX_event_ENC_camp_navarro
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_eureka.65.a
+		VLT = {
+			VLT_chad_rannor = {
+				set_nationality= EUR
+			}
+		}
+		set_country_flag = vlt_unlock_rannor
+		set_character_name = {
+			character = VLT_chad_rannor
+			name = EUR_rannor_name
+		}
+	}
+}

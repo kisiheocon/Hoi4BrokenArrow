@@ -950,11 +950,14 @@ country_event = {
 
 	option = {
 		name = erx_broken_arrow_navarro.3.a
-		country_event = { 
-			id = erx_broken_arrow_navarro.4 days = 20
+		hidden_effect = {
+			country_event = { 
+				id = erx_broken_arrow_navarro.4 days = 20
+			}
 		}
 	}
 }
+##NCR retaliate##
 country_event = {
 	id = erx_broken_arrow_navarro.4
 	title = erx_broken_arrow_navarro.4.t
@@ -963,12 +966,29 @@ country_event = {
 
 	option = {
 		name = erx_broken_arrow_navarro.4.a
+		set_country_flag = navarro_ncr_revenge
+		hidden_effect = {
+			country_event = {
+				id = erx_broken_arrow_navarro.5 days = 30
+			}
+		}	
 		NCR = {
 			declare_war_on = {
 				target = EUR
 				type = annex_everything
 			}
 		}
+	}
+}
+country_event = {
+	id = erx_broken_arrow_navarro.5
+	title = erx_broken_arrow_navarro.5.t
+	desc = erx_broken_arrow_navarro.5.d
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_navarro.5.a
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 }
 
@@ -979,21 +999,11 @@ country_event = {
 	title = erx_broken_arrow.100.t
 	desc = erx_broken_arrow.100.d
 	picture = GFX_event_broken_arrow_eagle
+
 	is_triggered_only = yes
-		trigger = {
-    tag = ERB
-	ERB = {
-		has_country_leader = {
-					ruling_only = yes
-					character = ERB_Franklin_Anderson
-				}
-		}
-		}
 	option = {
-		name = erx_broken_arrow.100.a
-		hidden_effect = {
-	ERB = { country_event = { id = erx_broken_arrow.101 } }
-		}
+		name = erx_broken_arrow.100.a	
+		country_event = { id = erx_broken_arrow.101 } 
 	}
 }
 country_event = {

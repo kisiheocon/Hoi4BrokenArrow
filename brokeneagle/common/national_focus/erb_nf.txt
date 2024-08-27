@@ -294,7 +294,6 @@ if = {
 			remove_ideas = enc_complete_chaos
 			country_lock_all_division_template = no
 			hidden_effect = {
-				ERB = { country_event = { id = erx_broken_arrow.100 days = 1 } }
 				country_event = { id = enc.3 }
 			}
 		}

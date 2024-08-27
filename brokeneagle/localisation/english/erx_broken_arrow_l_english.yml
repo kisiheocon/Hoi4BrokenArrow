@@ -208,6 +208,10 @@ erx_broken_arrow_navarro.3.a: "'Our Liberation is at Hand'"
 erx_broken_arrow_navarro.4.t: "The Republic Strikes Back"
 erx_broken_arrow_navarro.4.d: "We have sent the Republic and their baron cronies reeling across the border. Our Victory has been damning both for the Republics reputation and the Barons profit margins. Both have created enough backlash and public outcry that the Republic has been forced to send their army to retake their lands and extinguish the “Eurekan Troublemakers” as the President puts it. However it doesn’t take much observation to see that the NCR isn't looking for War, they are already stretched thin with other matters and due to mismanagement cannot afford one either. They seem to be intent on trying to overwhelm us into surrender with overwhelming numbers.\n\nWhich means if we can hold out long enough, they'll have to bite the bullet and back off."
 erx_broken_arrow_navarro.4.a: "'They send Mountains to topple a Mound?'"
+
+erx_broken_arrow_navarro.5.t: "The Redding Report, Navarro Edition"
+erx_broken_arrow_navarro.5.d: "Hub political analysts today raised concerns that the efforts toward the Peterson-era 'Reclamation of Navarro' has turned out to be little more than a front for the efforts of Big Business and that the extra capital raised will go directly toward various corporation's military budgets.\n\nThis, and the ever increasing casualty report from the recent Conflicts in Navarro have sparked numerous protests and a region wide labour strike in the NCR's northern territories, including Redding and several other northern states within the Republic. Investigations into this matter sparked a response by both the leader of a 'Union' in the area, as well as claims of dismissal by residing Brahmin and Ag-Barons alongside local government officials.\n\nThe Union leader of one of the larger unions, who has insisted they remain unnamed at this time, stated: 'We've been watching businesses come to Redding and thrive for a long time. But these Barons, especially that Flynn guy, are nothing but warhawks who quickly rose to power through the pockets of proud Republican patriots. Now all of a sudden they're waging wars on behalfs of their own major corporations? Something doesn't add up, especially when you factor in the rumors of a mass military mobilization in the Mojave.'\n\nRumors persist of military activity, but no concrete evidence has been brought to light of a mobilization. Shortly after their statement was taken, the Union leader perished under mysterious circumstances. Anton Flynn, said to be vacationing with family, was not available for comment on his ranch's newly purchased mercenary forces.\n\nS.F"
+erx_broken_arrow_navarro.5.a: "'It's nothing personal, just business.' - Anton Flynn."
 ########## MAYFLOWER - AMERICAN EXCEPTIONALISM ##############
 erx_broken_arrow_operation_mayflower:0 "Operation Mayflower"
 erx_broken_arrow_operation_mayflower_desc:0 "We are betrayed! Anderson's tyranny leaves us no options, with President Granite rescued we must like our forefathers evacuate to our old stomping grounds... "Eureka""
@@ -651,7 +655,7 @@ spies_no:0 "UNDEPLOYED"
 
 erx_broken_arrow_enclave_cat:0 "Broken Arrow"
 rescue_granite:0 "Rescue Granite"
-
+##NavarroCrisisDecisions
 erx_broken_arrow_navarro_cat:0 "The Navarro Crisis"
 navarro_crisis_old_relations:0 "Reignite Old Relationships"
 navarro_crisis_old_relations_desc:0 "During our time as Granite Company we made many contracts with the local tribal's in exchange for land rights and influence in the region.  With our renewed presence in the region and the ongoing crisis, we should reignite these relations. "
@@ -663,6 +667,8 @@ navarro_crisis_harass_chinese:0 "Push Back the Shi"
 navarro_crisis_harass_chinese_desc:0 "The Fusang and their Shi Backers threaten to overtake the whole region, We must put a stop to it."
 navarro_crisis_volunteers:0 "Call to Action"
 navarro_crisis_volunteers_desc:0 "Using defacto IOU's we have forged justification for our involvement via contracts with the tribal's without raising the suspicion of the NCR."
+navarro_survive_ncr:0 "Survive the Bear!"
+navarro_survive_ncr_desc:0 "By holding out long enough the Bear will have to bite the bullet and back off!"
 
 lineage_of_professionalism:0 "Lineage of Professionalism"
 arcata_company:0 "Arcata Company"
@@ -823,3 +829,6 @@ eur_ncr_eco_low:0 "Alternative Trade Routes"
 eur_ncr_eco_mid_1:0 "NCR Trade Dependent"
 eur_ncr_eco_mid_2:0 "NCR Trade Dependent"
 eur_ncr_eco_high:0 "NCR Trade Agreement"
+
+##SpecialThanks
+erx_broken_arrow_sf:0 "Special thanks to Soleful Phoenix"
