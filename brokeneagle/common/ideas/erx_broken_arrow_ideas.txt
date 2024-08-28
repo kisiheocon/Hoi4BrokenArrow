@@ -1064,7 +1064,29 @@ ideas = {
                 political_power_gain = 0.5
             }
         }
+##Oregon
+        eur_silicon_forest = {
+            picture = x
+            allowed = { 
+            }
+            removal_cost = -1
+            modifier = {
+                research_speed_factor = 0.05
+            }
+        }
+        eur_timber_industry = {
+            picture = x
+            allowed = { 
+            }
+            removal_cost = -1
+            modifier = {
+                industrial_capacity_factory = 0.05
+                production_speed_infrastructure_factor = 0.05
+                caps_income_modifier = 0.10
+            }
+        }
     }
+
 }
 
 

@@ -830,6 +830,7 @@ eur_ncr_eco_low:0 "Alternative Trade Routes"
 eur_ncr_eco_mid_1:0 "NCR Trade Dependent"
 eur_ncr_eco_mid_2:0 "NCR Trade Dependent"
 eur_ncr_eco_high:0 "NCR Trade Agreement"
+eur_ncr_eco_high_desc:0 "We've strucken a deal with the Bear. Despite our better judgement. But i suppose a Nosy Bear is worth a Filled Coffer.... For Now"
 
 ##SpecialThanks
 erx_broken_arrow_sf:0 "Special thanks to Soleful Phoenix"
@@ -846,5 +847,21 @@ erx_broken_arrow_development_oregon_eugene_desc:0 "While certainly not a major a
 #Portland-Oregon
 erx_broken_arrow_development_oregon_portland:0 "Project Portland"
 
+#Dams-Oregon
+erx_broken_arrow_dam_oregon_bonneville:0 "Project Bonneville Dam"
+erx_broken_arrow_dam_oregon_mcnary:0 "Project McNary Dam"
+
+erx_broken_arrow_oregon_destroy_rib:0 "Destroy The Rib Breakers"
+erx_broken_arrow_oregon_destroy_marrow:0 "Destroy The Marrow Drinkers"
+erx_broken_arrow_oregon_destroy_bone:0 "Destroy The Bone Dancers"
+erx_broken_arrow_oregon_destroy_chem:0 "Destroy The Chemult Station"
+erx_broken_arrow_oregon_invite_timberline:0 "Invite The Timberline"
 erx_broken_arrow_oregon_annex_packers:0 "Annex Packers"
 erx_broken_arrow_oregon_annex_apostle:0 "Annex The Apostles"
+erx_broken_arrow_oregon_annex_timberline:0 "Annex The Timberline"
+
+#Ideas-Oregon
+erx_broken_arrow_development_oregon_silicon_forest:0 "Silicon Forest"
+eur_silicon_forest:0 "Silicon Forest"
+erx_broken_arrow_development_oregon_timber_industry:0 "Oregon Timber Industry"
+eur_timber_industry:0 "Oregon Timber Industry"

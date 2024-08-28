@@ -87,4 +87,32 @@ spriteTypes = {
 		name = "GFX_goal_GFX_USA_peace_through_trade-62866"
 		texturefile = "gfx/interface/goals/GFX_USA_peace_through_trade-62866.png"
 	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_smuggle"
+		texturefile = "gfx/interface/goals/BRX_eco_smuggle.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_capsorcash"
+		texturefile = "gfx/interface/goals/BRX_eco_capsorcash.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_rich"
+		texturefile = "gfx/interface/goals/BRX_eco_rich.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_caps"
+		texturefile = "gfx/interface/goals/BRX_eco_caps.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_economy"
+		texturefile = "gfx/interface/goals/BRX_eco_economy.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_shake"
+		texturefile = "gfx/interface/goals/BRX_eco_shake.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_bear"
+		texturefile = "gfx/interface/goals/BRX_eco_bear.dds"
+	}
 }

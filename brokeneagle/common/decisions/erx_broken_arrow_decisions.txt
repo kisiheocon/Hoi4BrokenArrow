@@ -477,6 +477,80 @@ erx_broken_arrow_navarro_cat = {
 	}
 }
 erx_broken_arrow_development_oregon_cat = {
+	erx_broken_arrow_development_oregon_silicon_forest = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			num_of_available_civilian_factories >1
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			add_ideas = eur_silicon_forest
+		}
+	}
+	erx_broken_arrow_development_oregon_timber_industry = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			num_of_available_civilian_factories >3
+			has_full_control_of_state = 71
+			has_full_control_of_state = 51
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 4
+		}
+		remove_effect = {
+			add_ideas = eur_timber_industry
+			71 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					set_temp_variable = { new_node_economic_development = 0.5 }
+					add_to_temp_array = { new_node_trade_array = 291 }
+					add_to_temp_array = { new_node_trade_array = 179 }
+					add_to_temp_array = { new_node_trade_array = 23 }
+					add_to_temp_array = { new_node_trade_array = 337 }
+					add_to_temp_array = { new_node_trade_array = 84 }
+					set_temp_variable = { set_main_node_flag = 1 }
+					set_temp_variable = { new_node_map_x = 1898 }
+					set_temp_variable = { new_node_map_y = 736 }
+				}
+				create_map_node = yes
+			}
+			71 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 71
+				has_full_control_of_state = 51
+			}
+		}
+		
+	}
 	erx_broken_arrow_development_oregon_salem = {
 		icon = x
 		cost = 30
@@ -695,6 +769,196 @@ erx_broken_arrow_development_oregon_cat = {
 			}
 		}
 	}
+	erx_broken_arrow_dam_oregon_bonneville = {
+		icon = x
+		cost = 20
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		available = {
+			has_full_control_of_state = 37
+			num_of_available_civilian_factories >1
+		}
+
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			37 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 40
+				}
+				add_resource = {
+					type = energy
+					amount = 30
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 37
+			}
+		}
+	}
+	erx_broken_arrow_dam_oregon_mcnary = {
+		icon = x
+		cost = 20
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		available = {
+			has_full_control_of_state = 51
+			num_of_available_civilian_factories >1
+		}
+
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			51 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 30
+				}
+				add_resource = {
+					type = energy
+					amount = 20
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 51
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_marrow = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			country_exists = MDT
+		}
+		available = {
+			country_exists = MDT
+		}
+
+		days_remove = 20
+		remove_effect = {
+			declare_war_on = {
+				target = MDT
+				type = annex_everything
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_bone = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			country_exists = BDT
+		}
+		available = {
+			country_exists = BDT
+		}
+
+		days_remove = 20
+		remove_effect = {
+			declare_war_on = {
+				target = BDT
+				type = annex_everything
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_chem = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			country_exists = CHE
+		}
+		available = {
+			country_exists = CHE
+		}
+
+		days_remove = 20
+		remove_effect = {
+			declare_war_on = {
+				target = CHE
+				type = annex_everything
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_rib = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			country_exists = RBT
+		}
+		available = {
+			country_exists = RBT
+		}
+
+		days_remove = 20
+		remove_effect = {
+			declare_war_on = {
+				target = RBT
+				type = annex_everything
+			}
+		}
+	}
+	erx_broken_arrow_oregon_invite_timberline = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			country_exists = TIM
+		}
+		available = {
+			country_exists = TIM
+		}
+
+		days_remove = 20
+		remove_effect = {
+			add_to_faction = TIM
+		}
+	}
 	erx_broken_arrow_oregon_annex_packers = {
 		icon = x
 		cost = 50
@@ -744,6 +1008,32 @@ erx_broken_arrow_development_oregon_cat = {
 		remove_effect = {
 			annex_country = {
 				target = DIS
+			}
+		}
+	}
+	erx_broken_arrow_oregon_annex_timberline = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			TIM = {
+				is_in_faction_with = EUR
+			}
+		}
+		available = {
+			TIM = {
+				is_in_faction_with = EUR
+			}
+		}
+
+		days_remove = 60
+		remove_effect = {
+			annex_country = {
+				target = TIM
 			}
 		}
 	}

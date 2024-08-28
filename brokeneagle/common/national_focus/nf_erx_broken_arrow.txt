@@ -3059,7 +3059,7 @@ focus_tree = {
 #######Local/Regional Economics
 	focus = {
 		id = erx_broken_arrow_eco_start
-		icon = x
+		icon = GFX_goal_BRX_eco_economy
 		cost = 30
 		x = -6
 		y = 1
@@ -3078,7 +3078,7 @@ focus_tree = {
 	}
 	focus = {
 		id = erx_broken_arrow_eco_currency
-		icon = x
+		icon = GFX_goal_BRX_eco_capsorcash
 		cost = 20
 		x = 2
 		y = 1
@@ -3096,7 +3096,7 @@ focus_tree = {
 	}
 	focus = {
 		id = erx_broken_arrow_eco_currency_caps
-		icon = x
+		icon = GFX_goal_BRX_eco_caps
 		cost = 20
 		x = -1
 		y = 1
@@ -3115,7 +3115,7 @@ focus_tree = {
 	}
 	focus = {
 		id = erx_broken_arrow_eco_currency_ncr
-		icon = x
+		icon = GFX_goal_BRX_eco_rich
 		cost = 20
 		x = 1
 		y = 1
@@ -3146,7 +3146,7 @@ focus_tree = {
 	}
 	focus = {
 		id = erx_broken_arrow_eco_ncr_start
-		icon = x
+		icon = GFX_goal_BRX_eco_bear
 		cost = 20
 		x = -2
 		y = 1
@@ -3165,7 +3165,7 @@ focus_tree = {
 	}
 	focus = {
 		id = erx_broken_arrow_eco_ncr_high
-		icon = x
+		icon = GFX_goal_BRX_eco_shake
 		cost = 20
 		x = -1
 		y = 1
@@ -3191,7 +3191,7 @@ focus_tree = {
 	}
 	focus = {
 		id = erx_broken_arrow_eco_ncr_low
-		icon = x
+		icon = GFX_goal_BRX_eco_smuggle
 		cost = 20
 		x = 1
 		y = 1

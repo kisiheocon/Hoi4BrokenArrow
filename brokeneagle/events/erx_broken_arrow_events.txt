@@ -553,10 +553,15 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = erx_broken_arrow.20.a 
+		name = erx_broken_arrow.20.a
+		add_manpower = -200
+		add_war_support = 0.04
 	}
 	option = {
 		name = erx_broken_arrow.20.b
+		add_manpower = -50
+		add_war_support = 0.02
+		add_political_power = 20
 	}
 }
 #MUTANT MENAGERIE
@@ -673,7 +678,6 @@ country_event = {
 	}
 	option = {
 		name = erx_broken_arrow.24.b
-		add_political_power = 300
 		337 = {
 			add_core_of = EUR
 		}
@@ -799,7 +803,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = erx_broken_arrow.31.a
-		create_faction = "Federal States Of America"
+		create_faction = "Entente Cordial"
 		hidden_effect = {
 		mark_focus_tree_layout_dirty = yes
 		}
@@ -820,6 +824,7 @@ country_event = {
 		}
 	}
 }
+
 
 #DECADENCE AND DEBAUCHERY
 country_event = {
