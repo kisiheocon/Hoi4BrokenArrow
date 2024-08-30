@@ -954,7 +954,7 @@ ideas = {
         }  
 #####Local/Regional Economics
 		eur_ncr_eco_low = {
-            picture = GFX_idea_eur_ncr_eco_low
+            picture = x
             allowed = {
             }
             removal_cost = -1
@@ -967,7 +967,7 @@ ideas = {
             }
         }
 		eur_ncr_eco_mid_1 = {
-            picture = GFX_idea_eur_ncr_eco_mid
+            picture = x
             allowed = {
             }
             removal_cost = -1
@@ -980,7 +980,7 @@ ideas = {
             }
         }
 		eur_ncr_eco_mid_2 = {
-            picture = GFX_idea_eur_ncr_eco_mid
+            picture = x
             allowed = {
             }
             removal_cost = -1
@@ -996,7 +996,7 @@ ideas = {
             }
         }
 		eur_ncr_eco_high = {
-            picture = GFX_idea_eur_ncr_eco_high
+            picture = x
             allowed = {
             }
             removal_cost = -1
@@ -1085,8 +1085,19 @@ ideas = {
                 caps_income_modifier = 0.10
             }
         }
+        eur_oregon_cannibal = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+                conscription_factor = -0.1
+                non_core_manpower = -0.2
+                army_morale = -0.5
+                stability_factor = -0.05
+            }
+        }
     }
-
 }
 
 

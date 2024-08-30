@@ -4,14 +4,22 @@ spriteTypes = {
 	#########################
 	spriteType = {
 		name = "GFX_idea_eur_ncr_eco_low"
-		texturefile = "gfx/interface/ideas/eur_ncr_eco_low.dds"
+		textureFile = "gfx/interface/ideas/idea_EUR_NCR_eco_low.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_eur_ncr_eco_mid"
-		texturefile = "gfx/interface/ideas/eur_ncr_eco_mid.dds"
+		textureFile = "gfx/interface/ideas/idea_EUR_NCR_eco_mid.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_eur_ncr_eco_high"
-		texturefile = "gfx/interface/ideas/eur_ncr_eco_high.dds"
+		textureFile = "gfx/interface/ideas/idea_EUR_NCR_eco_high.dds"
+	}
+	spriteType = {
+		name = "GFX_coins"
+		textureFile = "gfx/interface/ideas/coins.dds"
+	}
+	spriteType = {
+		name = "GFX_cannibals"
+		textureFile = "gfx/interface/ideas/generic_cannibal.dds"
 	}
 }

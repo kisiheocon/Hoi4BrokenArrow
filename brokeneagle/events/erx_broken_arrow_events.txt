@@ -2,6 +2,7 @@ add_namespace = erx_broken_arrow_debug
 add_namespace = erx_broken_arrow
 add_namespace = erx_broken_arrow_fireside
 add_namespace = erx_broken_arrow_navarro
+add_namespace = erx_broken_arrow_mariposa
 
 #debug event
 country_event = {
@@ -1036,5 +1037,46 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = erx_broken_arrow.102.a
+	}
+}
+##Mariposa Events
+##Reformist POV
+country_event = {
+	id = erx_broken_arrow_mariposa.1
+	title = erx_broken_arrow_mariposa.1.t
+	desc = erx_broken_arrow_mariposa.1.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_mariposa.1.a
+		country_event = { id = erx_broken_arrow_mariposa.2 days = 5}
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+##Future discovered Purist plan
+country_event = {
+	id = erx_broken_arrow_mariposa.2
+	title = erx_broken_arrow_mariposa.2.t
+	desc = erx_broken_arrow_mariposa.2.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_mariposa.2.a
+		custom_effect_tooltip = "This report is discovered years in the future"
+		country_event = { id = erx_broken_arrow_mariposa.3 days = 5}
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+##Purist POV
+country_event = {
+	id = erx_broken_arrow_mariposa.3
+	title = erx_broken_arrow_mariposa.3.t
+	desc = erx_broken_arrow_mariposa.3.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_mariposa.3.a
+		custom_effect_tooltip = "Purist's POV"
+		custom_effect_tooltip = erx_broken_arrow_sf
 	}
 }
