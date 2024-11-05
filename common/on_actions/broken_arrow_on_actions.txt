@@ -1,0 +1,29 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			EUR  = {
+				news_event = {
+					id = erx_broken_arrow_navarro.1 days = 100
+				}
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = NVT
+					}
+					owns_state = 56
+					owns_state = 548
+					owns_state = 216
+				}
+				EUR = {
+					set_country_flag = victory_in_navarro
+					country_event = id = erx_broken_arrow_navarro.2 days = 3
+				}
+			}
+		}
+	}
+}

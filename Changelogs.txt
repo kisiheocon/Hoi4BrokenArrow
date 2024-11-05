@@ -1,6 +1,0 @@
--8/21/2024-Deez
-  +Initial creation of the github page
-  +Added Regional/Local Economics focuses (code-wise, missing loc and gfxs)
--8/24/2024-Deez
-  +Uploaded brokeneagle (Immortals's version of the devbuild)
-  +Will be using brokeneagle as the main devbuild from beyond 8/24/2024, the original debuild BrokenArrowDEV will be kept for rollback purposes

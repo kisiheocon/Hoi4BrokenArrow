@@ -1,0 +1,23 @@
+ARR_karma_category = {
+	allowed = {
+		original_tag = ARR
+	}
+	visible = {
+		has_country_flag = chosen_one_gone
+	}
+	visible_when_empty = yes
+	priority = 10000
+	icon = generic_democracy
+}
+
+ARR_chosen_one_category = {
+	allowed = {
+		original_tag = ARR
+	}
+	visible = {
+		NOT = { has_country_flag = chosen_one_gone }
+	}
+	#visible_when_empty = yes
+	priority = 9999
+	icon = generic_democracy
+}

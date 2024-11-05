@@ -1,0 +1,1189 @@
+#####################################################################################################################
+# COMMENTS HAVE BEEN INCLUDED FOR SAKE OF EXPLANATION, CAN BE REMOVED #
+# ID's must not include spaces!
+# Decisions MUST be visible for the AI to execute them, if in doubt, switch tag to the AI country and check if they can see/execute the mission.
+#####################################################################################################################
+erx_broken_arrow_radiowaves_cat = {	
+	clear_radio = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_completed_focus = erx_broken_arrow_kpdj
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			set_country_flag = kpdj_cleared
+		}
+	}
+	fireside_chat_0 = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_country_flag = kpdj_cleared
+			has_completed_focus = erx_broken_arrow_voice_of_nation
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			country_event = erx_broken_arrow.17
+		}
+	}
+	fireside_chat_1 = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_country_flag = kpdj_cleared
+			has_completed_focus = erx_broken_arrow_voice_of_nation
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			country_event = erx_broken_arrow_fireside.1
+		}
+	}
+	fireside_chat_2 = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_country_flag = kpdj_cleared
+			has_completed_focus = erx_broken_arrow_voice_of_nation
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			country_event = erx_broken_arrow_fireside.3
+		}
+	}
+	fireside_chat_3 = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_country_flag = kpdj_cleared
+			has_completed_focus = erx_broken_arrow_voice_of_nation
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			country_event = erx_broken_arrow_fireside.4
+		}
+	}
+	fireside_chat_4 = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_country_flag = kpdj_cleared
+			has_completed_focus = erx_broken_arrow_voice_of_nation
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			country_event = erx_broken_arrow_fireside.5
+		}
+	}
+	fireside_chat_5 = {
+		icon = GFX_decision_enc_propaganda
+		available = {
+			has_country_flag = kpdj_cleared
+			has_completed_focus = erx_broken_arrow_voice_of_nation
+		}
+		fire_only_once = yes
+		visible = {
+			always = yes
+		}
+		complete_effect = {
+			country_event = erx_broken_arrow_fireside.6
+		}
+	}
+}
+erx_broken_arrow_oregon_affairs_cat = {
+	merc_work = {
+		icon = x
+		cost = 35
+		days_re_enable = 30
+		available = {
+		}
+		fire_only_once = no
+		visible = {
+			has_completed_focus = erx_broken_arrow_local_affairs
+			NOT = {
+				has_completed_focus = erx_broken_arrow_seize_state_apparatus
+			}
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+	}
+	cleaning_house = {
+		icon = x
+		cost = 50
+		days_re_enable = 10
+		days_remove = 30
+		available = {
+		}
+		fire_only_once = no
+		visible = {
+			has_completed_focus = erx_broken_arrow_local_affairs
+			NOT = {
+				has_completed_focus = erx_broken_arrow_seize_state_apparatus
+			}
+		}
+		modifier = {
+			intellectuals_drift = 0.1
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.03
+			}
+		}
+	}
+	essentials = {
+		icon = x
+		cost = 25
+		days_remove = 30
+		days_re_enable = 10
+		available = {
+		}
+		fire_only_once = no
+		visible = {
+			has_completed_focus = erx_broken_arrow_local_affairs
+			NOT = {
+				has_completed_focus = erx_broken_arrow_seize_state_apparatus
+			}
+		}
+		modifier = {
+			intellectuals_drift = 0.1
+			consumer_goods_factor = 0.2
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.03
+			}
+		}
+	}
+	commandeer_convoys = {
+		icon = x
+		cost = 30
+		available = {
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = erx_broken_arrow_anguish_mourning
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {type = convoy producer = USA amount = 50}
+			add_to_variable = { arr_atk_prep = 1 }
+		}
+	}
+	coordinate_vertibirds = {
+		icon = x
+		cost = 30
+		available = {
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = erx_broken_arrow_anguish_mourning
+		}
+		complete_effect = {
+			add_timed_idea = { idea = arr_atk_bonus days = 30 }
+			add_to_variable = { arr_atk_prep = 1 }
+		}
+	}
+	shock_and_awe_tactics = {
+		icon = x
+		cost = 30
+		available = {
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = erx_broken_arrow_anguish_mourning
+		}
+		complete_effect = {
+			add_timed_idea = { idea = shock_and_awe_dec_idea days = 180 }
+			add_to_variable = { arr_atk_prep = 1 }
+		}
+	}
+	#loot_stashes = {
+	#	icon = x
+	#	cost = 100
+	#	days_remove = 30
+	#	available = {
+	#		has_completed_focus = erx_broken_arrow_starting_from_scratch
+	#	}
+	#	fire_only_once = yes
+	#	visible = {
+	#		always = yes
+	#	}
+	#	remove_effect = {
+	#		add_equipment_to_stockpile = { type = energy_equipment_2 producer = USA amount = 400}
+	#		add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 producer = ERB amount = 150}
+	#		add_equipment_to_stockpile = { type = support_equipment_1 producer = USA amount = 100}
+	#		add_equipment_to_stockpile = { type = anti_tank_equipment_2  producer = USA amount = 75}
+	#		add_equipment_to_stockpile = { type = explosive_demolitions_equipment_2  producer = USA amount = 75}
+	#		add_equipment_to_stockpile = { type = energy_fireteam_equipment_2  producer = USA amount = 75}
+	#		add_timed_idea = { idea = stash_houses days = 100 }
+	#	}
+	#}
+}
+#erx_broken_arrow_armory_gfx_cat = {
+#	service_rifle_gfx_change = {
+#		icon = x
+#		available = {
+#			has_tech = ballistic_weaponry_tech_2
+#		}
+#		fire_only_once = yes
+#		visible = {
+#			always = yes
+#		}
+#		complete_effect = {
+#			create_equipment_variant = {
+#				name = "Service Rifle"
+#				type = ballistic_equipment_2
+#				icon = GFX_BAG_ballistic_weaponry_tech_2_medium
+#
+#			}
+#		}
+#	}
+#	energy_rifle_gfx_change = {
+#		icon = x
+#		available = {
+#			has_tech = energy_weaponry_tech_2
+#		}
+#		fire_only_once = yes
+#		visible = {
+#			always = yes
+#		}
+#		complete_effect = {
+#			create_equipment_variant = {
+#				name = "AER9E3 Laser Rifle"
+#				type = energy_equipment_2
+#				icon = GFX_energy_weaponry_tech_2_medium
+#			}
+#		}
+#	}
+#	advanced_rifle_gfx_change = {
+#		icon = x
+#		available = {
+#			has_tech = ballistic_weaponry_tech_4
+#		}
+#		fire_only_once = yes
+#		visible = {
+#			always = yes
+#		}
+#		complete_effect = {
+#			create_equipment_variant = {
+#				name = "M200 Assault Rifle"
+#				type = ballistic_equipment_4
+#				icon = GFX_ERB_ballistic_weaponry_tech_4_medium
+#			}
+#		}
+#	}
+#	advanced_energy_rifle_gfx_change = {
+#		icon = x
+#		available = {
+#			has_tech = energy_weaponry_tech_4
+#		}
+#		fire_only_once = yes
+#		visible = {
+#			always = yes
+#		}
+#		complete_effect = {
+#			create_equipment_variant = {
+#				name = "AER9A2 Laser Rifle"
+#				type = energy_equipment_4
+#				icon = GFX_MCA_energy_weaponry_tech_3_medium
+#
+#			}
+#		}
+#	}
+#}
+erx_broken_arrow_navarro_cat = {
+	navarro_crisis_old_relations = {
+		icon = x
+		available = {
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
+		}
+		complete_effect = {
+			set_country_flag = eur_navarro_intervention
+			add_ideas = relationships_rekindled
+			add_opinion_modifier = {
+				target = EUR
+				modifier = eureka_side_opinion_modifier
+			}
+            add_opinion_modifier = {
+                target = NVT
+                modifier = free_folk_side_opinion_modifier
+            }
+			add_opinion_modifier = {
+                target = EUR
+                modifier = eureka_side_trade_modifier
+            }
+            add_opinion_modifier = {
+                target = NVT
+                modifier = free_folk_side_trade_modifier
+            }
+		}
+	}
+	navarro_crisis_exiles = {
+		icon = x
+		available = {
+			has_country_flag = eur_navarro_intervention
+		}
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
+		}
+		days_remove = 70
+		modifier = {
+			weekly_manpower = 70
+		}
+	}
+	navarro_crisis_harass_colonials = {
+		icon = x
+		available = {
+			has_country_flag = eur_navarro_intervention
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
+		}
+		cost = 20
+		days_re_enable = 30
+		fire_only_once = no
+		visible = {
+			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
+		}
+		complete_effect = {
+			NVT = {
+				add_timed_idea = { idea = nat_atk_bonus days = 20 }
+			}
+			NAT = {
+				add_timed_idea = { idea = nat_atk_nerf days = 20 } 
+			}
+		}
+	}
+	navarro_crisis_harass_chinese = {
+		icon = x
+		available = {
+			has_country_flag = eur_navarro_intervention
+		}
+		cost = 20
+		days_re_enable = 30
+		fire_only_once = no
+		visible = {
+			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
+		}
+		complete_effect = {
+			NVT = {
+				add_timed_idea = { idea = shi_atk_bonus days = 20 }
+			}
+			NVS = {
+				add_timed_idea = { idea = shi_atk_nerf days = 20 } 
+			}
+		}
+	}
+	navarro_crisis_volunteers = {
+		icon = x
+		available = {
+			has_country_flag = eur_navarro_intervention
+		}
+		cost = 50
+		days_re_enable = 30
+		fire_only_once = no
+		visible = {
+			has_completed_focus = erx_broken_arrow_navarro_crisis
+			NOT = {
+				has_country_flag = conquered_navarro
+			}
+		}
+		days_remove = 25
+		modifier = {
+			send_volunteer_size = 1
+		}
+	}
+	navarro_survive_ncr = {
+		icon = x
+		days_mission_timeout = 60
+		is_good = yes
+
+		activation = {
+			has_country_flag = navarro_ncr_revenge
+		}
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			always = no
+		}
+		timeout_effect = {
+			clr_country_flag = navarro_ncr_revenge
+			white_peace = NCR
+		}
+	}
+}
+erx_broken_arrow_development_oregon_cat = {
+	erx_broken_arrow_development_oregon_silicon_forest = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			add_ideas = eur_silicon_forest
+		}
+	}
+	erx_broken_arrow_development_oregon_timber_industry = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 3
+			has_full_control_of_state = 71
+			has_full_control_of_state = 51
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 4
+		}
+		remove_effect = {
+			add_ideas = eur_timber_industry
+			71 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					set_temp_variable = { new_node_economic_development = 0.5 }
+					add_to_temp_array = { new_node_trade_array = 291 }
+					add_to_temp_array = { new_node_trade_array = 179 }
+					add_to_temp_array = { new_node_trade_array = 23 }
+					add_to_temp_array = { new_node_trade_array = 337 }
+					add_to_temp_array = { new_node_trade_array = 84 }
+					set_temp_variable = { set_main_node_flag = 1 }
+					set_temp_variable = { new_node_map_x = 1898 }
+					set_temp_variable = { new_node_map_y = 736 }
+				}
+				create_map_node = yes
+			}
+			71 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 71
+				has_full_control_of_state = 51
+			}
+		}
+		
+	}
+	erx_broken_arrow_development_oregon_cannibal_remove = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		days_remove = 120
+		modifier = {
+			weekly_manpower = -20
+		}
+		remove_effect = {
+			remove_ideas = eur_oregon_cannibal
+		}
+	}
+	erx_broken_arrow_development_oregon_salem = {
+		icon = x
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			has_full_control_of_state = 493
+			num_of_civilian_factories_available_for_projects > 3
+			has_equipment = {
+				infantry_equipment > 799
+			}
+			has_equipment = {
+				support_equipment_1 >99
+			}
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -800
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -100
+			}
+		}
+		days_remove = 120
+		remove_effect = {
+			493 = {
+				set_temp_variable = { pop_add = 2500 }
+                add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = large_city
+				add_victory_points = {
+					province = 4101
+					value = 10
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 493
+			}
+		}
+	}
+	erx_broken_arrow_development_oregon_eugene = {
+		icon = x
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			has_full_control_of_state = 358
+			num_of_civilian_factories_available_for_projects > 3
+			has_equipment = {
+				support_equipment_1 >299
+			}
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -300
+			}
+		}
+		days_remove = 120
+		remove_effect = {
+			358 = {
+				set_temp_variable = { pop_add = 2000 }
+                add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_province_name = { 
+					id = 4200 name = "Eugene"
+				}
+				set_state_category = large_city
+				add_victory_points = {
+					province = 4200
+					value = 12
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 358
+			}
+		}
+	}
+	erx_broken_arrow_development_oregon_portland = {
+		icon = x
+		cost = 60
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		available = {
+			has_full_control_of_state = 23
+			has_full_control_of_state = 37
+			num_of_civilian_factories_available_for_projects > 7
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		modifier = {
+			civilian_factory_use = 8
+		}
+		complete_effect = {
+		}
+		days_remove = 120
+		remove_effect = {
+			23 = {
+				set_temp_variable = { pop_add = 3000 }
+                add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = large_city
+				add_victory_points = {
+					province = 3882
+					value = 9
+				}
+			}
+			37 = {
+				set_temp_variable = { pop_add = 3000 }
+                add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = large_city
+			}
+			23 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 23
+				has_full_control_of_state = 37
+			}
+		}
+	}
+	erx_broken_arrow_dam_oregon_bonneville = {
+		icon = x
+		cost = 20
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		available = {
+			has_full_control_of_state = 37
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			37 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 40
+				}
+				add_resource = {
+					type = energy
+					amount = 30
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 37
+			}
+		}
+	}
+	erx_broken_arrow_dam_oregon_mcnary = {
+		icon = x
+		cost = 20
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+		}
+		available = {
+			has_full_control_of_state = 51
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			51 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 30
+				}
+				add_resource = {
+					type = energy
+					amount = 20
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_full_control_of_state = 51
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_marrow = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			MDT = { all_core_land_owned_by_prev_sphere = no }
+		}
+		available = {
+		}
+
+		days_remove = 20
+		remove_effect = {
+			will_lead_to_war_with = MDT
+			MDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_bone = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			BDT = { all_core_land_owned_by_prev_sphere = no }
+		}
+		available = {
+		}
+
+		days_remove = 20
+		remove_effect = {
+			will_lead_to_war_with = BDT
+			BDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_chem = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			CHE = { all_core_land_owned_by_prev_sphere = no }
+		}
+		available = {
+		}
+
+		days_remove = 20
+		remove_effect = {
+			will_lead_to_war_with = CHE
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	erx_broken_arrow_oregon_destroy_rib = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			RBT = { all_core_land_owned_by_prev_sphere = no }
+		}
+		available = {
+		}
+
+		days_remove = 20
+		remove_effect = {
+			will_lead_to_war_with = RBT
+			RBT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	erx_broken_arrow_oregon_invite_timberline = {
+		icon = x
+		cost = 40
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			country_exists = TIM
+		}
+		
+		available = {
+		}
+
+		days_remove = 20
+		remove_effect = {
+			add_to_faction = TIM
+		}
+	}
+	erx_broken_arrow_oregon_annex_packers = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			PAC = {
+				is_subject_of = EUR
+			}
+		}
+
+		available = {
+		}
+
+		days_remove = 60
+		remove_effect = {
+			annex_country = {
+				target = PAC
+			}
+		}
+	}
+	erx_broken_arrow_oregon_annex_apostle = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			DIS = {
+				is_in_faction_with = EUR
+			}
+		}
+		available = {
+		}
+
+		days_remove = 60
+		remove_effect = {
+			annex_country = {
+				target = DIS
+			}
+		}
+	}
+	erx_broken_arrow_oregon_annex_timberline = {
+		icon = x
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_completed_focus = erx_oregon_RCA
+			TIM = {
+				is_in_faction_with = EUR
+			}
+		}
+		available = {
+		}
+
+		days_remove = 60
+		remove_effect = {
+			annex_country = {
+				target = TIM
+			}
+		}
+	}
+}
+erx_broken_arrow_espionage_cat = {
+	eureka_espionage_bos_0 = {
+		icon = x
+		available = {
+			has_completed_focus = erx_broken_arrow_infil_bos
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			custom_effect_tooltip = "Deploys Agents to infiltrate Lost Hills"
+			set_country_flag = eureka_agents_deployed_lost_hills
+		}
+	}
+	eureka_espionage_bos_1 = {
+		icon = x
+		available = {
+			has_country_flag = eureka_agents_deployed_lost_hills
+			has_completed_focus = erx_broken_arrow_infil_bos_scribe
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			add_to_variable = { eureka_spy_level_bos_var = 1 }
+		}
+	}
+	eureka_espionage_bos_2 = {
+		icon = x
+		available = {
+			has_country_flag = eureka_agents_deployed_lost_hills
+			has_completed_focus = erx_broken_arrow_infil_bos_chains
+			has_war_with = BOS
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			BOS = {
+				add_timed_idea = { idea = bos_atk_nerf days = 100 }
+			}
+			add_to_variable = { eureka_spy_level_bos_var = 1 }
+		}
+	}
+	eureka_espionage_bos_3 = {
+		icon = x
+		available = {
+			has_country_flag = eureka_agents_deployed_lost_hills
+			has_completed_focus = erx_broken_arrow_infil_bos_council
+			has_war_with = BOS
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			BOS = {
+				add_timed_idea = { idea = bos_pol_nerf days = 100 }
+			}
+			add_to_variable = { eureka_spy_level_bos_var = 1 }
+		}
+	}
+	eureka_espionage_ncr_0 = {
+		icon = x
+		available = {
+			has_completed_focus = erx_broken_arrow_infil_ncr
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			custom_effect_tooltip = "Deploys Agents to Shady Sands"
+			set_country_flag = eureka_agents_deployed_shady_sands
+		}
+	}
+	eureka_espionage_ncr_1 = {
+		icon = x
+		available = {
+			has_country_flag = eureka_agents_deployed_shady_sands
+			has_completed_focus = erx_broken_arrow_corpo_espion
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			NCR = {
+				add_timed_idea = { idea = ncr_ind_nerf days = 100 }
+			}
+			add_to_variable = { eureka_spy_level_ncr_var = 1 }
+		}
+	}
+	eureka_espionage_ncr_2 = {
+		icon = x
+		available = {
+			has_country_flag = eureka_agents_deployed_shady_sands
+			has_completed_focus = erx_broken_arrow_ncr_high_comm
+			has_war_with = NCR
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			NCR = {
+				add_timed_idea = { idea = ncr_atk_nerf days = 100 }
+			}
+			add_to_variable = { eureka_spy_level_ncr_var = 1 }
+		}
+	}
+	eureka_espionage_ncr_3 = {
+		icon = x
+		available = {
+			has_country_flag = eureka_agents_deployed_shady_sands
+			has_completed_focus = erx_broken_arrow_ncr_state
+			has_war_with = NCR
+		}
+		cost = 20
+		fire_only_once = yes
+		visible = {
+			#has_completed_focus = erx_broken_arrow_navarro_intel_app
+		}
+		complete_effect = {
+			NCR = {
+				add_timed_idea = { idea = ncr_pol_nerf days = 100 }
+			}
+			add_to_variable = { eureka_spy_level_ncr_var = 1 }
+		}
+	}
+}

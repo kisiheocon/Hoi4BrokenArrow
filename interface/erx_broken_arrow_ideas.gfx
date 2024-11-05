@@ -1,0 +1,17 @@
+spriteTypes = {
+	#########################
+	##National Spirits/Idea##
+	#########################
+	spriteType = {
+		name = "GFX_idea_eur_ncr_eco_low"
+		textureFile = "gfx/interface/ideas/idea_EUR_NCR_eco_low.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_eur_ncr_eco_mid"
+		textureFile = "gfx/interface/ideas/idea_EUR_NCR_eco_mid.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_eur_ncr_eco_high"
+		textureFile = "gfx/interface/ideas/idea_EUR_NCR_eco_high.dds"
+	}
+}

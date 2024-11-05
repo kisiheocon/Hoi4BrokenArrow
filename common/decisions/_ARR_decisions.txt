@@ -1,0 +1,368 @@
+ARR_karma_category = {
+	leader_election_countdown = {
+		allowed = { original_tag = ARR }
+
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		available = {
+			always = no
+		}
+		activation = {
+			has_country_flag = chosen_one_gone
+			has_country_flag = council_leader
+		}
+		is_good = yes
+		selectable_mission = no
+		days_mission_timeout = 360
+		timeout_effect = {
+			clr_country_flag = council_leader
+			country_event = {
+				id = nf_arroyo.3
+			}
+		}
+	}
+	arr_chitsa_infrastructure = {
+		icon = GFX_decision_generic_construction
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 50
+
+		visible = {
+			has_government = elites
+			check_variable = { chitsa_karma_num > 6 }
+		}
+
+		# fire_only_once = yes
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 25 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = { caps_to_add = -25 }
+				subtract_caps = yes
+			}
+		}
+
+		fixed_random_seed = no
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	arr_chitsa_benevolence = {
+		icon = GFX_decision_hol_war_on_pacifism
+		available = {
+			NOT = { has_idea = arr_benevolent_intentions }
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 55
+
+		visible = {
+			has_government = elites
+			check_variable = { chitsa_karma_num > 6 }
+		}
+
+		# fire_only_once = yes
+
+		complete_effect = {
+			add_war_support = -0.06
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			add_timed_idea = {
+				idea = arr_benevolent_intentions
+				days = 100
+			}
+		}
+	}
+	arr_chitsa_kill_dimitri = {
+		icon = GFX_decision_axe
+		cancel_if_not_visible = yes
+		days_remove = 80
+
+		visible = {
+			has_government = elites
+			check_variable = { chitsa_karma_num < 4 }
+			NOT = { has_country_flag = dimitri_dead }
+			date > 2277.1.1
+		}
+
+		fire_only_once = yes
+		cost = 100
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			country_event = {
+				id = nf_arroyo.57
+			}
+		}
+	}
+	arr_chitsa_overpowers_nagor = {
+		icon = GFX_decision_scav
+		cancel_if_not_visible = yes
+		days_remove = 80
+
+		visible = {
+			has_government = elites
+			check_variable = { chitsa_karma_num < 4 }
+			NOT = { has_country_flag = nagor_dead }
+			date > 2277.1.1
+		}
+
+		fire_only_once = yes
+		cost = 100
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			country_event = {
+				id = nf_arroyo.58
+			}
+		}
+	}
+	arr_dimitri_housing = {
+		icon = GFX_decision_generic_pantheon
+		available = {
+			NOT = { has_idea = arr_available_housing }
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 50
+
+		visible = {
+			has_government = intellectuals
+			check_variable = { dimitri_karma_num > 6 }
+		}
+
+		# fire_only_once = yes
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = { caps_to_add = -20 }
+				subtract_caps = yes
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			add_timed_idea = {
+				idea = arr_refocused_builders
+				days = 60
+			}
+			add_timed_idea = {
+				idea = arr_available_housing
+				days = 120
+			}
+		}
+	}
+	arr_dimitri_health = {
+		icon = GFX_decision_chems
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 70
+
+		visible = {
+			has_government = intellectuals
+			check_variable = { dimitri_karma_num > 6 }
+		}
+
+		# fire_only_once = yes
+		fixed_random_seed = no
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 40 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = { caps_to_add = -40 }
+				subtract_caps = yes
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			random_owned_controlled_state = {
+				add_state_modifier = {
+					modifier = {
+						recruitable_population_factor = 1.2
+					}
+				}
+			}
+		}
+	}
+	arr_dimitri_exile_ghouls = {
+		icon = GFX_decision_revolver
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 80
+
+		visible = {
+			has_government = intellectuals
+			check_variable = { dimitri_karma_num < 4 }
+		}
+
+		# fire_only_once = yes
+
+		cost = 30
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			random_owned_controlled_state = {
+				add_manpower = -100
+			}
+			add_stability = 0.05
+		}
+	}
+	arr_dimitri_exile_followers = {
+		icon = GFX_decision_category_followers
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 60
+
+		visible = {
+			has_government = intellectuals
+			check_variable = { dimitri_karma_num < 4 }
+			has_country_flag = followers_established
+		}
+
+		fire_only_once = yes
+
+		cost = 60
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			clr_country_flag = followers_established
+			set_country_flag = followers_expelled
+		}
+	}
+	arr_nagor_help_chitsa = {
+		icon = GFX_decision_vault_boy
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 40
+
+		visible = {
+			has_government = people
+			check_variable = { nagor_karma_num > 6 }
+			NOT = { has_country_flag = chitsa_dead }
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			add_to_variable = { chitsa_karma_num = 2 }
+			custom_effect_tooltip = chitsa_karma_big_up
+		}
+	}
+	arr_nagor_help_dimitri = {
+		icon = GFX_decision_vault_boy
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 30
+
+		visible = {
+			has_government = people
+			check_variable = { nagor_karma_num > 6 }
+			NOT = { has_country_flag = dimitri_dead }
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			add_to_variable = { dimitri_karma_num = 1 }
+			custom_effect_tooltip = dimitri_karma_up
+		}
+	}
+
+	arr_nagor_exile_dimitri = {
+		icon = GFX_decision_category_followers
+		available = {
+		}
+		cancel_if_not_visible = yes
+
+		days_remove = 80
+
+		visible = {
+			has_government = people
+			check_variable = { nagor_karma_num < 4 }
+			NOT = { has_country_flag = dimitri_dead }
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		remove_effect = {
+			custom_effect_tooltip = arr_cancel_karma_decision_tt
+			country_event = {
+				id = nf_arroyo.66
+			}
+		}
+	}
+}
+
+ARR_chosen_one_category = {
+	chosen_leaves_countdown = {
+		icon = GFX_decision_pipboy
+		allowed = { original_tag = ARR }
+		available = {
+			always = no
+		}
+		activation = {
+			NOT = { has_country_flag = chosen_one_gone }
+			hidden_trigger = {
+				NOT = { has_country_flag = chosen_one_returned }
+			}
+		}
+		selectable_mission = no
+		days_mission_timeout = 360
+		fire_only_once = yes
+		timeout_effect = {
+			country_event = {
+				id = nf_arroyo.4
+			}
+		}
+	}
+}

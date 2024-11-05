@@ -1,0 +1,1120 @@
+ideas = {
+    country = {
+        eur_enc_complete_chaos = {
+			picture = enc_manpower_remnants_disorganized
+			modifier = {
+                custom_modifier_tooltip = SPR_military_disloyalty_tt
+                stability_factor = -0.2
+                war_support_factor = -0.2
+                political_power_gain = -0.5
+			}
+		}
+        lineage_of_professionalism = {
+
+            picture = enc_jingoism
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+                army_org_factor = 0.05
+                army_morale_factor = 0.02
+            }
+        }
+        arcata_company = {
+
+            picture = eas_mkII_hellfire
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+                modifier_army_sub_unit_power_armour_attack_factor = 0.03
+				modifier_army_sub_unit_power_armour_defence_factor = 0.03
+				land_reinforce_rate = 0.03
+		   	    army_org_factor = 0.05
+			    special_forces_min = 30
+                hidden_modifier = {
+                    send_volunteer_divisions_required = -10
+                } 
+			}
+        }
+        broken_arrow = {
+
+            picture = enc_usa_shielded
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+				encryption_factor = 0.25
+                decryption_factor = 0.25
+			}
+        }
+        statewide_broadcasts = {
+
+            picture = enc_broadcasting
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+				war_support_factor = 0.05
+                political_power_factor = 0.1
+                weekly_manpower = 25
+			}
+        }
+        aircaft_experimentation = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            research_bonus = {
+				air_tech_category = -0.05
+			}
+
+            modifier = {
+				experience_gain_air = 0.05
+                air_accidents_factor = 0.15
+                air_ace_generation_chance_factor = -0.35
+			}
+        }
+        republic_dreams = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+				surrender_limit = 0.3
+                conscription = 0.01
+                war_support_factor = 0.05
+			}
+        }
+        arr_atk_bonus = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = ARR
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.05
+            }
+        }
+        shock_and_awe_dec_idea = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_speed_factor = 0.05
+                army_org_factor = 0.05
+                land_reinforce_rate = 0.05
+            }
+        }
+        american_manufacturing = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.15
+                    soft_attack = 0.05
+                    hard_attack = 0.05
+                    piercing_factor = 0.05
+					instant = yes
+				}
+                power_armor_equipment = {
+					build_cost_ic = 0.15
+                    armor_value = 0.05
+                    hardness = 0.05
+                    soft_attack = 0.05
+					instant = yes
+				}
+            }
+        }
+        american_manufacturing_2 = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.15
+                    soft_attack = 0.05
+                    hard_attack = 0.05
+                    piercing_factor = 0.05
+					instant = yes
+				}
+                power_armor_equipment = {
+					build_cost_ic = 0.15
+                    armor_value = 0.05
+                    hardness = 0.05
+                    soft_attack = 0.05
+					instant = yes
+				}
+            }
+
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+        californian_manufacturing = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+           equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+                    soft_attack = -0.05
+                    hard_attack = -0.05
+                    piercing_factor = -0.05
+					instant = yes
+				}
+                power_armor_equipment = {
+					build_cost_ic = -0.15
+                    armor_value = -0.05
+                    hardness = -0.05
+                    soft_attack = -0.05
+					instant = yes
+				}
+           }
+        }
+        californian_manufacturing_2 = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+           equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.17
+                    soft_attack = -0.05
+                    hard_attack = -0.05
+                    piercing_factor = -0.05
+					instant = yes
+				}
+                power_armor_equipment = {
+					build_cost_ic = -0.17
+                    armor_value = -0.05
+                    hardness = -0.05
+                    soft_attack = -0.05
+					instant = yes
+				}
+           }
+           modifier = {
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+        death_to_tyrants = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = ERB
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.1
+            }
+        }
+        strike_down_bear = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = NCR
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.05
+            }
+        }
+        this_is_personal = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_core_attack_factor = 0.1
+                army_core_defence_factor = 0.05
+            }
+        }
+        enclave_brutality = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                attrition = 0.08
+                stability_weekly_factor = -0.005
+                war_support_weekly_factor = 0.005
+                army_attack_factor = -0.03
+            }
+        }
+        strike_the_devil = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = WBH
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.05
+            }
+            modifier = {
+                acclimatization_cold_climate_gain_factor = 0.1
+            }
+        }
+        man_vs_monster = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = TRL
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.05
+            }
+        }
+        radioactive_weaponry = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                attrition = 0.1
+            }
+        }
+        the_continental_army = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                modifier_army_sub_unit_militia_attack_factor = 0.05
+	            modifier_army_sub_unit_militia_defence_factor = 0.05
+            }
+        }
+        valley_forge = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                winter_attrition_factor = -0.1
+                acclimatization_cold_climate_gain_factor = 0.1
+                supply_consumption_factor = -0.05
+            }
+        }
+        crossing_deleware = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_morale_factor = 0.05
+	            river_crossing_factor = -0.1
+                naval_invasion_penalty = -0.05
+                amphibious_invasion = 0.1
+            }
+        }
+        steadfast_army = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_org_factor = 0.03
+	            army_morale_factor = 0.03
+            }
+        }
+        prussian_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_org_factor = 0.03
+	            supply_consumption_factor = -0.03
+                training_time_factor = -0.1
+            }
+        }
+        yorktown_legacy_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                modifier_army_sub_unit_militia_attack_factor = 0.05
+	            modifier_army_sub_unit_militia_defence_factor = 0.05
+                surrender_limit = 0.1
+            }
+        }
+        gettysburg_lessons = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_defence_factor = 0.03
+                max_dig_in_factor = 0.05
+                army_speed_factor = 0.02
+            }
+        }
+        shermans_lessons = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                breakthrough_factor = 0.05
+                army_speed_factor = 0.03
+                pocket_penalty = -0.1
+                resistance_activity = 0.15 
+                resistance_growth = 0.1
+                fortification_damage = 0.05
+                air_strategic_bomber_bombing_factor = 0.1
+                war_support_factor = 0.05
+            }
+        }
+        custers_ranks = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                command_abilities_cost_factor = -0.25
+                modifier_army_sub_unit_motorized_attack_factor = 0.03
+                modifier_army_sub_unit_motorized_defence_factor = 0.03
+                pocket_penalty = -0.1
+                supply_consumption_factor = -0.03
+                army_morale_factor = 0.05
+                tactic_basic_concentrated_defence_preferred_weight_factor = 0.25
+            }
+        }
+        maine_naval_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                naval_coordination = 0.05
+                naval_org = 0.05
+            }
+        }
+        foray_naval_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                naval_invasion_prep_speed = 0.1
+                naval_invasion_penalty = -0.1
+            }
+        }
+        gulf_domination_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                amphibious_invasion = 0.1
+                naval_invasion_prep_speed = 0.05
+                naval_invasion_penalty = -0.05
+            }
+        }
+        shipwrecked_naval_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                critical_receive_chance = -0.1
+                naval_morale_factor = 0.05
+            }
+        }
+        san_juan_idea = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = 0.03
+                army_defence_factor = 0.03
+                org_loss_when_moving = 0.03
+            }
+        }
+        defense_in_depth = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_defence_factor = 0.03
+                production_speed_bunker_factor = 0.1
+                army_morale_factor = 0.03
+            }
+        }
+        day_of_infamy = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = YKZ
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.05
+            }
+            modifier = {
+                war_support_factor = 0.03
+            }
+        }
+        axis_of_evil = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_core_attack_factor = 0.03
+                army_core_defence_factor = 0.03
+                war_support_factor = 0.03
+            }
+        }
+        pattons_tanks = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                modifier_army_sub_unit_tank_attack_factor = 0.05
+                modifier_army_sub_unit_tank_speed_factor = 0.05
+                modifier_army_sub_unit_motorized_attack_factor = 0.03
+                modifier_army_sub_unit_motorized_speed_factor = 0.03
+            }
+            equipment_bonus = {
+                tank_equipment = {
+                    breakthrough = 0.05
+                }
+            }
+        }
+        rebuilding_america = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                production_speed_buildings_factor = 0.05
+                local_resources_factor = 0.03
+            }
+        }
+        logistics_cons_bonus = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                production_speed_supply_node_factor = 0.05
+                production_speed_infrastructure_factor = 0.05
+            }
+        }
+        stash_houses = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+             equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.20
+					instant = yes
+				}
+                power_armor_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+                support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+                fireteam_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+            }
+        }
+        bunker_building = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                production_speed_bunker_factor = 0.1
+                production_speed_bunker2_factor = 0.1
+            }
+        }
+        eureka_fisheries = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                caps_income_modifier = 0.10
+                production_speed_dockyard_factor = 0.05
+                production_speed_infrastructure_factor = 0.05
+            }
+        }
+        freedom_of_religion = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                stability_weekly_factor = 0.0025
+            }
+        }
+        freedom_of_speech = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                elites_drift = 0.01
+                intellectuals_drift = 0.01
+                people_drift = 0.01
+                ruler_drift = 0.01
+                stability_weekly_factor = 0.0025
+            }
+        }
+        freedom_of_press = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_intel_to_others = 0.15
+                navy_intel_to_others = 0.15
+                airforce_intel_to_others = 0.15
+                civilian_intel_to_others = 0.15
+                encryption_factor = -0.1
+                stability_weekly_factor = 0.0025
+            }
+        }
+        freedom_of_want = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                consumer_goods_factor = 0.05
+                monthly_population = 0.1
+                stability_weekly_factor = 0.01
+            }
+        }
+        freedom_of_fear = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                resistance_growth = -0.05
+                resistance_activity = 0.1
+                stability_weekly_factor = 0.0025
+            }
+        }
+        building_intel_agency = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                consumer_goods_factor = 0.1
+                political_power_gain = -0.1
+            }
+        }
+        domestic_sec = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                encryption_factor = 0.1
+                resistance_activity = -0.05
+            }
+        }
+        domestic_sec_div = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                encryption_factor = 0.2
+                resistance_activity = -0.08
+                operative_slot = 1
+            }
+        }
+        national_sec = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                decryption_factor_factor = 0.1
+                intel_network_gain_factor = 0.05
+            }
+        }
+        national_sec_div = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                decryption_factor = 0.2
+                intel_network_gain_factor = 0.1
+                operative_slot = 1
+            }
+        }
+        relationships_rekindled = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            cancel = {
+                has_country_flag = conquered_navarro
+            }
+            modifier = {
+                send_volunteer_size = 3
+            }
+        }
+        nat_atk_bonus = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = NAT
+                attack_bonus_against = 0.1
+            }
+            modifier = {
+                breakthrough_factor = 0.1
+            }
+        }
+        nat_atk_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = -0.05
+                army_org_factor = -0.05
+            }
+        }
+        shi_atk_bonus = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = SHI
+                attack_bonus_against = 0.1
+            }
+            modifier = {
+                breakthrough_factor = 0.1
+            }
+        }
+        shi_atk_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = -0.05
+                army_org_factor = -0.05
+            }
+        }
+        navarro_aid = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                political_power_gain = -0.1
+                consumer_goods_factor = 0.05
+            }
+        }
+        navarro_roads = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                production_speed_buildings_factor = -0.15
+            }
+        }
+        navarro_military = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                production_speed_buildings_factor = 0.05
+            }
+        }
+        navarro_products = {
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                industrial_capacity_factory = 0.05
+            }
+            equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+                demolitions_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+                support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+                fireteam_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+                anti_air_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+            }
+        }
+        bos_atk_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                attrition = 0.05
+                army_org_factor = -0.1
+            }
+        }
+        bos_pol_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                mobilization_speed = -0.15
+                army_morale_factor = -0.03
+                political_power_factor = -0.02
+            }
+        }
+        ncr_ind_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                industrial_capacity_factory = -0.15
+                repair_speed_infrastructure_factor  = -0.05
+                war_support_factor = -0.03
+            }
+        }
+        ncr_atk_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                attrition = 0.05
+                army_org_factor = -0.1
+            }
+        }
+        ncr_pol_nerf = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                mobilization_speed = -0.15
+                army_morale_factor = -0.03
+                political_power_factor = -0.02
+            }
+        }
+        navarro_intervention_no_surrender = {
+
+            picture = x
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                surrender_limit = 1
+            }
+        }
+		EUR_fury_civilization = {
+
+            picture = x
+
+            allowed = {
+            }
+            removal_cost = -1
+
+            targeted_modifier = {
+				tag = UMB
+			attack_bonus_against = 0.05
+			}
+            
+        }
+      		apostle_migration = {
+
+            picture = x
+
+            allowed = {
+            }
+            removal_cost = -1
+
+            modifier = {
+                 weekly_manpower = +100
+                 war_support_factor =0.05
+                 stability_factor = 0.05 
+            }
+            
+        }  
+#####Local/Regional Economics
+		eur_ncr_eco_low = {
+            picture = eur_ncr_eco_low
+            allowed = {
+            }
+            removal_cost = -1
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.05
+                mic_to_target_factor = 0.05
+                extra_trade_to_target_factor = 0.1
+                trade_cost_for_target_factor = -0.05
+            }
+        }
+		eur_ncr_eco_mid_1 = {
+            picture = eur_ncr_eco_mid
+            allowed = {
+            }
+            removal_cost = -1
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.1
+                mic_to_target_factor = 0.1
+                extra_trade_to_target_factor = 0.2
+                trade_cost_for_target_factor = -0.1
+            }
+        }
+		eur_ncr_eco_mid_2 = {
+            picture = eur_ncr_eco_mid
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = 0.05
+            }
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.1
+                mic_to_target_factor = 0.1
+                extra_trade_to_target_factor = 0.2
+                trade_cost_for_target_factor = -0.1
+            }
+        }
+		eur_ncr_eco_high = {
+            picture = eur_ncr_eco_high
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = 0.15
+				stability_factor = 0.05
+				war_support_factor = -0.05
+            }
+            targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.15
+                mic_to_target_factor = 0.15
+                extra_trade_to_target_factor = 0.3
+                trade_cost_for_target_factor = -0.2
+            }
+        }
+		eur_worthless_currencies_1 = {
+            picture = chi_hyper_inflation5
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = -0.2
+				stability_factor = -0.1
+                caps_income_modifier = -0.3
+            }
+        }
+		eur_worthless_currencies_2 = {
+            picture = chi_hyper_inflation4
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = -0.15
+				stability_factor = -0.05
+                caps_income_modifier = -0.2
+            }
+        }
+		eur_worthless_currencies_3 = {
+            picture = chi_hyper_inflation3
+            allowed = {
+            }
+            removal_cost = -1
+			modifier = {
+                production_speed_buildings_factor = -0.1
+                caps_income_modifier = -0.1
+            }
+        }
+    
+##Transitional Government##
+        eur_tran_gov_demo = {
+            picture = flag_USA
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+				stability_factor = 0.1
+                political_power_factor = -0.15
+            }
+        }
+        eur_tran_gov_auth = {
+            picture = generic_military_draft2
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+                stability_factor = -0.25
+                political_power_gain = 0.5
+            }
+        }
+##Oregon
+        eur_silicon_forest = {
+            picture = generic_book_science
+            allowed = { 
+            }
+            removal_cost = -1
+            modifier = {
+                research_speed_factor = 0.05
+            }
+        }
+        eur_timber_industry = {
+            picture = generic_backpack
+            allowed = { 
+            }
+            removal_cost = -1
+            modifier = {
+                industrial_capacity_factory = 0.05
+                production_speed_infrastructure_factor = 0.05
+                caps_income_modifier = 0.1
+            }
+        }
+        eur_oregon_cannibal = {
+            picture = generic_cannibal
+            allowed = {
+            }
+            removal_cost = -1
+            modifier = {
+                conscription_factor = -0.1
+                non_core_manpower = -0.2
+                army_morale_factor = -0.2
+                stability_factor = -0.05
+            }
+        }
+    }
+}
+
+
+
+     
+     
+
+
+
+
+
+
+
+

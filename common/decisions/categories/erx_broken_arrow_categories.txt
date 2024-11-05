@@ -1,0 +1,97 @@
+erx_broken_arrow_development_oregon_cat = {
+	picture = GFX_decision_cat_picture_oregon_flag
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = x
+	priority = 999
+}
+erx_broken_arrow_navarro_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = GFX_decision_satellite
+	priority = 998
+}
+erx_broken_arrow_radiowaves_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = GFX_decision_satellite
+}
+erx_broken_arrow_oregon_affairs_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = x
+	priority = 997
+}
+erx_broken_arrow_stashes_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = x
+}
+erx_broken_arrow_enclave_cat = {
+	allowed = {
+		original_tag = ERB
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_airwaves
+	}
+	icon = x
+}
+#erx_broken_arrow_armory_gfx_cat = {
+#	allowed = {
+#		original_tag = EUR
+#	}
+#	visible = {
+#		#has_completed_focus = erx_broken_arrow_airwaves
+#	}
+#	icon = x
+#}
+erx_broken_arrow_espionage_cat = {
+	allowed = {
+		original_tag = EUR
+	}
+	visible = {
+		#has_completed_focus = erx_broken_arrow_intel_app
+	}
+	icon = GFX_decision_satellite
+}
+EUR_political_infighting = {
+	icon = GFX_decision_trifold_flag
+	priority = { base = 10 }
+	allowed = {
+		original_tag = EUR
+	}
+	visible_when_empty = yes
+	visible = {
+		has_country_flag = granite_plots
+		NOT = {
+			OR = {
+				has_country_leader = {
+					character = MCA_Douglas_Granite
+				}
+				has_country_leader = {
+					character = ERB_Douglas_Granite
+				}
+			}
+		}
+	}
+}

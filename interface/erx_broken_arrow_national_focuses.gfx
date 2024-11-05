@@ -1,0 +1,162 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_goal_medal_icon"
+		texturefile = "gfx/interface/goals/medal_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_oss_icon"
+		texturefile = "gfx/interface/goals/oss_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_sweep_farm_tariffs"
+		texturefile = "gfx/interface/goals/USA_sweep_farm_tariffs.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GFX_USA_investigate_the_military-62362"
+		texturefile = "gfx/interface/goals/GFX_USA_investigate_the_military-62362.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_congressional_authority"
+		texturefile = "gfx/interface/goals/USA_congressional_authority.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GFX_USA_hoovers_america-62869"
+		texturefile = "gfx/interface/goals/GFX_USA_hoovers_america-62869.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_modern_recon"
+		texturefile = "gfx/interface/goals/USA_modern_recon.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_democracy_savior"
+		texturefile = "gfx/interface/goals/USA_democracy_savior.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_call_of_race"
+		texturefile = "gfx/interface/goals/USA_call_of_race.png"
+	}
+	spriteType = {
+		name = "GFX_goal_goal_USA_By_the_People_For_the_People"
+		texturefile = "gfx/interface/goals/goal_USA_By_the_People_For_the_People.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_ports_atlantic"
+		texturefile = "gfx/interface/goals/USA_ports_atlantic.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_support_new_mexico"
+		texturefile = "gfx/interface/goals/USA_support_new_mexico.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_break_windsor"
+		texturefile = "gfx/interface/goals/USA_break_windsor.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_beautiful_pacific"
+		texturefile = "gfx/interface/goals/USA_beautiful_pacific.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_arsenal_of_democracy"
+		texturefile = "gfx/interface/goals/USA_arsenal_of_democracy.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_city_on_a_hill"
+		texturefile = "gfx/interface/goals/USA_city_on_a_hill.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_avenge_mexican_crimes"
+		texturefile = "gfx/interface/goals/USA_avenge_mexican_crimes.png"
+	}
+	spriteType = {
+		name = "GFX_goal_goal_USA_No_Chauvinism"
+		texturefile = "gfx/interface/goals/goal_USA_No_Chauvinism.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_sphere_of_influence"
+		texturefile = "gfx/interface/goals/USA_sphere_of_influence.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_payment_protection"
+		texturefile = "gfx/interface/goals/USA_payment_protection.png"
+	}
+	spriteType = {
+		name = "GFX_goal_USA_antileftist_action"
+		texturefile = "gfx/interface/goals/USA_antileftist_action.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GFX_USA_peace_through_trade-62866"
+		texturefile = "gfx/interface/goals/GFX_USA_peace_through_trade-62866.png"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_smuggle"
+		texturefile = "gfx/interface/goals/BRX_eco_smuggle.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_capsorcash"
+		texturefile = "gfx/interface/goals/BRX_eco_capsorcash.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_rich"
+		texturefile = "gfx/interface/goals/BRX_eco_rich.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_caps"
+		texturefile = "gfx/interface/goals/BRX_eco_caps.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_economy"
+		texturefile = "gfx/interface/goals/BRX_eco_economy.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_shake"
+		texturefile = "gfx/interface/goals/BRX_eco_shake.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_eco_bear"
+		texturefile = "gfx/interface/goals/BRX_eco_bear.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_oregontrail"
+		texturefile = "gfx/interface/goals/BRX2_oregontrail.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_crabseason"
+		texturefile = "gfx/interface/goals/BRX2_crabseason.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_undivine"
+		texturefile = "gfx/interface/goals/BRX2_undivine.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_deathmariposa"
+		texturefile = "gfx/interface/goals/BRX2_deathmariposa.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BDX_plangold"
+		texturefile = "gfx/interface/goals/BDX_plangold.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX_plangreen"
+		texturefile = "gfx/interface/goals/BRX_plangreen.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_supersam"
+		texturefile = "gfx/interface/goals/BRX2_supersam.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_nativesback"
+		texturefile = "gfx/interface/goals/BRX2_nativesback.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_gratitude"
+		texturefile = "gfx/interface/goals/BRX2_gratitude.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_ORA"
+		texturefile = "gfx/interface/goals/BRX2_ORA.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_BRX2_strikedeal"
+		texturefile = "gfx/interface/goals/BRX2_strikedeal.dds"
+	}
+}

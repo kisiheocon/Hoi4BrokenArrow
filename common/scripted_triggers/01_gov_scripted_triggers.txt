@@ -1,0 +1,255 @@
+uses_generic_manpower_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_global_variant_manpower_law = yes
+		}
+		NOT = {
+			has_regional_or_cultural_manpower_law = yes
+		}
+		NOT = {
+			has_unique_manpower_law = yes
+		}
+	}
+}
+
+# Version of the above trigger for laws guaranteed to be for ONLY settler or mutant nations, meaning the global variant check would be redundant CPU drainage
+uses_generic_manpower_laws_presumed_settler_or_mutant = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_manpower_law = yes
+		}
+	}
+}
+
+has_global_variant_manpower_law = {
+	OR = {
+		is_tribal_nation = yes
+		is_raider_nation = yes
+		is_ghoul_nation = yes
+	}
+}
+
+has_regional_or_cultural_manpower_law = {
+	hidden_trigger = {
+		OR = {
+			is_brotherhood_nation_proper = yes
+			is_mexican_nation = yes
+		}
+	}
+}
+
+has_unique_manpower_law = {
+	hidden_trigger = {
+		OR = {
+			has_country_flag = has_unique_manpower_law
+			original_tag = ERB
+			original_tag = EUR
+		}
+	}
+}
+
+use_generic_officer_training_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_officer_training_law = yes
+		}
+	}
+}
+
+has_unique_officer_training_law = {
+	hidden_trigger = {
+		OR = {
+			# Tags
+			original_tag = TNK
+			original_tag = ERB
+
+			# Currently Disabled for the sake of performance as it's unused. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_officer_laws
+
+			# This trigger has been moved to the allowed section of the laws to save on performance which requires using the allowed block @Tran
+			# is_super_mutant_nation = yes
+			is_super_mutant_nation_allowed_block = yes
+		}
+	}
+}
+
+use_generic_army_training_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_army_training_law = yes
+		}
+	}
+}
+
+has_unique_army_training_law = {
+	hidden_trigger = {
+		original_tag = TNK
+	}
+}
+
+use_generic_outsider_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_outsider_law = yes
+		}
+	}
+}
+
+has_unique_outsider_law = {
+	hidden_trigger = {
+		OR = {
+			#Tags
+			original_tag = ERB
+			# This trigger has been moved to the allowed section of the laws to save on performance which requires using the allowed block @Tran
+			# is_brotherhood_nation_proper = yes
+			is_brotherhood_nation_proper_allowed_block = yes
+
+			# Currently Disabled for the sake of performance as it's unused. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_outsider_laws
+
+			# This trigger has been moved to the allowed section of the laws to save on performance which requires using the allowed block @Tran
+			# is_enclave_nation_proper = yes
+			is_enclave_nation_proper_allowed_block = yes
+		}
+	}
+}
+
+use_generic_economic_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_economic_law = yes
+		}
+	}
+}
+
+has_unique_economic_law = {
+	hidden_trigger = {
+		OR = {
+			original_tag = ERB
+			original_tag = EUR
+			# Currently Disabled for the sake of performance in favor of the allowed check below. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_economic_laws
+			is_nation_with_unique_economy_law = yes #ADD YOUR TAG HERE
+		}
+	}
+}
+
+use_generic_trade_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_trade_law = yes
+		}
+	}
+}
+
+has_unique_trade_law = {
+	hidden_trigger = {
+		OR = {
+			#tags
+			original_tag = BOS
+			original_tag = ACH
+			original_tag = NCR
+			original_tag = STC
+			original_tag = ERB
+			original_tag = EUR
+			# Currently Disabled for the sake of performance in favor of the allowed check below. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_trade_laws
+		}
+	}
+}
+
+use_generic_press_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_press_law = yes
+		}
+	}
+}
+
+has_unique_press_law = {
+	hidden_trigger = {
+		OR = {
+			#Tag
+			original_tag = ACH
+			original_tag = BOS
+			original_tag = ERB
+			# Currently Disabled for the sake of performance as it's unused. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_press_laws
+		}
+	}
+}
+
+use_generic_slavery_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_slavery_law = yes
+		}
+	}
+}
+
+has_unique_slavery_law = {
+	hidden_trigger = {
+		OR = {
+			#Tags
+			has_country_flag = has_unique_slave_laws
+		}
+	}
+}
+
+use_generic_drug_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_drug_law = yes
+		}
+	}
+}
+
+has_unique_drug_law = {
+	hidden_trigger = {
+		OR = {
+			#tags
+			# Currently Disabled for the sake of performance as it's unused. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_drug_laws
+		}
+	}
+}
+
+use_generic_undesirable_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_undesirable_law = yes
+		}
+	}
+}
+
+has_unique_undesirable_law = {
+	hidden_trigger = {
+		OR = {
+			#tags
+			original_tag = ACH
+			original_tag = TNK
+			original_tag = ERB
+			# Currently Disabled for the sake of performance as it's unused. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_undesirable_laws
+		}
+	}
+}
+
+use_generic_mutant_recruitment_laws = {
+	hidden_trigger = {
+		NOT = {
+			has_unique_mutant_recruitment_law = yes
+		}
+	}
+}
+
+has_unique_mutant_recruitment_law = {
+	hidden_trigger = {
+		OR = {
+			#tags
+			original_tag = ERB
+			# Currently Disabled for the sake of performance as it's unused. WARNING: reenabling will require editing the laws themselves somewhat @Tran
+			# has_country_flag = has_unique_mutant_recruitment_laws
+		}
+	}
+}

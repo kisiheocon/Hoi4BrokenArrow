@@ -1,0 +1,1128 @@
+add_namespace = erx_broken_arrow_debug
+add_namespace = erx_broken_arrow
+add_namespace = erx_broken_arrow_fireside
+add_namespace = erx_broken_arrow_navarro
+add_namespace = erx_broken_arrow_mariposa
+add_namespace = erx_broken_arrow_incep
+
+
+#debug event
+country_event = {
+	id = erx_broken_arrow_debug.1
+	title = erx_broken_arrow_debug.1.t
+	desc = erx_broken_arrow_debug.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_debug.1.a
+		load_focus_tree = nf_erx_broken_arrow
+		set_country_flag = eur_enclave_exiles
+		remove_ideas = eur_mercenary_army
+		country_lock_all_division_template = no
+	}
+}
+country_event = {
+	id = erx_broken_arrow_debug.2
+	title = erx_broken_arrow_debug.2.t
+	desc = erx_broken_arrow_debug.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_debug.2.a
+		#load_focus_tree = nf_erx_broken_arrow
+		create_equipment_variant = {
+			name = "M200 Assault Rifle"
+			type = ballistic_equipment_4
+			icon = GFX_ERB_ballistic_weaponry_tech_4_medium
+
+		}
+	}
+}
+#SAVED BY THE BELL
+country_event = {
+	id = erx_broken_arrow.1
+	title = erx_broken_arrow.1.t
+	desc = erx_broken_arrow.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.1.a
+		country_event = erx_broken_arrow.2
+	}
+}
+#THE FATE OF SGT. ARCH DORNAN
+country_event = {
+	id = erx_broken_arrow.2
+	title = erx_broken_arrow.2.t
+	desc = erx_broken_arrow.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.2.a 
+		country_event = erx_broken_arrow.3
+		custom_effect_tooltip = erx_broken_arrow.2_tt
+	}
+	option = {
+		name = erx_broken_arrow.2.b 
+		country_event = erx_broken_arrow.3
+		custom_effect_tooltip = erx_broken_arrow.2_tt
+	}
+	option = {
+		name = erx_broken_arrow.2.c 
+		add_stability = 0.05
+		add_war_support = -0.05
+		retire_character = ERB_Sergeant_Doran
+		custom_effect_tooltip = erx_broken_arrow.2_tt
+		country_event = erx_broken_arrow.3
+	}
+}
+#FINAL ESCAPE
+country_event = {
+	id = erx_broken_arrow.3
+	title = erx_broken_arrow.3.t
+	desc = erx_broken_arrow.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.3.a 
+		EUR = {
+			set_country_flag = eur_enclave_exiles
+			add_manpower = 2000
+			add_equipment_to_stockpile = {type = energy_equipment_2 producer = USA amount = 300}
+			add_equipment_to_stockpile = {type = enclave_power_armour_equipment_1 producer = ERB amount = 200}
+			add_stability = 0.05
+			add_war_support = -0.05
+		}
+		EUR = {
+			change_tag_from = ERB
+		}
+		hidden_effect = {
+			ERB = {
+				ERB_Douglas_Granite = {
+					set_nationality = EUR
+				}
+				ERC_Shadow = {
+					set_nationality = EUR
+				}
+				ERC_Dwemer = {
+					set_nationality = EUR
+				}
+				ERB_David = {
+					set_nationality = EUR
+				}
+				ERC_Scott = {
+					set_nationality = EUR
+				}
+				ERB_Rimmy = {
+					set_nationality = EUR
+				}
+			}
+			ERB = {
+				retire_character = erc_amber_clark
+				retire_character = enc_indy_neidell
+				retire_character = erc_gerald_stewart
+				retire_character = ERC_theorist_navy
+				retire_character = ERC_grand_fleet_navy
+				retire_character = ERC_weather_air_chief
+				retire_character = enc_BrenRadNeo
+				retire_character = army_entrenchment_3_guy
+				retire_character = enc_bomber_guy2
+				retire_character = felix_grayson
+				retire_character = erx_harold_richardson
+				retire_character = boris_t
+				retire_character = lt_kolyis
+			}
+			EUR = {
+				load_focus_tree = nf_erx_broken_arrow
+			}
+			EUR = {
+				remove_ideas = eur_mercenary_army
+				remove_ideas = eur_spec_attack
+				remove_ideas = eur_spec_defence
+				remove_ideas = eur_spec_supply
+				remove_ideas = all_are_welcome
+				remove_ideas = eur_next_generation
+				remove_ideas = granite_company_heroism
+			}
+			EUR = {
+				set_technology = { enclave_pa_unlock_tech = 1}
+				set_technology = { vertibird_unlock_tech = 1}
+			}
+			EUR = {
+				add_ideas = {
+					enc_civilian_economy
+					concealed_econ
+					eur_enc_cons1
+					eur_ncr_eco_mid_1 
+					eur_worthless_currencies_1
+					eur_enc_complete_chaos
+				}
+			}
+			EUR = {
+				country_lock_all_division_template = yes
+			}
+			ERB = {
+				clr_country_flag = ncr_suspicious
+			}
+		}
+	}
+
+	option = {
+		name = erx_broken_arrow.3.b 
+		EUR = {
+			set_country_flag = eur_enclave_exiles
+			add_stability = -0.05
+			add_war_support = 0.05
+			add_manpower = 1000
+			add_equipment_to_stockpile = {type = energy_equipment_2 producer = USA amount = 200}
+			add_equipment_to_stockpile = {type = enclave_power_armour_equipment_1 producer = ERB amount = 100}
+			add_equipment_to_stockpile = {type = support_robot_thruster_equipment_2 producer = USA amount = 200}
+		}
+		ERB = {
+			add_fuel = -17000
+			add_stability = -0.15
+			add_war_support = 0.1
+		}
+		EUR = {
+			change_tag_from = ERB
+		}
+		159 = {
+			damage_building = {
+				type = infrastructure
+				damage = 5
+			}
+		}
+		hidden_effect = {
+			ERB = {
+				ERB_Douglas_Granite = {
+					set_nationality = EUR
+				}
+				ERC_Shadow = {
+					set_nationality = EUR
+				}
+				ERC_Dwemer = {
+					set_nationality = EUR
+				}
+				ERB_David = {
+					set_nationality = EUR
+				}
+				ERC_Scott = {
+					set_nationality = EUR
+				}
+				ERB_Rimmy = {
+					set_nationality = EUR
+				}
+			}
+			ERB = {
+				retire_character = erc_amber_clark
+				retire_character = enc_indy_neidell
+				retire_character = erc_gerald_stewart
+				retire_character = ERC_theorist_navy
+				retire_character = ERC_grand_fleet_navy
+				retire_character = ERC_weather_air_chief
+				retire_character = enc_BrenRadNeo
+				retire_character = army_entrenchment_3_guy
+				retire_character = enc_bomber_guy2
+				retire_character = felix_grayson
+				retire_character = erx_harold_richardson
+				retire_character = boris_t
+				retire_character = lt_kolyis
+			}
+			EUR = {
+				remove_ideas = eur_mercenary_army
+				remove_ideas = eur_spec_attack
+				remove_ideas = eur_spec_defence
+				remove_ideas = eur_spec_supply
+				remove_ideas = all_are_welcome
+				remove_ideas = eur_next_generation
+				remove_ideas = granite_company_heroism
+			}
+			EUR = {
+				load_focus_tree = nf_erx_broken_arrow
+			}
+			EUR = {
+				set_technology = { enclave_pa_unlock_tech = 1}
+				set_technology = { vertibird_unlock_tech = 1}
+			}
+			EUR = {
+				add_ideas = {
+					enc_civilian_economy
+					concealed_econ
+					eur_enc_cons1
+					eur_ncr_eco_mid_1
+					eur_worthless_currencies_1
+					eur_enc_complete_chaos
+				}
+			}
+			EUR = {
+				country_lock_all_division_template = yes
+			}
+			ERB = {
+				clr_country_flag = ncr_suspicious
+			}
+		}
+	}
+}
+#NATIONAL CATASTROPHE
+country_event = {
+	id = erx_broken_arrow.4
+	title = erx_broken_arrow.4.t
+	desc = erx_broken_arrow.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.4.a 
+	}
+}
+#HOME SWEET HOME
+country_event = {
+	id = erx_broken_arrow.5
+	title = erx_broken_arrow.5.t
+	desc = erx_broken_arrow.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.5.a 
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.05
+		}
+		add_political_power = 60
+	}
+}
+#AFFAIRS OF STATE
+country_event = {
+	id = erx_broken_arrow.6
+	title = erx_broken_arrow.6.t
+	desc = erx_broken_arrow.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.6.a 
+	}
+}
+#TIME FOR A PRESS CONFERENCE?
+country_event = {
+	id = erx_broken_arrow.7
+	title = erx_broken_arrow.7.t
+	desc = erx_broken_arrow.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.7.a 
+		country_event = erx_broken_arrow.21
+	}
+}
+#THE BALLET BOX
+country_event = {
+	id = erx_broken_arrow.8
+	title = erx_broken_arrow.8.t
+	desc = erx_broken_arrow.8.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.8.a 
+		country_event = { id = erx_broken_arrow.9 days = 10 random = 2 }
+	}
+}
+#THE REFERENDUM
+country_event = {
+	id = erx_broken_arrow.9
+	title = erx_broken_arrow.9.t
+	desc = erx_broken_arrow.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.9.a 
+		country_event = erx_broken_arrow.10
+	}
+	option = {
+		name = erx_broken_arrow.9.b 
+		country_event = erx_broken_arrow.11
+	}
+}
+#LANDSLIDE VICTORY
+country_event = {
+	id = erx_broken_arrow.10
+	title = erx_broken_arrow.10.t
+	desc = erx_broken_arrow.10.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.10.a 
+		promote_character = {
+			character = ERB_Douglas_Granite
+			ideology = technocracy
+		}
+		set_politics = {
+			ruling_party = intellectuals
+   			elections_allowed = no
+    		long_name = ERB_EUR2_intellectuals_party_long
+    		name = ERB_EUR2_intellectuals_party_long
+		}
+		add_stability = 0.1
+		#set_temp_variable = {
+		#	var = legitimacy_change_var
+		#	value = 0.10
+		#}
+		#change_legitimacy = yes
+		set_country_flag = democratic_enc_takeover
+		retire_character = EUR_portmaster
+	}
+}
+#NO TYRANTS NO DESPOTS
+country_event = {
+	id = erx_broken_arrow.11
+	title = erx_broken_arrow.11.t
+	desc = erx_broken_arrow.11.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.11.a 
+		custom_effect_tooltip = fed_militia_tt
+		set_country_flag = forceful_enc_takeover
+		promote_character = {
+			character = ERB_Douglas_Granite
+			ideology = technocracy
+		}
+		set_politics = {
+			ruling_party = intellectuals
+   			elections_allowed = no
+    		long_name = ERB_intellectuals_party_long
+    		name = ERB_intellectuals_party
+		}
+		retire_character = EUR_portmaster
+		hidden_effect = {
+			load_oob = EUR_federal_militia	
+			set_division_template_lock = {
+				division_template = "Federal Militia"
+				is_locked = no
+			}
+		}
+	}
+}
+#FORMING A GOVERNMENT
+country_event = {
+	id = erx_broken_arrow.12
+	title = erx_broken_arrow.12.t
+	desc = erx_broken_arrow.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.12.a 
+		country_event = { id = erx_broken_arrow.13 days = 5 random = 2 }
+		add_ideas = eur_tran_gov_auth
+	}
+	option = {
+		name = erx_broken_arrow.12.b 
+		country_event = { id = erx_broken_arrow.14 days = 5 random = 2 }
+		add_ideas = eur_tran_gov_demo
+	}
+}
+#STICKS AND STONES - DERIVED FROM DEMOCRATIC REFERENDUM
+country_event = {
+	id = erx_broken_arrow.13
+	title = erx_broken_arrow.13.t
+	desc = erx_broken_arrow.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.13.a 
+		set_cosmetic_tag = ERB_EUR_FEG
+	}
+	option = {
+		name = erx_broken_arrow.13.b
+		set_cosmetic_tag = ERB_EUR_ANS
+	}
+}
+#DEMOCRACY NOW AND FOREVER - DERIVED FROM HOSTILE TAKEOVER
+country_event = {
+	id = erx_broken_arrow.14
+	title = erx_broken_arrow.14.t
+	desc = erx_broken_arrow.14.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.14.a 
+		set_cosmetic_tag = ERB_EUR_FRA
+	}
+	option = {
+		name = erx_broken_arrow.14.b
+		set_cosmetic_tag = ERB_EUR_APG
+	}
+}
+#UNDER PENALTY OF DEATH
+country_event = {
+	id = erx_broken_arrow.15
+	title = erx_broken_arrow.15.t
+	desc = erx_broken_arrow.15.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.15.a 
+		country_event = { id = erx_broken_arrow.155 }
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+country_event = {
+	id = erx_broken_arrow.155
+	title = erx_broken_arrow.155.t
+	desc = erx_broken_arrow.155.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.155.a 
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+#THE YANKEE DOODLE BOY
+country_event = {
+	id = erx_broken_arrow.16
+	title = erx_broken_arrow.16.t
+	desc = erx_broken_arrow.16.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.16.a
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+	option = {
+		name = erx_broken_arrow.16.b
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+	option = {
+		name = erx_broken_arrow.16.c
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+#I VOW THEE TO MY COUNTRY
+country_event = {
+	id = erx_broken_arrow.17
+	title = erx_broken_arrow.17.t
+	desc = erx_broken_arrow.17.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.17.a 
+	}
+}
+#THE TIGHTENING GRIP
+country_event = {
+	id = erx_broken_arrow.18
+	title = erx_broken_arrow.18.t
+	desc = erx_broken_arrow.18.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.18.a 
+	}
+}
+#A LUKEWARM DISCOVERY
+country_event = {
+	id = erx_broken_arrow.19
+	title = erx_broken_arrow.19.t
+	desc = erx_broken_arrow.19.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.19.a 
+		country_event = { id = erx_broken_arrow.20 days = 10 }
+	}
+}
+#SECRECY OR AUDACITY
+country_event = {
+	id = erx_broken_arrow.20
+	title = erx_broken_arrow.20.t
+	desc = erx_broken_arrow.20.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.20.a
+		add_manpower = -150
+		add_war_support = 0.04
+	}
+	option = {
+		name = erx_broken_arrow.20.b
+		add_manpower = -50
+		add_war_support = 0.02
+		add_political_power = 20
+	}
+}
+#MUTANT MENAGERIE
+country_event = {
+	id = erx_broken_arrow.21
+	title = erx_broken_arrow.21.t
+	desc = erx_broken_arrow.21.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.21.a 
+		custom_effect_tooltip = mutant_policy1_tt
+		add_political_power = -50
+		#set_temp_variable = {
+		#		var = legitimacy_change_var
+		#		value = 0.05
+		#}
+		#change_legitimacy = yes
+		country_event = erx_broken_arrow.22
+	}
+	option = {
+		name = erx_broken_arrow.21.b
+		add_political_power = 50
+		#set_temp_variable = {
+		#		var = legitimacy_change_var
+		#		value = -0.05
+		#}
+		#change_legitimacy = yes
+		country_event = erx_broken_arrow.22
+	}
+}
+#INTERNATIONAL AFFAIRS
+country_event = {
+	id = erx_broken_arrow.22
+	title = erx_broken_arrow.22.t
+	desc = erx_broken_arrow.22.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.22.a 
+		custom_effect_tooltip = international_affairs_policy_tt
+		set_country_flag = ncr_neutral
+		add_war_support = -0.05
+		add_stability = 0.05
+		country_event = erx_broken_arrow.23
+	}
+	option = {
+		name = erx_broken_arrow.22.b
+		custom_effect_tooltip = international_affairs_policy_tt
+		set_country_flag = ncr_hostile
+		add_war_support = 0.05
+		add_stability = -0.05
+		country_event = erx_broken_arrow.23
+	}
+	option = {
+		name = erx_broken_arrow.22.c
+		custom_effect_tooltip = international_affairs_policy_tt
+		set_country_flag = ncr_sierra
+		add_war_support = 0.03
+		add_stability = 0.02
+		country_event = erx_broken_arrow.23
+	}
+}
+#ON THE ISSUE OF GOVERNANCE 
+country_event = {
+	id = erx_broken_arrow.23
+	title = erx_broken_arrow.23.t
+	desc = erx_broken_arrow.23.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.23.a 
+		custom_effect_tooltip = governance_issue1_tt
+		add_popularity = {
+			ideology = people
+			popularity = 0.15
+		}
+	}
+	option = {
+		name = erx_broken_arrow.23.b
+		custom_effect_tooltip = governance_issue2_tt
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.15
+		}
+	}
+}
+#ABETTANCE OR AUSTERITY
+country_event = {
+	id = erx_broken_arrow.24
+	title = erx_broken_arrow.24.t
+	desc = erx_broken_arrow.24.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.24.a 
+		337 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			337 = {
+				set_temp_variable = { pop_add = -2500 }
+				add_state_population_no_state_name = yes
+			}
+			add_core_of = EUR
+		}
+		add_political_power = 50
+		add_war_support = 0.05
+	}
+	option = {
+		name = erx_broken_arrow.24.b
+		337 = {
+			add_core_of = EUR
+		}
+		add_war_support = -0.05
+		add_political_power = -50
+		add_stability = -0.05
+		add_manpower = 500
+	}
+}
+#QUANTITY OR QUALITY
+country_event = {
+	id = erx_broken_arrow.25
+	title = erx_broken_arrow.25.t
+	desc = erx_broken_arrow.25.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.25.a 
+		complete_national_focus = erx_broken_arrow_american_manufacturing
+	}
+	option = {
+		name = erx_broken_arrow.25.b
+		complete_national_focus = erx_broken_arrow_californian_manufacturing
+	}
+}
+#I LIKE IKE
+country_event = {
+	id = erx_broken_arrow.26
+	title = erx_broken_arrow.26.t
+	desc = erx_broken_arrow.26.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.26.a 
+	}
+	option = {
+		name = erx_broken_arrow.26.b
+	}
+	option = {
+		name = erx_broken_arrow.26.c
+	}
+}
+#Federal Retribution
+country_event = {
+	id = erx_broken_arrow.27
+	title = erx_broken_arrow.27.t
+	desc = erx_broken_arrow.27.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.27.a 
+	}
+}
+#Winner Takes All
+country_event = {
+	id = erx_broken_arrow.28
+	title = erx_broken_arrow.28.t
+	desc = erx_broken_arrow.28.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.28.a 
+	}
+}
+#Packing up Ed
+country_event = {
+	id = erx_broken_arrow.29
+	title = erx_broken_arrow.29.t
+	desc = erx_broken_arrow.29.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.29.a 
+		puppet = PAC
+		PAC = {
+			set_cosmetic_tag = ERB_EUR_PAC
+		}
+		PAC = {
+			hidden_effect = {
+				country_event = { id = erx_broken_arrow.30 hours = 1 }
+			}
+		}
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+country_event = {
+	id = erx_broken_arrow.30
+	title = erx_broken_arrow.30.t
+	desc = erx_broken_arrow.30.d
+
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = erx_broken_arrow.30.a 
+				hidden_effect = {
+			set_country_leader_description = {
+			ideology = chieftain
+			desc = "Thanks to President Granite, no one doubts who's in charge of the Pack...excuse that, the Insular Government of the Packers (try saying that five times fast)."
+			}
+			set_country_leader_name = {
+			ideology = chieftain
+			name = "Jim"
+				}
+			set_country_leader_portrait = {
+			ideology = chieftain
+			portrait = GFX_Portrait_Tribal_Generic_8
+				}
+		}
+	
+	}
+}
+###Oregon Unlock
+country_event = {
+	id = erx_broken_arrow.31
+	title = erx_broken_arrow.31.t
+	desc = erx_broken_arrow.31.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow.31.a
+		create_faction = "Entente Cordial"
+		hidden_effect = {
+		mark_focus_tree_layout_dirty = yes
+		}
+	}
+}
+##What the Fuck?
+country_event = {
+	id = erx_broken_arrow.32
+	title = erx_broken_arrow.32.t
+	desc = erx_broken_arrow.32.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow.32.a 
+	}
+}
+
+
+#DECADENCE AND DEBAUCHERY
+country_event = {
+	id = erx_broken_arrow_fireside.1
+	title = erx_broken_arrow_fireside.1.t
+	desc = erx_broken_arrow_fireside.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_fireside.1.a
+		country_event = erx_broken_arrow_fireside.2
+	}
+}
+#DECADENCE AND DEBAUCHERY PT2
+country_event = {
+	id = erx_broken_arrow_fireside.2
+	title = erx_broken_arrow_fireside.2.t
+	desc = erx_broken_arrow_fireside.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_fireside.2.a
+	}
+}
+#DARK DAYS LIE AHEAD
+country_event = {
+	id = erx_broken_arrow_fireside.3
+	title = erx_broken_arrow_fireside.3.t
+	desc = erx_broken_arrow_fireside.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_fireside.3.a
+	}
+}
+#ARSENAL OF DEMOCRACY
+country_event = {
+	id = erx_broken_arrow_fireside.4
+	title = erx_broken_arrow_fireside.4.t
+	desc = erx_broken_arrow_fireside.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_fireside.4.a
+	}
+}
+#ESPIONAGE AND INFILTRATION
+country_event = {
+	id = erx_broken_arrow_fireside.5
+	title = erx_broken_arrow_fireside.5.t
+	desc = erx_broken_arrow_fireside.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_fireside.5.a
+	}
+}
+#FAITH 
+country_event = {
+	id = erx_broken_arrow_fireside.6
+	title = erx_broken_arrow_fireside.6.t
+	desc = erx_broken_arrow_fireside.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_fireside.6.a
+	}
+}
+#CRISIS TO THE SOUTH
+country_event = {
+	id = erx_broken_arrow_navarro.1
+	title = erx_broken_arrow_navarro.1.t
+	desc = erx_broken_arrow_navarro.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_navarro.1.a
+		custom_effect_tooltip = erx_broken_arrow_navarro.1_tt
+		NVT = {
+			add_ideas = navarro_intervention_no_surrender
+		}
+		EUR = {
+			set_country_flag = eur_navarro_time
+		}
+		EUR = {
+			complete_national_focus = erx_broken_arrow_navarro_crisis
+		}
+		EUR = {
+			mark_focus_tree_layout_dirty = yes
+		}
+		hidden_effect = {
+			set_victory_points = {
+				province = 4924
+				value = 5
+			}
+			set_victory_points = {
+				province = 8578
+				value = 15
+			}
+			set_province_name = {
+				id = 4924
+				name = eureka_vp_fob
+			}
+		}
+	}
+}
+#VICTORY 
+country_event = {
+	id = erx_broken_arrow_navarro.2
+	title = erx_broken_arrow_navarro.2.t
+	desc = erx_broken_arrow_navarro.2.d
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_navarro.2.a
+		country_event = { 
+			id = erx_broken_arrow_navarro.3 
+		}
+	}
+}
+country_event = {
+	id = erx_broken_arrow_navarro.3
+	title = erx_broken_arrow_navarro.3.t
+	desc = erx_broken_arrow_navarro.3.d
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_navarro.3.a
+		hidden_effect = {
+			country_event = { 
+				id = erx_broken_arrow_navarro.4 days = 20
+			}
+		}
+	}
+}
+##NCR retaliate##
+country_event = {
+	id = erx_broken_arrow_navarro.4
+	title = erx_broken_arrow_navarro.4.t
+	desc = erx_broken_arrow_navarro.4.d
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_navarro.4.a
+		set_country_flag = navarro_ncr_revenge
+		hidden_effect = {
+			country_event = {
+				id = erx_broken_arrow_navarro.5 days = 30
+			}
+		}	
+		NCR = {
+			declare_war_on = {
+				target = EUR
+				type = annex_everything
+			}
+		}
+	}
+}
+country_event = {
+	id = erx_broken_arrow_navarro.5
+	title = erx_broken_arrow_navarro.5.t
+	desc = erx_broken_arrow_navarro.5.d
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow_navarro.5.a
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+
+###Election Events
+##
+country_event = {
+	id = erx_broken_arrow.100
+	title = erx_broken_arrow.100.t
+	desc = erx_broken_arrow.100.d
+	picture = GFX_event_broken_arrow_eagle
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow.100.a	
+		country_event = { id = erx_broken_arrow.101 } 
+	}
+}
+country_event = {
+	id = erx_broken_arrow.101
+	title = erx_broken_arrow.101.t
+	desc = erx_broken_arrow.101.d
+	picture = GFX_event_broken_arrow_eagle
+
+	is_triggered_only = yes
+
+	option = {
+		name = erx_broken_arrow.101.a
+		country_event = { id = erx_broken_arrow.1 }
+	}
+}
+country_event = {
+	id = erx_broken_arrow.102
+	title = erx_broken_arrow.102.t
+	desc = erx_broken_arrow.102.d
+	picture = GFX_event_broken_arrow_eagle
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow.102.a
+	}
+}
+##Mariposa Events
+##Reformist POV
+country_event = {
+	id = erx_broken_arrow_mariposa.1
+	title = erx_broken_arrow_mariposa.1.t
+	desc = erx_broken_arrow_mariposa.1.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_mariposa.1.a
+		country_event = { id = erx_broken_arrow_mariposa.2 days = 5}
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+##Future discovered Purist plan
+country_event = {
+	id = erx_broken_arrow_mariposa.2
+	title = erx_broken_arrow_mariposa.2.t
+	desc = erx_broken_arrow_mariposa.2.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_mariposa.2.a
+		custom_effect_tooltip = "This report is discovered years in the future"
+		country_event = { id = erx_broken_arrow_mariposa.3 days = 5}
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+##Purist POV
+country_event = {
+	id = erx_broken_arrow_mariposa.3
+	title = erx_broken_arrow_mariposa.3.t
+	desc = erx_broken_arrow_mariposa.3.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_mariposa.3.a
+		custom_effect_tooltip = "Purist's POV"
+		custom_effect_tooltip = erx_broken_arrow_sf
+	}
+}
+####Granite Depresso Expresso - Starting Events after Operation Mayflower
+country_event = {
+	id = erx_broken_arrow_incep.1
+	title = erx_broken_arrow_incep.1.t
+	desc = erx_broken_arrow_incep.1.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_incep.1.a
+			hidden_effect = {
+				country_event = { id = erx_broken_arrow_incep.2 days = 10 }
+			}
+			add_stability = -0.05
+			add_war_support = -0.05
+	}
+}
+country_event = {
+	id = erx_broken_arrow_incep.2
+	title = erx_broken_arrow_incep.2.t
+	desc = erx_broken_arrow_incep.2.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_incep.2.a
+			hidden_effect = {
+				country_event = { id = erx_broken_arrow_incep.3 days = 10 }
+			}
+			add_stability = 0.02
+			add_political_power = 20
+	}
+}
+country_event = {
+	id = erx_broken_arrow_incep.3
+	title = erx_broken_arrow_incep.3.t
+	desc = erx_broken_arrow_incep.3.d
+
+	is_triggered_only = yes
+	option = {
+		name = erx_broken_arrow_incep.3.a
+		add_political_power = 50
+	}
+}

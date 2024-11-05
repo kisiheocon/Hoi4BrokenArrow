@@ -1,0 +1,332 @@
+﻿characters = {
+    eur_enc_offensive = {
+	name = erc_amber_clark
+        portraits = {
+            army = {
+                small = GFX_idea_enc_generic_arma_2
+            }
+        }
+        advisor = {
+		idea_token = enc_offensive
+		visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+            slot = army_chief
+            idea_token = enc_offensive
+			cost = 250
+
+			allowed = {
+				original_tag = EUR
+			}
+			traits = { army_chief_offensive_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+        }
+	}
+    eur_enc_indy_neidell = {
+        name = enc_indy_neidell_name
+        portraits = {
+            army = {
+                small = GFX_idea_enc_indy_neidell
+            }
+        }
+        advisor = {
+		idea_token = indy_mitchell
+		visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+            slot = army_chief
+            idea_token = enc_indy_neidell
+			cost = 100
+            
+			allowed = {
+				original_tag = EUR
+			}
+			traits = { desert_fighter }
+
+			ai_will_do = {
+				factor = 1
+			}
+        }
+	}
+    eur_ERC_defensive_army = {
+	name = erc_gerald_stewart
+		token_base = generic_army_chief_def
+		portraits = {
+			army = {
+				small = GFX_idea_enc_generic_arma_4
+			}
+		}
+		advisor = {
+		idea_token = defensive_army_guy
+		visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+			cost = 100
+			slot = army_chief
+			ledger = army
+			traits = {
+				army_chief_defensive_1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+    eur_ERC_theorist_navy = {
+		portraits = {
+			army = {
+				small = GFX_idea_enc_generic_nava_3
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = enc_navy_theorist_dude
+			ledger = navy
+			visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+			traits = {
+				enc_defense_fleet
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	eur_ERC_grand_fleet_navy = {
+		portraits = {
+			army = {
+				small = GFX_idea_enc_generic_nava_1
+			}
+		}
+		
+		advisor = {
+		idea_token = enc_grand_navy_fellow
+		visible = {
+			original_tag = EUR
+			}
+            available = {
+               original_tag = EUR
+            }
+            visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+			cost = 100
+			slot = navy_chief
+			ledger = navy
+			traits = {
+				enc_offense_fleet
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+    eur_ERC_weather_air_chief = {
+	name = "Margaret Curtiss"
+		token_base = generic_air_chief_all_weather
+		portraits = {
+			army = {
+				small = GFX_idea_enc_generic_aira_6
+			}
+		}
+		advisor = {
+		idea_token = enc_weather_man
+		visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+			cost = 100
+			slot = air_chief
+			ledger = air
+			traits = {
+				air_chief_all_weather_2
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+    eur_enc_BrenRadNeo = {
+        name = enc_BrenRadNeo_name
+        portraits = {
+            army = {
+                small = GFX_idea_generic_political_advisor_europe_6
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = enc_BrenRadNeo
+			allowed = {
+				original_tag = EUR
+			}
+			visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+			traits = {
+				interventionist
+			}
+        }
+	}
+    eur_army_entrenchment_3_guy = {
+        portraits = {
+            army = {
+                small = GFX_idea_enc_generic_arma_4
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = army_entrenchment_3_guy
+			visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+			traits = { army_entrenchment_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+        }
+	}
+    eur_enc_bomber_guy2 = {
+        portraits = {
+            army = {
+                small = GFX_idea_enc_generic_aira_4
+            }
+        }
+        advisor = {
+            slot = research_advisor
+            idea_token = enc_bomber_man
+			visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            available = {
+               original_tag = EUR
+            }
+
+			traits = { vertibird_ace }
+        }
+	} 
+    eur_felix_grayson = {
+        name = felix_grayson_name
+        portraits = {
+            army = {
+                small = GFX_idea_generic_political_advisor_europe_3
+            }
+        }
+        advisor = {
+            slot = cultural_advisor
+            idea_token = felix_grayson
+            allowed = {
+                original_tag = EUR
+            }
+            visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+            traits = {
+                attorney_general
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+	}
+    eur_lt_kolyis = {
+        name = lt_kolyis_name
+        portraits = {
+            army = {
+                small = GFX_idea_enc_generic_arma_1
+            }
+        }
+        advisor = {
+            slot = cultural_advisor
+            idea_token = lt_kolyis
+			allowed = {
+				original_tag = EUR
+			}
+			visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+			traits = {
+				EPA_director
+			}
+			ai_will_do = {
+				factor = 1
+			}
+        }
+	}
+    eur_erx_harold_richardson = {
+        name = erx_harold_richardson_name
+        portraits = {
+            army = {
+                small = "gfx/interface/ideas/ministers/enc_richardson_III.tga"
+            }
+        }
+		visible = {
+				NOT = {
+					has_country_flag = reformers_purged
+				}
+			}
+        advisor = {
+            slot = cultural_advisor
+			desc = erx_harold_richardson_desc
+            idea_token = erx_harold_richardson
+			allowed = {
+				original_tag = EUR
+			}
+			traits = { 
+			 
+			unbreakable_will
+			civilian_constructor
+			
+			}
+			ai_will_do = {
+				factor = 1
+			}
+        }
+	}
+    eur_boris_t = {
+        name = boris_t_name
+        portraits = {
+            army = {
+                small = GFX_idea_boris_t
+            }
+        }
+        advisor = {
+            slot = cultural_advisor
+            idea_token = boris_t
+            allowed = {
+				original_tag = EUR
+			}
+            traits = {
+                reformer
+            }
+            ai_will_do = {
+                factor = 1
+            }
+            visible = {
+                has_completed_focus = erx_broken_arrow_operation_mayflower
+            }
+        }
+	}
+}
